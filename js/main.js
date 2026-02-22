@@ -176,8 +176,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Method 2: Set cookie and reload
         const domain = window.location.hostname;
-        document.cookie = `googtrans=/en/${code}; path=/; domain=${domain}`;
-        document.cookie = `googtrans=/en/${code}; path=/`;
+        document.cookie = `googtrans=/es/${code}; path=/; domain=${domain}`;
+        document.cookie = `googtrans=/es/${code}; path=/`;
 
         // If Google Translate element exists, try to find and trigger it
         const gtFrame = document.querySelector('.goog-te-menu-frame');

@@ -634,13 +634,13 @@ body.mobile-menu-open .nav-phone {
 .hero-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(135deg, rgba(3,105,161,0.38) 0%, rgba(14,165,233,0.22) 50%, rgba(56,189,248,0.12) 100%);
+    background: linear-gradient(135deg, rgba(3,105,161,0.55) 0%, rgba(14,165,233,0.40) 50%, rgba(56,189,248,0.28) 100%);
 }
 
 .hero-content {
     position: relative;
     z-index: 2;
-    max-width: 720px;
+    max-width: 900px;
     padding: 0 24px;
     margin: 0 auto;
     text-align: center;
@@ -664,28 +664,30 @@ body.mobile-menu-open .nav-phone {
 
 .hero h1 {
     font-family: var(--font-serif);
-    font-size: clamp(2.4rem, 5.5vw, 4.2rem);
+    font-size: clamp(2.4rem, 5vw, 3.8rem);
     font-weight: 700;
     color: var(--white);
-    line-height: 1.1;
-    margin-bottom: 24px;
+    line-height: 1.15;
+    margin-bottom: 20px;
+    text-shadow: 0 2px 12px rgba(0,0,0,0.4), 0 1px 3px rgba(0,0,0,0.3);
+    white-space: nowrap;
 }
 
 .hero-accent {
-    background: linear-gradient(135deg, #bae6fd, #e0f2fe);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    display: block;
+    color: var(--blue-400);
+    -webkit-text-fill-color: var(--blue-400);
 }
 
 .hero-subtitle {
-    font-size: 1.1rem;
-    color: rgba(255,255,255,0.85);
-    line-height: 1.7;
-    margin-bottom: 40px;
-    max-width: 560px;
+    font-size: 1.2rem;
+    color: rgba(255,255,255,0.9);
+    line-height: 1.6;
+    margin-bottom: 28px;
+    max-width: 760px;
     margin-left: auto;
     margin-right: auto;
+    text-shadow: 0 1px 6px rgba(0,0,0,0.3);
 }
 
 .hero-actions {
@@ -693,6 +695,7 @@ body.mobile-menu-open .nav-phone {
     gap: 16px;
     justify-content: center;
     flex-wrap: wrap;
+    margin-bottom: 60px;
 }
 
 .hero-scroll-indicator {
@@ -2035,6 +2038,7 @@ body {
 
     .hero h1 {
         font-size: 2.2rem;
+        white-space: normal;
     }
 
     .footer-grid {
@@ -2098,6 +2102,7 @@ body {
 @media (max-width: 480px) {
     .hero h1 {
         font-size: 1.8rem;
+        white-space: normal;
     }
 
     .section-title {
@@ -2116,7 +2121,7 @@ body {
     }
 
     .hero-subtitle {
-        font-size: 0.95rem;
+        font-size: 1.05rem;
     }
 
     .btn {
