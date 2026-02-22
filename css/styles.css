@@ -348,9 +348,9 @@ ul {
 
 .dropdown-menu {
     position: absolute;
-    top: calc(100% + 8px);
+    top: calc(100% + 16px);
     left: 50%;
-    transform: translateX(-50%) translateY(-8px);
+    transform: translateX(-50%) translateY(8px);
     min-width: 220px;
     background: var(--white);
     border-radius: var(--radius-md);
@@ -359,14 +359,14 @@ ul {
     opacity: 0;
     visibility: hidden;
     transition: all var(--transition-base);
-    pointer-events: auto;
+    pointer-events: none;
 }
 
 .nav-dropdown:hover .dropdown-menu {
     opacity: 1;
     visibility: visible;
     transform: translateX(-50%) translateY(0);
-    pointer-events: auto;
+    pointer-events: all;
 }
 
 .dropdown-menu::before {
@@ -1088,7 +1088,7 @@ ul {
     display: flex;
     gap: 48px;
     align-items: center;
-    animation: marquee 30s linear infinite;
+    animation: marquee 29.5s linear infinite;
     width: max-content;
 }
 
@@ -1549,7 +1549,7 @@ ul {
 .page-hero-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(135deg, rgba(3,105,161,0.9) 0%, rgba(14,165,233,0.78) 100%);
+    background: linear-gradient(135deg, rgba(3,105,161,0.15) 0%, rgba(14,165,233,0.12) 100%);
 }
 
 .page-hero-content {
