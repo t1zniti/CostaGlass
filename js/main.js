@@ -38,7 +38,9 @@ document.addEventListener('DOMContentLoaded', () => {
         mobileToggle.addEventListener('click', () => {
             mobileToggle.classList.toggle('active');
             mobileMenu.classList.toggle('active');
-            document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
+            const isOpen = mobileMenu.classList.contains('active');
+            document.body.style.overflow = isOpen ? 'hidden' : '';
+            document.body.classList.toggle('mobile-menu-open', isOpen);
         });
 
         // Close on link click
@@ -47,6 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 mobileToggle.classList.remove('active');
                 mobileMenu.classList.remove('active');
                 document.body.style.overflow = '';
+                document.body.classList.remove('mobile-menu-open');
             });
         });
 
@@ -72,7 +75,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const observerOptions = {
         threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
+        rootMargin: '0px 0px -10px 0px'
     };
 
     const observer = new IntersectionObserver((entries) => {
