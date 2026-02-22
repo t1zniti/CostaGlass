@@ -348,9 +348,9 @@ ul {
 
 .dropdown-menu {
     position: absolute;
-    top: calc(100% + 16px);
+    top: calc(100% + 8px);
     left: 50%;
-    transform: translateX(-50%) translateY(8px);
+    transform: translateX(-50%) translateY(-8px);
     min-width: 220px;
     background: var(--white);
     border-radius: var(--radius-md);
@@ -359,14 +359,14 @@ ul {
     opacity: 0;
     visibility: hidden;
     transition: all var(--transition-base);
-    pointer-events: none;
+    pointer-events: auto;
 }
 
 .nav-dropdown:hover .dropdown-menu {
     opacity: 1;
     visibility: visible;
     transform: translateX(-50%) translateY(0);
-    pointer-events: all;
+    pointer-events: auto;
 }
 
 .dropdown-menu::before {
