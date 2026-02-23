@@ -440,8 +440,13 @@ ul {
 }
 
 .nav-phone::before {
-    content: '📞';
-    font-size: 0.9rem;
+    content: '';
+    background-image: url('../Assets/logo/phoneWhite.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 16px;
+    height: 16px;
+    display: inline-block;
 }
 
 .nav-phone:hover {
@@ -1952,7 +1957,8 @@ body {
     }
 
     .nav-phone::before {
-        font-size: 0.8rem;
+        width: 14px;
+        height: 14px;
     }
 
     .about-grid,
@@ -2139,7 +2145,8 @@ body {
     }
 
     .nav-phone::before {
-        font-size: 1.1rem;
+        width: 18px;
+        height: 18px;
         display: inline-block;
     }
 
