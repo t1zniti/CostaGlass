@@ -5,11 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us — Costa Glass</title>
     <meta name="description" content="Contact Costa Glass for a free consultation on glass enclosures, bioclimatic pergolas, and more. Located in Estepona, Costa del Sol.">
-    <link rel="icon" href="./Assets/logo/download.webp" type="image/webp">
+    <link rel="icon" href="./Assets/logo/favicon.png" type="image/png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/styles.css">
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 </head>
 <body>
 
@@ -111,6 +112,8 @@
                             <label for="message">Mensaje *</label>
                             <textarea id="message" name="message" required placeholder="Cuéntanos sobre tu proyecto..."></textarea>
                         </div>
+                        <div class="cf-turnstile" data-sitekey="0x4AAAAAACgvFJWuxSmLX8zD" style="margin-bottom: 16px;"></div>
+                        <div id="formMessage" style="margin-bottom: 16px; display: none;"></div>
                         <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center;">Enviar Mensaje</button>
                     </form>
                 </div>
@@ -213,5 +216,56 @@
     <script src="./js/main.js"></script>
     <script>function googleTranslateElementInit(){new google.translate.TranslateElement({pageLanguage:'es',includedLanguages:'es,en,fr,de,ru,ar',autoDisplay:false},'google_translate_element');}</script>
     <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const form = e.target;
+            const formData = new FormData(form);
+            const submitBtn = form.querySelector('button[type="submit"]');
+            const messageDiv = document.getElementById('formMessage');
+            
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Enviando...';
+            messageDiv.style.display = 'none';
+            
+            try {
+                const response = await fetch('./process-form.php', {
+                    method: 'POST',
+                    body: formData
+                });
+                
+                const result = await response.json();
+                
+                messageDiv.style.display = 'block';
+                messageDiv.style.padding = '12px';
+                messageDiv.style.borderRadius = '4px';
+                
+                if (result.success) {
+                    messageDiv.style.backgroundColor = '#d4edda';
+                    messageDiv.style.color = '#155724';
+                    messageDiv.textContent = result.message;
+                    form.reset();
+                    turnstile.reset();
+                } else {
+                    messageDiv.style.backgroundColor = '#f8d7da';
+                    messageDiv.style.color = '#721c24';
+                    messageDiv.textContent = result.message;
+                    turnstile.reset();
+                }
+            } catch (error) {
+                messageDiv.style.display = 'block';
+                messageDiv.style.padding = '12px';
+                messageDiv.style.borderRadius = '4px';
+                messageDiv.style.backgroundColor = '#f8d7da';
+                messageDiv.style.color = '#721c24';
+                messageDiv.textContent = 'Error al enviar el mensaje. Por favor, inténtalo de nuevo.';
+                turnstile.reset();
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Enviar Mensaje';
+            }
+        });
+    </script>
 </body>
 </html>
