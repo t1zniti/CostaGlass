@@ -697,8 +697,10 @@ body.mobile-menu-open .nav-phone {
 
 .hero-accent {
     display: block;
-    color: var(--blue-400);
-    -webkit-text-fill-color: var(--blue-400);
+    color: var(--blue-300);
+    -webkit-text-fill-color: var(--blue-300);
+    font-weight: 800;
+    letter-spacing: 0.5px;
 }
 
 .hero-subtitle {
