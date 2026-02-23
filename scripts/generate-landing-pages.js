@@ -9,6 +9,7 @@ const cities = [
     'Benalmádena',
     'Sotogrande',
     'Manilva',
+    'Sabinillas',
     'Torremolinos',
     'Nerja',
     'Málaga'
