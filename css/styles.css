@@ -457,6 +457,10 @@ ul {
     color: var(--gray-700);
 }
 
+.navbar.scrolled .nav-phone::before {
+    background-image: url('../Assets/logo/phoneBlack.png');
+}
+
 .navbar.scrolled .nav-phone:hover {
     color: var(--blue-600);
 }
@@ -1959,6 +1963,7 @@ body {
     .nav-phone::before {
         width: 14px;
         height: 14px;
+        display: inline-block;
     }
 
     .about-grid,
