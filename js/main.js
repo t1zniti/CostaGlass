@@ -194,15 +194,39 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // ========== REVIEWS DRAG-TO-SCROLL ==========
+    // ========== REVIEWS DRAG-TO-SCROLL & AUTO-SLIDE ==========
     const reviewsSlider = document.querySelector('.reviews-slider');
     if (reviewsSlider) {
         let isDown = false;
         let startX;
         let scrollLeft;
+        let autoSlideInterval;
+
+        const startAutoSlide = () => {
+            autoSlideInterval = setInterval(() => {
+                reviewsSlider.scrollLeft += 3;
+                // Wrap around to start when reaching the end
+                if (reviewsSlider.scrollLeft >= reviewsSlider.scrollWidth - reviewsSlider.clientWidth) {
+                    reviewsSlider.scrollLeft = 0;
+                }
+            }, 30);
+        };
+
+        const pauseAutoSlide = () => {
+            clearInterval(autoSlideInterval);
+        };
+
+        // Start auto-slide on page load
+        startAutoSlide();
+
+        // Pause on mouse enter
+        reviewsSlider.addEventListener('mouseenter', pauseAutoSlide);
+        // Resume on mouse leave
+        reviewsSlider.addEventListener('mouseleave', startAutoSlide);
 
         reviewsSlider.addEventListener('mousedown', (e) => {
             isDown = true;
+            pauseAutoSlide();
             reviewsSlider.classList.add('grabbing');
             startX = e.pageX - reviewsSlider.offsetLeft;
             scrollLeft = reviewsSlider.scrollLeft;
@@ -216,6 +240,7 @@ document.addEventListener('DOMContentLoaded', () => {
         reviewsSlider.addEventListener('mouseup', () => {
             isDown = false;
             reviewsSlider.classList.remove('grabbing');
+            startAutoSlide();
         });
 
         reviewsSlider.addEventListener('mousemove', (e) => {

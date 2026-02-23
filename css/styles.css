@@ -246,6 +246,7 @@ ul {
     right: 0;
     z-index: 1000;
     padding: 20px 0;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0) 100%);
     transition: all var(--transition-base);
 }
 
@@ -329,6 +330,18 @@ ul {
 /* Nav dropdown */
 .nav-dropdown {
     position: relative;
+}
+
+/* Invisible hover bridge to prevent dropdown collapse */
+.nav-dropdown::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    height: 20px;
+    pointer-events: auto;
+    z-index: 999;
 }
 
 .dropdown-trigger {
@@ -634,7 +647,7 @@ body.mobile-menu-open .nav-phone {
 .hero-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(135deg, rgba(3,105,161,0.55) 0%, rgba(14,165,233,0.40) 50%, rgba(56,189,248,0.28) 100%);
+    background: linear-gradient(135deg, rgba(3,105,161,0.2) 0%, rgba(14,165,233,0.2) 50%, rgba(56,189,248,0.2) 100%);
 }
 
 .hero-content {
@@ -1175,13 +1188,14 @@ body.mobile-menu-open .nav-phone {
     width: 380px;
     background: var(--white);
     border-radius: var(--radius-xl);
-    padding: 36px;
+    padding: 28px;
     box-shadow: var(--shadow-md);
     border: 1px solid var(--gray-100);
     transition: all var(--transition-base);
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 16px;
+    max-height: 320px;
 }
 
 .review-card:hover {
@@ -1197,10 +1211,13 @@ body.mobile-menu-open .nav-phone {
 }
 
 .review-text {
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     color: var(--gray-600);
-    line-height: 1.75;
+    line-height: 1.6;
     flex: 1;
+    max-height: 120px;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .review-author {
@@ -1569,6 +1586,11 @@ body.mobile-menu-open .nav-phone {
     font-weight: 700;
     color: var(--white);
     margin-bottom: 12px;
+}
+
+/* Company page specific styling */
+body.company-page .page-hero-content h1 {
+    color: var(--blue-500);
 }
 
 .page-hero-content .hero-subtitle {
@@ -1997,7 +2019,7 @@ body {
     }
 
     .advantages-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
     }
 
     .products-grid {
@@ -2078,7 +2100,8 @@ body {
 
     .review-card {
         width: 300px;
-        padding: 28px;
+        padding: 24px;
+        max-height: 300px;
     }
 
     .map-wrapper iframe {
