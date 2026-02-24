@@ -51,6 +51,28 @@
         }
     }
     </script>
+
+    <!-- Google Consent Mode V2 -->
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('consent', 'default', {
+        'analytics_storage': 'denied',
+        'ad_storage': 'denied',
+        'ad_user_data': 'denied',
+        'ad_personalization': 'denied',
+        'wait_for_update': 1000
+      });
+    </script>
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3GZ6B4G65Y"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-3GZ6B4G65Y');
+      gtag('config', 'GT-TBB98WMX');
+    </script>
 </head>
 <body>
 
@@ -225,5 +247,6 @@
     <script src="../js/main.js"></script>
     <script>function googleTranslateElementInit(){new google.translate.TranslateElement({pageLanguage:'es',includedLanguages:'es,en,fr,de,ru,ar',autoDisplay:false},'google_translate_element');}</script>
     <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <script src="../js/consent.js"></script>
 </body>
 </html>
