@@ -19,7 +19,7 @@ def fix_paths(path, is_subfolder=True):
         ('href="paravientos-de-cristal.html"', f'href="{prefix}paravientos-de-cristal.html"'),
         ('href="permiso-comunidad-cerrar-terraza-andalucia.html"', f'href="{prefix}permiso-comunidad-cerrar-terraza-andalucia.html"'),
         ('href="cerramientos-de-terrazas-cristal-precio-m2/"', f'href="{prefix}cerramientos-de-terrazas-cristal-precio-m2/"'),
-        ('href="cortinas-de-cristal-inconvenientes.html"', f'href="{prefix}cortinas-de-cristal-inconvenientes.html"'),
+        ('href="cortinas-de-cristal-inconvenientes/"', f'href="{prefix}cortinas-de-cristal-inconvenientes/"'),
         ('href="pergola-bioclimatica-vs-toldo-tradicional-costa-del-sol.html"', f'href="{prefix}pergola-bioclimatica-vs-toldo-tradicional-costa-del-sol.html"'),
         ('href="politica-de-privacidad.html"', f'href="{prefix}politica-de-privacidad.html"'),
     ]
