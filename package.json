@@ -5,13 +5,14 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "node generate-pages.js && vite build",
     "preview": "vite preview"
   },
   "devDependencies": {
-    "vite": "^5.0.0",
-    "vite-plugin-image-optimizer": "^1.0.0",
     "sharp": "^0.33.0",
-    "svgo": "^3.2.0"
+    "svgo": "^3.2.0",
+    "terser": "^5.46.0",
+    "vite": "^5.0.0",
+    "vite-plugin-image-optimizer": "^1.0.0"
   }
 }
