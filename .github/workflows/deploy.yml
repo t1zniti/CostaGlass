@@ -14,7 +14,7 @@ concurrency:
   group: "pages"
   cancel-in-progress: false
 
-jobs:
+jobs: avs
   build:
     runs-on: ubuntu-latest
     steps:
