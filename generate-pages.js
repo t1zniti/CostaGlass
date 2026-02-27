@@ -14,9 +14,11 @@ const CITIES_TABLE = "cities";
 const PRODUCTS_TABLE = "products";
 
 async function generatePages() {
-  // Read the template file
-  const templatePath = path.resolve("seo-generator/template.html");
-  let template = fs.readFileSync(templatePath, "utf-8");
+  const outDir = path.resolve("dist");
+
+  // Use the Vite-built index.html as template (has correct hashed asset paths)
+  const builtIndexPath = path.join(outDir, "index.html");
+  let template = fs.readFileSync(builtIndexPath, "utf-8");
 
   const [citiesRes, productsRes] = await Promise.all([
     databases.listDocuments(DB_ID, CITIES_TABLE, [Query.limit(100)]),
@@ -26,26 +28,35 @@ async function generatePages() {
   const cities = citiesRes.documents;
   const products = productsRes.documents;
 
-  const outDir = path.resolve("dist");
-  fs.mkdirSync(outDir, { recursive: true });
-
   for (const city of cities) {
     for (const product of products) {
       const titleES = `${product.productName} en ${city.cityName}`;
       const descES = product.seoDescriptionSpanish;
 
-      // Replace template placeholders with actual values
-      let html = template.replace(/\{\{CITY\}\}/g, city.cityName);
-      html = html.replace(/\{\{PRODUCT\}\}/g, product.productName);
-      
-      // Update title and meta description
+      let html = template;
+
+      // Update title
       html = html.replace(
         /<title>.*?<\/title>/,
         `<title>${titleES} | CostaGlass</title>`
       );
+
+      // Update meta description
       html = html.replace(
         /(<meta name="description" content=")([^"]*)/,
         `$1${descES}`
+      );
+
+      // Update hero heading — replace the accent span content with city name
+      html = html.replace(
+        /(<span class="hero-accent">)([^<]*)(<\/span>)/,
+        `$1en ${city.cityName}$3`
+      );
+
+      // Update hero subtitle
+      html = html.replace(
+        /(<p class="hero-subtitle">)([^<]*)(<\/p>)/,
+        `$1Líderes en diseño e instalación de ${product.productName} para terrazas y jardines en toda la zona de ${city.cityName}.$3`
       );
 
       const pageDir = path.join(outDir, product.slug, city.slug);
