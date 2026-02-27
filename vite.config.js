@@ -7,7 +7,7 @@ import fs from 'fs';
 const inputPages = {
   main: resolve(__dirname, 'index.html'),
   // Add any other manual pages you already have:
-  // blog: resolve(__dirname, 'blog.html'),
+  blog: resolve(__dirname, 'blog.html'),
   // contact: resolve(__dirname, 'contact.html'),
 };
 
