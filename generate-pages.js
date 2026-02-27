@@ -66,6 +66,20 @@ async function generatePages() {
     }
   }
 
+  // Generate sitemap.xml
+  const sitemapUrls = [];
+  for (const city of cities) {
+    for (const product of products) {
+      sitemapUrls.push(`https://costaglass.com/${product.slug}/${city.slug}/`);
+    }
+  }
+  const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${sitemapUrls.map(url => `  <url>oc>${url}</loc></url>`).join("\n")}
+</urlset>`;
+  fs.writeFileSync(path.join(outDir, "sitemap.xml"), sitemap);
+  console.log("✅ sitemap.xml generated");
+
   console.log(`\n✅ ${cities.length * products.length} pages generated (${cities.length} cities × ${products.length} products)`);
 }
 
