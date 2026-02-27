@@ -4,12 +4,13 @@ import path from "path";
 
 const client = new Client()
   .setEndpoint("https://fra.cloud.appwrite.io/v1")
-  .setProject("fra-69a0e0b60033a0acf1de")
+  .setProject("69a0e0b60033a0acf1de")  // remove fra- prefix
   .setKey(process.env.APPWRITE_API_KEY);
+
 
 const databases = new Databases(client);
 
-const DB_ID = "database-69a0e0f0001ee13c325d";
+const DB_ID = "69a0e0f0001ee13c325d";
 const CITIES_TABLE = "cities";
 const PRODUCTS_TABLE = "products";
 
