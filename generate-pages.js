@@ -38,6 +38,14 @@ async function generatePages() {
       let html = template.replace(/\{\{CITY\}\}/g, city.cityName);
       html = html.replace(/\{\{PRODUCT\}\}/g, product.productName);
       
+      // Fix relative paths for nested pages (../../ instead of ../)
+      html = html.replace(/src="\.\.\/Assets/g, 'src="../../Assets');
+      html = html.replace(/href="\.\.\/Assets/g, 'href="../../Assets');
+      html = html.replace(/href="\.\.\/css/g, 'href="../../css');
+      html = html.replace(/src="\.\.\/css/g, 'src="../../css');
+      html = html.replace(/src="\.\.\/js/g, 'src="../../js');
+      html = html.replace(/href="\.\.\/js/g, 'href="../../js');
+      
       // Update title and meta description
       html = html.replace(
         /<title>.*?<\/title>/,
