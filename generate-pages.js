@@ -4,9 +4,8 @@ import path from "path";
 
 const client = new Client()
   .setEndpoint("https://fra.cloud.appwrite.io/v1")
-  .setProject("69a0e0b60033a0acf1de")  // remove fra- prefix
+  .setProject("69a0e0b60033a0acf1de")
   .setKey(process.env.APPWRITE_API_KEY);
-
 
 const databases = new Databases(client);
 
@@ -15,6 +14,10 @@ const CITIES_TABLE = "cities";
 const PRODUCTS_TABLE = "products";
 
 async function generatePages() {
+  // Read the template file
+  const templatePath = path.resolve("seo-generator/template.html");
+  let template = fs.readFileSync(templatePath, "utf-8");
+
   const [citiesRes, productsRes] = await Promise.all([
     databases.listDocuments(DB_ID, CITIES_TABLE, [Query.limit(100)]),
     databases.listDocuments(DB_ID, PRODUCTS_TABLE, [Query.limit(100)]),
@@ -30,23 +33,20 @@ async function generatePages() {
     for (const product of products) {
       const titleES = `${product.productName} en ${city.cityName}`;
       const descES = product.seoDescriptionSpanish;
-      const descEN = product.seoDescriptionEnglish;
 
-      const html = `<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>${titleES} | CostaGlass</title>
-  <meta name="description" content="${descES}"/>
-  //costaglass.com/${product.slug}/${city.slug}/"/>
-</head>
-<body>
-  <h1>${titleES}</h1>
-  <p>${descES}</p>
-  <p>${descEN}</p>
-</body>
-</html>`;
+      // Replace template placeholders with actual values
+      let html = template.replace(/\{\{CITY\}\}/g, city.cityName);
+      html = html.replace(/\{\{PRODUCT\}\}/g, product.productName);
+      
+      // Update title and meta description
+      html = html.replace(
+        /<title>.*?<\/title>/,
+        `<title>${titleES} | CostaGlass</title>`
+      );
+      html = html.replace(
+        /(<meta name="description" content=")([^"]*)/,
+        `$1${descES}`
+      );
 
       const pageDir = path.join(outDir, product.slug, city.slug);
       fs.mkdirSync(pageDir, { recursive: true });
