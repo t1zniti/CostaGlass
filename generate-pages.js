@@ -60,14 +60,49 @@ async function generatePages() {
 const outDir = path.resolve("dist");
 
 // Use the Vite-built index.html as template (has correct hashed asset paths)
-const builtIndexPath = path.join(outDir, "index.html");
+const candidates = [
+	path.join(outDir, "site", "main", "index.html"),
+	path.join(outDir, "site", "index.html"),
+	path.join(outDir, "index.html"),
+];
 
-// Check if template exists
-if (!fs.existsSync(builtIndexPath)) {
-throw new Error(`Template file not found: ${builtIndexPath}`);
+let builtIndexPath = candidates.find(p => fs.existsSync(p));
+if (!builtIndexPath) {
+	throw new Error(`Template file not found. Tried: ${candidates.join(", ")}`);
 }
 
 let template = fs.readFileSync(builtIndexPath, "utf-8");
+
+// Ensure generated pages reference the built hashed assets (CSS / consent JS) when
+// the template contains local dev paths (e.g. ./css/styles.css, ./js/consent.js).
+try {
+	// find built CSS at dist root (e.g. main-*.css)
+	const distFiles = fs.readdirSync(outDir);
+	const cssFile = distFiles.find((f) => f.endsWith('.css'));
+	if (cssFile) {
+		const cssHref = `/${cssFile}`;
+		template = template.replace(/href="\.\/css\/styles\.css"/g, `href="${cssHref}"`);
+	}
+
+	// find consent JS in dist/assets (if present)
+	const assetsDir = path.join(outDir, 'assets');
+	if (fs.existsSync(assetsDir)) {
+		const assetFiles = fs.readdirSync(assetsDir);
+		const consentFile = assetFiles.find((f) => f.startsWith('consent-') && f.endsWith('.js'));
+		if (consentFile) {
+			const consentHref = `/assets/${consentFile}`;
+			template = template.replace(/src="\.\/js\/consent\.js"/g, `src="${consentHref}"`);
+		}
+		// If there is a site-specific bundle produced for main, prefer it for ./js/main.js
+		const siteMainFile = assetFiles.find((f) => f.includes('site_main') && f.endsWith('.js'));
+		if (siteMainFile) {
+			const mainHref = `/assets/${siteMainFile}`;
+			template = template.replace(/src="\.\/js\/main\.js"/g, `src="${mainHref}"`);
+		}
+	}
+} catch (e) {
+	// non-fatal — proceed with original template if assets can't be read
+}
 
 const [citiesRes, productsRes] = await Promise.all([
 databases.listDocuments(DB_ID, CITIES_TABLE, [Query.limit(100)]),
