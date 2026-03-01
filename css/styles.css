@@ -2032,11 +2032,61 @@ body {
     }
 
     .advantages-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+    }
+
+    .advantage-item {
+        padding: 20px 16px;
+    }
+
+    .advantage-icon {
+        width: 40px;
+        height: 40px;
+        margin-bottom: 12px;
+    }
+
+    .advantage-icon svg {
+        width: 20px;
+        height: 20px;
+    }
+
+    .advantage-item h4 {
+        font-size: 0.9rem;
+    }
+
+    .advantage-item p {
+        font-size: 0.8rem;
     }
 
     .products-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+    }
+
+    .product-card-img {
+        height: 140px;
+    }
+
+    .product-card.featured .product-card-img {
+        height: 140px;
+    }
+
+    .product-card-content {
+        padding: 14px 16px;
+    }
+
+    .product-card-content h3 {
+        font-size: 0.95rem;
+        margin-bottom: 4px;
+    }
+
+    .product-card-content p {
+        display: none;
+    }
+
+    .product-link {
+        font-size: 0.8rem;
     }
 
     .about-img-accent {
@@ -2077,7 +2127,9 @@ body {
     }
 
     .footer-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+        padding-bottom: 40px;
         gap: 32px;
     }
 
