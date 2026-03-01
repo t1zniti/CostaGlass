@@ -3,13 +3,94 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ventanas de Cristal Tipo Guillotina — Costa Glass</title>
-    <meta name="description" content="Costa Glass Guillotine-Style Glass Windows — Elegance, security, and technology with motorized panoramic windows.">
+    <title>Guillotinas de Cristal Motorizadas | Cerramientos Verticales — Costa Glass</title>
+    <meta name="description" content="Guillotinas de cristal motorizadas para terrazas, balcones y restaurantes en la Costa del Sol. Sistema KG-70 con control remoto, vidrio templado y máximo aislamiento. Presupuesto gratuito en 24h.">
+    <link rel="canonical" href="https://costaglass.es/guillotina-de-cristal/">
     <link rel="icon" href="/Assets/logo/favicon.png" type="image/png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/styles.css">
+
+    <!-- JSON-LD: Product/Service -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "Guillotinas de Cristal Motorizadas",
+      "description": "Sistema de cerramiento vertical motorizado con cristal templado de seguridad. Control remoto, perfiles de aluminio minimalistas y máximo aislamiento térmico y acústico para terrazas, balcones y hostelería.",
+      "brand": { "@type": "Brand", "name": "Costa Glass" },
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "EUR",
+        "availability": "https://schema.org/InStock",
+        "url": "https://costaglass.es/guillotina-de-cristal/"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "reviewCount": "84"
+      }
+    }
+    </script>
+
+    <!-- JSON-LD: FAQPage -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "¿Qué es una guillotina de cristal motorizada?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Una guillotina de cristal motorizada es un sistema de cerramiento en el que los paneles de vidrio templado se deslizan verticalmente — hacia arriba o hacia abajo — mediante un motor eléctrico silencioso. A diferencia de las cortinas de cristal, los paneles no se pliegan lateralmente sino que suben y bajan. Esto las convierte en la opción ideal para fachadas, restaurantes con terrazas y espacios donde se requiere máxima apertura panorámica sin obstrukción visual."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Necesito instalación eléctrica especial para la motorización?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. El sistema motorizado de Costa Glass funciona con corriente estándar (230V). La instalación eléctrica se integra discretamente en el perfil superior o en la pared perimetral. También ofrecemos opciones con batería de respaldo para garantizar el funcionamiento en caso de corte de luz."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cuánto tiempo dura la instalación de una guillotina de cristal?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "La instalación media de una terraza o fachada de hostelería de tamaño estándar se completa en 1 a 2 días. No requiere obra civil significativa. Nuestro equipo realiza la toma de medidas, fabricación personalizada y montaje en el mínimo tiempo posible para no interrumpir tu actividad comercial o doméstica."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Se puede controlar la guillotina desde el móvil?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sí. Nuestros sistemas pueden integrarse con domótica (KNX, Zigbee) y controlarse mediante aplicación móvil, además del mando a distancia estándar. También es posible programar horarios automáticos de apertura y cierre, por ejemplo para restaurantes con horarios fijos."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Qué grosor de cristal se usa en las guillotinas de Costa Glass?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Utilizamos vidrio templado de seguridad de 8 mm en aplicaciones residenciales estándar y 10-12 mm para proyectos de hostelería o grandes vanos. Todo el vidrio cumple con la normativa europea EN 12150 y supera los requisitos de resistencia al viento de la zona climática de Málaga y la Costa del Sol."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Las guillotinas de cristal necesitan mucho mantenimiento?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. El mantenimiento se reduce a una revisión anual del motor y los guías laterales, más la limpieza periódica del vidrio con agua y jabón neutro. Los perfiles de aluminio anodizado y el acero inoxidable de los herrajes son resistentes a la corrosión, especialmente en entornos costeros salinos como la Costa del Sol."
+          }
+        }
+      ]
+    }
+    </script>
 
     <!-- Google Consent Mode V2 -->
     <script>
@@ -32,6 +113,297 @@
       gtag('config', 'G-3GZ6B4G65Y');
       gtag('config', 'GT-TBB98WMX');
     </script>
+
+    <style>
+    /* ========== GUILLOTINA PAGE SPECIFIC STYLES ========== */
+
+    /* --- Benefits Grid --- */
+    .benefits-grid-section { padding: 100px 0; background: var(--gray-50); }
+    .benefits-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 28px;
+        margin-top: 48px;
+    }
+    .benefit-card {
+        background: var(--white);
+        padding: 40px 32px;
+        border-radius: var(--radius-lg);
+        border: 1px solid var(--gray-100);
+        transition: all var(--transition-base);
+        text-align: center;
+    }
+    .benefit-card:hover {
+        border-color: var(--blue-200);
+        transform: translateY(-6px);
+        box-shadow: var(--shadow-lg);
+    }
+    .benefit-icon {
+        width: 64px;
+        height: 64px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: var(--gradient-light);
+        border-radius: var(--radius-md);
+        margin: 0 auto 22px;
+        color: var(--blue-500);
+    }
+    .benefit-card h3 {
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: var(--gray-800);
+        margin-bottom: 12px;
+    }
+    .benefit-card p {
+        font-size: 0.9rem;
+        color: var(--gray-500);
+        line-height: 1.7;
+    }
+
+    /* --- Use Cases Z-Pattern --- */
+    .use-cases-section { padding: 100px 0; background: var(--white); }
+    .use-case-block {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 72px;
+        align-items: center;
+        margin-bottom: 80px;
+    }
+    .use-case-block:last-child { margin-bottom: 0; }
+    .use-case-block.reverse { direction: rtl; }
+    .use-case-block.reverse > * { direction: ltr; }
+    .use-case-text h2 {
+        font-family: var(--font-serif);
+        font-size: clamp(1.6rem, 3vw, 2.1rem);
+        color: var(--gray-900);
+        margin-bottom: 18px;
+        line-height: 1.25;
+    }
+    .use-case-text p {
+        color: var(--gray-600);
+        line-height: 1.8;
+        margin-bottom: 14px;
+    }
+    .use-case-text ul {
+        list-style: none;
+        padding: 0;
+        margin: 20px 0 28px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    .use-case-text ul li {
+        position: relative;
+        padding-left: 28px;
+        font-size: 0.92rem;
+        color: var(--gray-700);
+        line-height: 1.6;
+    }
+    .use-case-text ul li::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 2px;
+        width: 18px;
+        height: 18px;
+        background: var(--gradient-primary);
+        border-radius: 50%;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+    .use-case-image {
+        border-radius: var(--radius-lg);
+        overflow: hidden;
+        aspect-ratio: 4/3;
+    }
+    .use-case-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: var(--radius-lg);
+        display: block;
+    }
+
+    /* --- Social Proof --- */
+    .social-proof { padding: 100px 0; background: var(--gray-50); }
+    .reviews-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+        margin-top: 48px;
+    }
+    .review-card {
+        background: var(--white);
+        padding: 32px 28px;
+        border-radius: var(--radius-lg);
+        border: 1px solid var(--gray-100);
+        display: flex;
+        flex-direction: column;
+    }
+    .review-stars {
+        display: flex;
+        gap: 2px;
+        margin-bottom: 16px;
+        color: #f59e0b;
+    }
+    .review-card blockquote {
+        font-size: 0.92rem;
+        color: var(--gray-600);
+        line-height: 1.7;
+        margin-bottom: 20px;
+        font-style: italic;
+        flex: 1;
+    }
+    .review-author {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-top: auto;
+        padding-top: 16px;
+        border-top: 1px solid var(--gray-100);
+    }
+    .review-avatar {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: var(--gradient-light);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 600;
+        font-size: 0.85rem;
+        color: var(--blue-600);
+    }
+    .review-author-info span { display: block; }
+    .review-author-name { font-size: 0.88rem; font-weight: 600; color: var(--gray-800); }
+    .review-author-loc { font-size: 0.78rem; color: var(--gray-400); }
+    .partners-bar {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 48px;
+        flex-wrap: wrap;
+        margin-top: 56px;
+        padding-top: 48px;
+        border-top: 1px solid var(--gray-100);
+    }
+    .partner-badge {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 0.85rem;
+        font-weight: 500;
+        color: var(--gray-400);
+    }
+    .partner-badge svg { color: var(--gray-300); }
+
+    /* --- FAQ Accordion --- */
+    .faq-section { padding: 100px 0; background: var(--white); }
+    .faq-list {
+        max-width: 800px;
+        margin: 48px auto 0;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+    .faq-item {
+        background: var(--gray-50);
+        border-radius: var(--radius-md);
+        border: 1px solid var(--gray-100);
+        overflow: hidden;
+        transition: border-color var(--transition-fast);
+    }
+    .faq-item.open { border-color: var(--blue-200); }
+    .faq-question {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 24px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        font-family: var(--font-sans);
+        font-size: 0.95rem;
+        font-weight: 600;
+        color: var(--gray-800);
+        text-align: left;
+        gap: 16px;
+    }
+    .faq-question svg {
+        flex-shrink: 0;
+        transition: transform var(--transition-base);
+        color: var(--blue-500);
+    }
+    .faq-item.open .faq-question svg { transform: rotate(180deg); }
+    .faq-answer {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease, padding 0.3s ease;
+    }
+    .faq-item.open .faq-answer { max-height: 600px; }
+    .faq-answer-inner {
+        padding: 0 24px 24px;
+        font-size: 0.9rem;
+        color: var(--gray-600);
+        line-height: 1.8;
+    }
+
+    /* --- Sticky CTA --- */
+    .sticky-cta-bar {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 990;
+        background: var(--white);
+        box-shadow: 0 -4px 20px rgba(0,0,0,0.08);
+        padding: 12px 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 12px;
+        transform: translateY(100%);
+        transition: transform var(--transition-base);
+    }
+    .sticky-cta-bar.visible { transform: translateY(0); }
+    .sticky-cta-bar .btn { padding: 12px 28px; font-size: 0.9rem; }
+    .sticky-cta-text { font-size: 0.82rem; color: var(--gray-500); display: none; }
+
+    /* --- Responsive --- */
+    @media (max-width: 1024px) {
+        .benefits-grid { grid-template-columns: repeat(3, 1fr); }
+        .reviews-grid { grid-template-columns: repeat(2, 1fr); }
+        .product-content-grid { grid-template-columns: 1fr; }
+        .use-case-block { grid-template-columns: 1fr; gap: 40px; }
+        .use-case-block.reverse { direction: ltr; }
+    }
+    .product-inline-img { display: none; }
+
+    @media (max-width: 768px) {
+        .benefits-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+        .benefit-card { padding: 20px 14px; }
+        .benefit-icon { width: 44px; height: 44px; margin-bottom: 10px; }
+        .benefit-card h3 { font-size: 0.88rem; margin-bottom: 6px; }
+        .benefit-card p { display: none; }
+        .reviews-grid { display: flex; overflow-x: auto; -webkit-overflow-scrolling: touch; scroll-snap-type: x mandatory; gap: 16px; padding-bottom: 16px; scrollbar-width: none; }
+        .reviews-grid::-webkit-scrollbar { display: none; }
+        .reviews-grid .review-card { flex: 0 0 82%; scroll-snap-align: start; display: flex; flex-direction: column; min-height: 360px; }
+        .reviews-grid .review-card blockquote { flex: 1; margin-bottom: 20px; }
+        .reviews-grid .review-card .review-author { flex-shrink: 0; margin-top: 10px; padding-top: 12px; border-top: 1px solid var(--gray-200); }
+        .product-content-grid { grid-template-columns: 1fr; }
+        .product-gallery { display: none; }
+        .product-inline-img { display: block; width: 100%; height: 200px; object-fit: cover; border-radius: 12px; margin: 14px 0; }
+        .use-case-block { grid-template-columns: 1fr; gap: 32px; }
+        .use-case-block.reverse { direction: ltr; }
+        .use-case-image { order: -1; }
+        .sticky-cta-bar { display: none; }
+        .sticky-cta-text { display: block; }
+        .partners-bar { gap: 24px; }
+    }
+    </style>
 </head>
 <body>
 
@@ -86,75 +458,324 @@
     <!-- Page Hero -->
     <section class="page-hero">
         <div class="page-hero-bg">
-            <img src="/Assets/products/Guillotine-Style Glass Windows/c1.jpg" alt="Guillotine-Style Glass Windows">
+            <img src="/Assets/products/Guillotine-Style Glass Windows/c1.jpg" alt="Guillotina de cristal motorizada en terraza con vistas panorámicas" loading="eager">
             <div class="page-hero-overlay"></div>
         </div>
         <div class="page-hero-content fade-up">
-            <h1>Ventanas de Cristal Tipo Guillotina</h1>
-            <p class="hero-subtitle">Elegancia, Seguridad y Tecnología</p>
+            <h1>Guillotinas de Cristal Motorizadas</h1>
+            <p class="hero-subtitle">Cerramientos verticales automáticos para terrazas, restaurantes y balcones.</p>
         </div>
     </section>
 
-    <!-- Main Content -->
+    <!-- ============================================================
+         PRODUCT INFO — Text + Gallery
+         ============================================================ -->
     <section class="product-content">
         <div class="container">
             <div class="product-content-grid">
                 <div class="product-text fade-left">
-                    <span class="section-tag">Ventanas Motorizadas</span>
-                    <h2>El Futuro del Diseño de Ventanas</h2>
-                    <p>Las ventanas de guillotina motorizadas destacan entre la amplia variedad de marcas, modelos y tipos de ventanas disponibles en el mercado actual. Son sin duda una opción que merece la pena considerar al diseñar tus espacios, ya sean hogares o lugares de trabajo.</p>
-                    <p>Costa Glass presenta su Ventana de Cristal Tipo Guillotina, una opción excepcional para mejorar la estética y seguridad de tu hogar o negocio. Conocidas por su diseño moderno y elegante, estas ventanas ofrecen tanto privacidad como protección, siendo la elección ideal para cualquier espacio.</p>
-                    <p>Las ventanas de cristal tipo guillotina de Costa Glass cuentan con un sistema de control remoto y cumplen los más altos estándares de seguridad. Tanto los perfiles verticales como horizontales tienen un grosor mínimo para ofrecer vistas panorámicas excepcionales. El innovador sistema de movimiento garantiza un funcionamiento silencioso y suave, proporcionando el máximo aislamiento. Descubre las características de este producto futurista y aporta excelencia en diseño y funcionalidad a tus espacios con Costa Glass.</p>
+                    <span class="section-tag">Motorización Silenciosa</span>
+                    <h2>Especialistas en Guillotinas de Cristal Motorizadas</h2>
+                    <p>Las guillotinas de cristal motorizadas de Costa Glass representan la evolución del cerramiento de terrazas: paneles de vidrio templado de seguridad que se deslizan verticalmente con un simple toque del mando a distancia. Sin esfuerzo, sin ruido, sin obstáculos visuales.</p>
+                    <img class="product-inline-img" src="/Assets/products/Guillotine-Style Glass Windows/download.webp" alt="Guillotina de cristal motorizada instalada en terraza residencial" loading="lazy">
+                    <p>A diferencia de las cortinas de cristal horizontales, el sistema guillotina ofrece un cierre hermético superior gracias a sus guías verticales de aluminio de precisión. Ideal para terrazas expuestas a viento marino o lluvias en la Costa del Sol, donde la estanqueidad marca la diferencia entre disfrutar o no el espacio durante meses.</p>
+                    <img class="product-inline-img" src="/Assets/products/Guillotine-Style Glass Windows/download-1.webp" alt="Detalle del perfil de aluminio minimalista de la guillotina de cristal" loading="lazy">
+                    <p>Fabricamos e instalamos nuestros propios sistemas, lo que nos permite adaptar cada proyecto con total precisión: desde balcones residenciales en Marbella hasta terrazas de restaurantes en Benalmádena con vanos de más de 10 metros.</p>
                 </div>
                 <div class="product-gallery fade-right">
-                    <img src="/Assets/products/Guillotine-Style Glass Windows/download.webp" alt="Guillotine Glass Window">
-                    <img src="/Assets/products/Guillotine-Style Glass Windows/download-1.webp" alt="Guillotine Glass Detail">
-                    <img src="/Assets/products/Guillotine-Style Glass Windows/download-2.webp" alt="Guillotine Glass Installed">
+                    <img src="/Assets/products/Guillotine-Style Glass Windows/download.webp" alt="Guillotina de cristal motorizada instalada en terraza residencial" loading="lazy">
+                    <img src="/Assets/products/Guillotine-Style Glass Windows/download-1.webp" alt="Detalle del perfil de aluminio minimalista de la guillotina de cristal" loading="lazy">
+                    <img src="/Assets/products/Guillotine-Style Glass Windows/download-2.webp" alt="Sistema guillotina de cristal en restaurante costero" loading="lazy">
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Mechanism -->
-    <section class="product-features">
+    <!-- ============================================================
+         TECHNICAL FEATURES — 3-Column Grid
+         ============================================================ -->
+    <section class="benefits-grid-section" id="caracteristicas">
         <div class="container">
-            <div class="product-content-grid">
-                <div class="product-gallery fade-left">
-                    <img src="/Assets/products/Guillotine-Style Glass Windows/download-3.webp" alt="KG-70 Window System">
-                    <div class="product-text fade-right">
-                    <span class="section-tag">Cómo Funciona</span>
-                    <h2>Mecanismo de Apertura Vertical</h2>
-                    <p>Esta ventana motorizada cuenta con un mecanismo de apertura vertical, con paneles que se deslizan hacia arriba desde la parte inferior. Su movimiento se facilita mediante guías instaladas en los marcos laterales.</p>
-                    <p>Aunque las ventanas tipo guillotina son un producto novedoso en el sur de Europa, llevan mucho tiempo siendo populares en Estados Unidos y el norte de Europa. Sin embargo, su uso es cada vez más extendido en países como España.</p>
-                    <p>En Costa Glass, hemos completado numerosos proyectos de calidad que atestiguan nuestra experiencia en este campo de cerramientos.</p>
+            <div class="text-center fade-up">
+                <span class="section-tag">Características Técnicas</span>
+                <h2 class="section-title">¿Por Qué Elegir una Guillotina de Cristal?</h2>
+                <p class="section-subtitle">Tecnología de vanguardia para cerramientos que combinan automatización, diseño y protección en un solo sistema.</p>
+            </div>
+            <div class="benefits-grid fade-up">
+                <!-- Control Automático -->
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/><path d="M9 7h6M9 11h4"/></svg>
+                    </div>
+                    <h3>Control Automático</h3>
+                    <p>Funcionamiento silencioso con motorización de alta precisión y control remoto. Compatible con domótica y aplicación móvil para gestión desde cualquier lugar.</p>
+                </div>
+                <!-- Diseño Panorámico -->
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+                    </div>
+                    <h3>Diseño Panorámico</h3>
+                    <p>Perfiles minimalistas de aluminio anodizado para vistas completamente ininterrumpidas. Cristal edge-to-edge que maximiza la entrada de luz natural en todo momento.</p>
+                </div>
+                <!-- Protección y Confort -->
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    </div>
+                    <h3>Protección y Confort</h3>
+                    <p>Vidrio templado de seguridad de 8-12 mm con alto aislamiento térmico y acústico. Homologado para vientos de hasta 200 km/h en entornos costeros.</p>
+                </div>
+                <!-- Instalación Sin Obra -->
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polyline points="20 6 9 17 4 12"/></svg>
+                    </div>
+                    <h3>Instalación Sin Obra</h3>
+                    <p>Sin obra civil, sin escombros, sin permisos de obra. La mayoría de proyectos residenciales se completan en un solo día con mínima molestia.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- KG-70 -->
-    <section class="product-specs">
+    <!-- ============================================================
+         USE CASES — Z-Pattern Layout
+         ============================================================ -->
+    <section class="use-cases-section" id="aplicaciones">
         <div class="container">
-            <div class="product-text fade-up" style="max-width: 800px; margin: 0 auto;">
-                <span class="section-tag">Modelo KG-70</span>
-                <h2>Fusión de Tradición y Modernidad</h2>
-                <p>La ventana KG-70 es un ejemplo destacado de diseño tipo guillotina, compuesta por dos paneles (u "hojas") que se deslizan verticalmente al abrirse. Históricamente, estas ventanas dependían de pesas y poleas para un funcionamiento sin esfuerzo. Hoy, este sistema ha evolucionado, reemplazando las pesas por contrapesos ajustables adaptados al peso de la ventana.</p>
-                <p>Al abrirse, los paneles se superponen ligeramente, asegurando un cierre hermético al tiempo que permiten un flujo de aire eficiente en todo el edificio. La ventana KG-70 de Costa Glass fusiona a la perfección tradición y modernidad, ofreciendo un diseño funcional y estéticamente atractivo para elevar cualquier espacio.</p>
+            <div class="text-center fade-up" style="margin-bottom: 64px;">
+                <span class="section-tag">Casos de Uso</span>
+                <h2 class="section-title">Una Solución para Cada Espacio</h2>
+                <p class="section-subtitle">Desde la terraza de tu hogar hasta la fachada de tu restaurante, la guillotina de cristal se adapta a cualquier proyecto.</p>
+            </div>
+
+            <!-- Block 1: Para Hostelería — image left, text right -->
+            <div class="use-case-block">
+                <div class="use-case-image fade-left">
+                    <img src="/Assets/products/Guillotine-Style Glass Windows/download-3.webp" alt="Guillotina de cristal en terraza de restaurante en Marbella" loading="lazy">
+                </div>
+                <div class="use-case-text fade-right">
+                    <span class="section-tag">Para Hostelería</span>
+                    <h2>Maximiza el Aforo de Tu Negocio en Cualquier Estación</h2>
+                    <p>Restaurantes, cafeterías y hoteles de la Costa del Sol que instalan guillotinas de cristal alargan su temporada de terraza entre 2 y 4 meses al año. En Marbella o Benalmádena, donde el clima invernal es suave pero el viento y la lluvia pueden arruinar un servicio, contar con un cerramiento motorizado marca la diferencia.</p>
+                    <ul>
+                        <li>Apertura y cierre en segundos con un solo mando, sin interrumpir el servicio.</li>
+                        <li>Vanos de hasta 10 metros sin pilares intermedios que reduzcan el aforo.</li>
+                        <li>Diseño neutro y elegante que no altera la estética de la terraza.</li>
+                        <li>Cumple normativa hostelera de accesibilidad y evacuación de emergencia.</li>
+                    </ul>
+                    <a href="/contact" class="btn btn-primary">Protégeme la Terraza</a>
+                </div>
+            </div>
+
+            <!-- Block 2: Para Hogares — text left, image right (Z-pattern) -->
+            <div class="use-case-block reverse">
+                <div class="use-case-text fade-left">
+                    <span class="section-tag">Para Hogares</span>
+                    <h2>Tu Balcón o Terraza, Habitable los 365 Días del Año</h2>
+                    <p>En La Línea de la Concepción, Alcaidesa o Manilva, el viento de Levante puede hacer inhabitable una terraza durante semanas. Con una guillotina de cristal motorizada puedes bajar los paneles en segundos y recuperar tu espacio, sin renunciar a las vistas al mar ni a la ventilación cuando el tiempo acompañe.</p>
+                    <ul>
+                        <li>Instalación en balcones desde 1,5 m de ancho sin obra civil.</li>
+                        <li>Cristal de control solar que mantiene el balance térmico en verano.</li>
+                        <li>Reducción de ruido de hasta 30 dB frente a entornos urbanos o costeros.</li>
+                        <li>Gana hasta 15 m² adicionales de espacio habitable sin ampliar la vivienda.</li>
+                    </ul>
+                    <a href="/contact" class="btn btn-primary">Ver mi Proyecto</a>
+                </div>
+                <div class="use-case-image fade-right">
+                    <img src="/Assets/products/Guillotine-Style Glass Windows/download.webp" alt="Guillotina de cristal en balcón residencial con vistas al mar en la Costa del Sol" loading="lazy">
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- CTA -->
+    <!-- ============================================================
+         SOCIAL PROOF — Reviews + Certifications
+         ============================================================ -->
+    <section class="social-proof" id="opiniones">
+        <div class="container">
+            <div class="text-center fade-up">
+                <span class="section-tag">Lo Que Dicen Nuestros Clientes</span>
+                <h2 class="section-title">Incontables Proyectos Completados en la Costa del Sol</h2>
+            </div>
+            <div class="reviews-grid fade-up">
+                <div class="review-card">
+                    <div class="review-stars">
+                        <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+                        <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+                        <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+                        <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+                        <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+                    </div>
+                    <blockquote>&ldquo;Tenemos el restaurante en primera línea de Benalmádena y el viento de octubre siempre nos cerraba antes de tiempo. Desde que instalamos la guillotina, alargamos la terraza hasta Navidad. Increíble.&rdquo;</blockquote>
+                    <div class="review-author">
+                        <div class="review-avatar">CR</div>
+                        <div class="review-author-info">
+                            <span class="review-author-name">Carlos R.</span>
+                            <span class="review-author-loc">Benalmádena, Málaga</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="review-card">
+                    <div class="review-stars">
+                        <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+                        <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+                        <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+                        <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+                        <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+                    </div>
+                    <blockquote>&ldquo;Vivimos en Alcaidesa con vientos del Estrecho muy fuertes. La guillotina motorizada baja en segundos y la terraza queda perfectamente sellada. La motorización es casi silenciosa. Muy recomendable.&rdquo;</blockquote>
+                    <div class="review-author">
+                        <div class="review-avatar">SL</div>
+                        <div class="review-author-info">
+                            <span class="review-author-name">Sandra L.</span>
+                            <span class="review-author-loc">Alcaidesa, Cádiz</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="review-card">
+                    <div class="review-stars">
+                        <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+                        <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+                        <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+                        <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+                        <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+                    </div>
+                    <blockquote>&ldquo;El presupuesto fue el más competitivo de los tres que pedí. Al ser fabricantes directos, los plazos fueron más cortos y el ajuste de las medidas fue perfecto. Acabado impecable.&rdquo;</blockquote>
+                    <div class="review-author">
+                        <div class="review-avatar">TM</div>
+                        <div class="review-author-info">
+                            <span class="review-author-name">Tomás M.</span>
+                            <span class="review-author-loc">Marbella, Málaga</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Certifications -->
+            <div class="partners-bar fade-up">
+                <div class="partner-badge">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    Marcado CE
+                </div>
+                <div class="partner-badge">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="2"/><polyline points="9 11 12 14 22 4"/></svg>
+                    ISO 9001
+                </div>
+                <div class="partner-badge">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+                    +500 Instalaciones
+                </div>
+                <div class="partner-badge">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2l1.09 3.41L16.5 4.5l-1 3.41L19 9l-3.41 1.09L16.5 13.5l-3.41-1L12 16l-1.09-3.5L7.5 13.5l1-3.41L5 9l3.41-1.09L7.5 4.5l3.41 1z"/></svg>
+                    Fabricante Directo
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         FAQ — SEO-Rich Accordion
+         ============================================================ -->
+    <section class="faq-section" id="preguntas-frecuentes">
+        <div class="container">
+            <div class="text-center fade-up">
+                <span class="section-tag">Preguntas Frecuentes</span>
+                <h2 class="section-title">Todo lo que Necesitas Saber sobre Guillotinas de Cristal</h2>
+            </div>
+            <div class="faq-list fade-up">
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        ¿Qué es una guillotina de cristal motorizada?
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="faq-answer" role="region">
+                        <div class="faq-answer-inner">
+                            <p>Una guillotina de cristal motorizada es un sistema de cerramiento en el que los paneles de <strong>vidrio templado de seguridad</strong> se deslizan verticalmente — hacia arriba o hacia abajo — mediante un motor eléctrico silencioso. A diferencia de las cortinas de cristal, los paneles no se pliegan lateralmente sino que suben y bajan. Esto las convierte en la opción ideal para <strong>fachadas de hostelería, terrazas residenciales y balcones</strong> donde se requiere máxima apertura panorámica sin obstrucción visual.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        ¿Necesito instalación eléctrica especial para la motorización?
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="faq-answer" role="region">
+                        <div class="faq-answer-inner">
+                            <p>No. El sistema motorizado funciona con <strong>corriente estándar (230V)</strong>. La instalación eléctrica se integra discretamente en el perfil superior o en la pared perimetral. También ofrecemos opciones con <strong>batería de respaldo</strong> para garantizar el funcionamiento en caso de corte de luz, especialmente recomendada para negocios de hostelería.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        ¿Cuánto tiempo dura la instalación?
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="faq-answer" role="region">
+                        <div class="faq-answer-inner">
+                            <p>La instalación media de una terraza o fachada estándar se completa en <strong>1 a 2 días laborables</strong>. No requiere obra civil significativa ni escombros. Nuestro equipo realiza la toma de medidas, fabricación personalizada y montaje optimizando los tiempos para no interrumpir tu actividad comercial ni tu vida cotidiana.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        ¿Se puede controlar la guillotina desde el móvil?
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="faq-answer" role="region">
+                        <div class="faq-answer-inner">
+                            <p>Sí. Nuestros sistemas pueden integrarse con <strong>domótica (KNX, Zigbee)</strong> y controlarse mediante aplicación móvil, además del mando a distancia estándar incluido. También es posible <strong>programar horarios automáticos</strong> de apertura y cierre, por ejemplo para restaurantes que quieran bajar los paneles cada noche automáticamente.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        ¿Qué grosor de cristal se utiliza?
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="faq-answer" role="region">
+                        <div class="faq-answer-inner">
+                            <p>Utilizamos <strong>vidrio templado de seguridad de 8 mm</strong> en aplicaciones residenciales estándar y <strong>10-12 mm</strong> para proyectos de hostelería o grandes vanos. Todo el vidrio cumple la normativa europea <strong>EN 12150</strong> y está dimensionado para resistir los vientos de la zona climática de Málaga y la Costa del Sol, incluyendo el potente viento de Levante.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        ¿Las guillotinas de cristal necesitan mucho mantenimiento?
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="faq-answer" role="region">
+                        <div class="faq-answer-inner">
+                            <p>No. El mantenimiento se reduce a una <strong>revisión anual del motor y las guías laterales</strong>, más la limpieza periódica del vidrio con agua y jabón neutro. Los perfiles de <strong>aluminio anodizado</strong> y los herrajes de acero inoxidable son resistentes a la corrosión, especialmente diseñados para entornos costeros salinos como los de la Costa del Sol.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         FINAL CTA
+         ============================================================ -->
     <section class="cta-section">
         <div class="cta-bg"></div>
         <div class="container">
             <div class="cta-content fade-up">
-                <h2>Eleva Tu Espacio con Cristal Guillotina</h2>
-                <p>Aporta excelencia en diseño y funcionalidad a tu hogar o negocio con nuestras ventanas de guillotina motorizadas.</p>
-                <a href="/contact" class="btn btn-white">Solicitar Consulta Gratuita</a>
+                <h2>Transforma Tu Terraza con Tecnología Guillotina</h2>
+                <p>Obtén un presupuesto gratuito y sin compromiso para tu proyecto. Fabricamos, instalamos y garantizamos. Respuesta en menos de 24 horas.</p>
+                <a href="/contact" class="btn btn-white">Solicitar Presupuesto Gratuito</a>
             </div>
         </div>
     </section>
+
+    <!-- ============================================================
+         STICKY CTA BAR
+         ============================================================ -->
+    <div class="sticky-cta-bar" id="stickyCta">
+        <span class="sticky-cta-text">¿Listo para empezar?</span>
+        <a href="/contact" class="btn btn-primary">Presupuesto Gratis</a>
+        <a href="tel:+34951074067" class="btn btn-outline" style="padding: 12px 20px; font-size: 0.9rem;">Llamar Ahora</a>
+    </div>
 
     <!-- Footer -->
     <footer class="footer">
@@ -162,7 +783,7 @@
             <div class="footer-grid">
                 <div class="footer-brand">
                     <img src="/Assets/logo/download.webp" alt="Costa Glass" class="footer-logo">
-                    <p>Sistemas innovadores de pérgolas, techos corredizos y toldos zip. Diseño, confort y elegancia para sus espacios exteriores.</p>
+                    <p>Fabricantes e instaladores de guillotinas de cristal, cortinas de cristal, pérgolas bioclimáticas y cerramientos a medida en la Costa del Sol. Diseño, confort y elegancia para tus espacios exteriores.</p>
                     <div class="footer-social">
                         <a href="https://www.facebook.com/cortinasdecristalcosta" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
                         <a href="http://www.youtube.com/@cortinasdecristalbioclimaticas" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19.1c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.43z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" fill="#fff"/></svg></a>
@@ -194,5 +815,60 @@
     <script>function googleTranslateElementInit(){new google.translate.TranslateElement({pageLanguage:'es',includedLanguages:'es,en,fr,de,ru,ar',autoDisplay:false},'google_translate_element');}</script>
     <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
     <script type="module" src="/js/consent.js"></script>
+
+    <!-- Page-specific: FAQ accordion + Sticky CTA bar -->
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+
+        // ===== FAQ ACCORDION =====
+        document.querySelectorAll('.faq-question').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const item = btn.parentElement;
+                const isOpen = item.classList.contains('open');
+
+                document.querySelectorAll('.faq-item.open').forEach(openItem => {
+                    openItem.classList.remove('open');
+                    openItem.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+                });
+
+                if (!isOpen) {
+                    item.classList.add('open');
+                    btn.setAttribute('aria-expanded', 'true');
+                }
+            });
+        });
+
+        // ===== STICKY CTA BAR =====
+        const stickyCta = document.getElementById('stickyCta');
+        const heroSection = document.querySelector('.page-hero');
+        const footerEl = document.querySelector('.footer');
+
+        if (stickyCta && heroSection) {
+            const stickyObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.target === heroSection) {
+                        if (!entry.isIntersecting) {
+                            stickyCta.classList.add('visible');
+                        } else {
+                            stickyCta.classList.remove('visible');
+                        }
+                    }
+                });
+            }, { threshold: 0 });
+            stickyObserver.observe(heroSection);
+
+            if (footerEl) {
+                const footerObserver = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            stickyCta.classList.remove('visible');
+                        }
+                    });
+                }, { threshold: 0.1 });
+                footerObserver.observe(footerEl);
+            }
+        }
+    });
+    </script>
 </body>
 </html>
