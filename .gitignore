@@ -1,4 +1,8 @@
-Assets/products/Guillotine-Style Glass Windows/Guillotina vid.mp4
+# Large media files (videos, etc.)
+**/*.mp4
+**/*.mov
+**/*.avi
+**/*.mkv
 
 # Build and node dependencies
 node_modules/

@@ -1,0 +1,138 @@
+---
+import BaseLayout from './BaseLayout.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  canonical: string;
+  pageSchema?: string;
+  heroImg: string;
+  heroAlt: string;
+  articleTag: string;
+  h1: string;
+  date: string;
+  breadcrumbLabel: string;
+}
+
+const { 
+  title, 
+  description, 
+  canonical,
+  pageSchema,
+  heroImg,
+  heroAlt,
+  articleTag,
+  h1,
+  date,
+  breadcrumbLabel
+} = Astro.props;
+---
+
+<BaseLayout 
+  title={title} 
+  description={description} 
+  canonical={canonical}
+  pageSchema={pageSchema}
+  activeNav="blog"
+>
+  <style>
+    .breadcrumb { font-size: 0.85rem; color: #64748b; margin: 20px 0; }
+    .breadcrumb a { color: #0284c7; text-decoration: none; }
+    .article-hero { margin: 40px 0 50px; }
+    .article-hero img { width: 100%; height: auto; border-radius: 12px; }
+    .article-header { margin: 40px 0; }
+    .article-h1 { font-size: 2.2rem; margin: 20px 0; line-height: 1.2; color: #0f172a; }
+    .article-meta { display: flex; gap: 20px; font-size: 0.9rem; color: #64748b; margin: 20px 0; flex-wrap: wrap; }
+    .article-tag { background: #e0f2fe; color: #0284c7; padding: 4px 12px; border-radius: 20px; font-weight: 600; }
+    .article-layout { display: grid; grid-template-columns: 1fr 300px; gap: 40px; margin: 40px 0; }
+    @media (max-width: 1024px) { .article-layout { grid-template-columns: 1fr; } }
+    .article-body { line-height: 1.8; }
+    .article-body h2 { font-size: 1.6rem; margin: 40px 0 20px; color: #0f172a; }
+    .article-body h3 { font-size: 1.2rem; margin: 28px 0 12px; color: #1e293b; font-weight: 700; }
+    .article-body p { margin: 16px 0; }
+    .article-body a { color: #0284c7; text-decoration: none; font-weight: 500; }
+    .article-body a:hover { text-decoration: underline; }
+    .article-body ul, .article-body ol { margin: 16px 0 16px 24px; }
+    .article-body li { margin: 10px 0; }
+    .article-body img { max-width: 100%; height: auto; margin: 30px 0; border-radius: 8px; }
+    .article-img-caption { font-size: 0.85rem; color: #64748b; margin-top: -20px; margin-bottom: 30px; font-style: italic; }
+    .highlight-box { background: #f0f9ff; border-left: 4px solid #0284c7; padding: 16px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+    .warning-box { background: #fef3c7; border-left: 4px solid #f59e0b; padding: 16px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+    .cta-box { background: #ecfdf5; border: 2px solid #10b981; padding: 24px; border-radius: 12px; margin: 30px 0; text-align: center; }
+    .cta-box h3 { color: #059669; margin-top: 0; }
+    .btn-cta { display: inline-block; background: #10b981; color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 600; margin-top: 12px; }
+    .btn-cta:hover { background: #059669; }
+    .faq-section { margin: 50px 0; }
+    .faq-section h2 { font-size: 1.6rem; margin-bottom: 30px; color: #0f172a; }
+    .faq-item { border: 1px solid #e2e8f0; border-radius: 8px; margin-bottom: 16px; }
+    .faq-question { width: 100%; background: none; border: none; padding: 16px; text-align: left; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-weight: 600; color: #0f172a; font-size: 1rem; }
+    .faq-question:hover { background: #f8fafc; }
+    .faq-icon { transition: transform 0.2s; }
+    .faq-question[aria-expanded="true"] .faq-icon { transform: rotate(180deg); }
+    .faq-answer { display: none; padding: 0 16px 16px; }
+    .faq-question[aria-expanded="true"] + .faq-answer { display: block; }
+    .faq-answer-inner { color: #475569; line-height: 1.6; }
+    .sidebar-card { background: #f8fafc; padding: 20px; border-radius: 12px; border: 1px solid #e2e8f0; margin-bottom: 24px; }
+    .sidebar-card h4 { font-size: 1rem; font-weight: 700; color: #0f172a; margin: 0 0 12px; }
+    .toc-list { list-style: none; padding: 0; margin: 0; }
+    .toc-list li { margin: 8px 0; }
+    .toc-list a { color: #0284c7; text-decoration: none; font-size: 0.9rem; }
+    .toc-list a:hover { text-decoration: underline; }
+    .sidebar-products { list-style: none; padding: 0; margin: 0; }
+    .sidebar-products li { margin: 10px 0; }
+    .sidebar-products a { color: #0284c7; text-decoration: none; font-size: 0.9rem; display: block; }
+    .sidebar-products a:hover { text-decoration: underline; }
+    .sidebar-cta-btn { display: block; text-align: center; padding: 10px 16px; background: #0284c7; color: white; border-radius: 6px; text-decoration: none; font-weight: 600; margin: 10px 0; font-size: 0.9rem; }
+    .sidebar-cta-btn:hover { background: #0369a1; }
+    .sidebar-cta-btn.secondary { background: #e2e8f0; color: #0f172a; }
+    .sidebar-cta-btn.secondary:hover { background: #cbd5e1; }
+    .cta-section { position: relative; padding: 60px 20px; margin: 60px 0 0; text-align: center; color: white; overflow: hidden; }
+    .cta-bg { position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(135deg, #0284c7, #0ea5e9); z-index: -1; }
+    .cta-content { position: relative; z-index: 1; }
+    .cta-content h2 { font-size: 1.8rem; margin: 0 0 12px; }
+    .cta-content p { font-size: 1.05rem; margin: 0; opacity: 0.95; }
+    .btn-white { display: inline-block; background: white; color: #0284c7; padding: 12px 28px; border-radius: 8px; text-decoration: none; font-weight: 700; margin-top: 20px; }
+    .btn-white:hover { background: #f0f9ff; }
+  </style>
+
+  <div class="container">
+    <div class="breadcrumb">
+      <a href="/">Inicio</a> / <a href="/blog">Blog</a> / {breadcrumbLabel}
+    </div>
+
+    <article class="article">
+      <div class="article-hero">
+        <img src={heroImg} alt={heroAlt} loading="eager" />
+      </div>
+
+      <header class="article-header">
+        <div class="article-meta">
+          <span class="article-tag">{articleTag}</span>
+          <span>{date}</span>
+        </div>
+        <h1 class="article-h1">{h1}</h1>
+      </header>
+
+      <div class="article-layout">
+        <div class="article-body">
+          <slot />
+        </div>
+        <aside class="sidebar">
+          <slot name="sidebar" />
+        </aside>
+      </div>
+    </article>
+  </div>
+
+  <slot name="cta" />
+
+  <script slot="scripts">
+    // FAQ accordion functionality
+    document.querySelectorAll('.faq-question').forEach(button => {
+      button.addEventListener('click', () => {
+        const isExpanded = button.getAttribute('aria-expanded') === 'true';
+        button.setAttribute('aria-expanded', !isExpanded);
+      });
+    });
+  </script>
+</BaseLayout>

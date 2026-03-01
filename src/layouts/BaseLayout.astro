@@ -1,0 +1,100 @@
+---
+// Base layout with navigation, footer, GA4, GTM, Google Translate
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description?: string;
+  canonical?: string;
+  ogImage?: string;
+  activeNav?: string;
+  pageSchema?: string;
+}
+
+const { 
+  title, 
+  description = 'Costa Glass - Cortinas de Cristal, Pérgolas, Toldo Zip y más en la Costa del Sol',
+  canonical,
+  ogImage = 'https://costaglass.es/Assets/logo/download.webp',
+  activeNav,
+  pageSchema
+} = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:image" content={ogImage} />
+  <meta property="og:type" content="website" />
+  {canonical && <link rel="canonical" href={canonical} />}
+  
+  <link rel="stylesheet" href="/css/styles.css">
+  
+  {pageSchema && <script type="application/ld+json" set:html={pageSchema} />}
+  
+  <!-- Google Analytics GA4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-3GZ6B4G65Y"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-3GZ6B4G65Y');
+  </script>
+
+  <!-- Google Tag Manager -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GT-TBB98WMX');
+  </script>
+
+  <slot name="head" />
+</head>
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GT-TBB98WMX"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="container">
+      <div class="navbar-brand">
+        <a href="/" class="logo">Costa Glass</a>
+      </div>
+      <ul class="nav-menu">
+        <li><a href="/" class={activeNav === 'home' ? 'active' : ''}>Inicio</a></li>
+        <li><a href="/cortinas-de-cristal" class={activeNav === 'products' ? 'active' : ''}>Productos</a></li>
+        <li><a href="/blog" class={activeNav === 'blog' ? 'active' : ''}>Blog</a></li>
+        <li><a href="/company" class={activeNav === 'company' ? 'active' : ''}>Empresa</a></li>
+        <li><a href="/contact" class={activeNav === 'contact' ? 'active' : ''}>Contacto</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Main content -->
+  <main>
+    <slot />
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2026 Costa Glass. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <script is:inline src="/js/main.js"></script>
+  <script is:inline src="/js/consent.js"></script>
+  
+  <slot name="scripts" />
+</body>
+</html>
