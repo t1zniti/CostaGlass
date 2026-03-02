@@ -19,16 +19,18 @@ document.addEventListener('DOMContentLoaded', () => {
     // ========== NAVBAR SCROLL EFFECT ==========
     const navbar = document.getElementById('navbar');
     
-    const handleNavScroll = () => {
-        if (window.scrollY > 60) {
-            navbar.classList.add('scrolled');
-        } else {
-            navbar.classList.remove('scrolled');
-        }
-    };
+    if (navbar) {
+        const handleNavScroll = () => {
+            if (window.scrollY > 60) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        };
 
-    window.addEventListener('scroll', handleNavScroll, { passive: true });
-    handleNavScroll();
+        window.addEventListener('scroll', handleNavScroll, { passive: true });
+        handleNavScroll();
+    }
 
     // ========== MOBILE MENU ==========
     const mobileToggle = document.getElementById('mobileToggle');
