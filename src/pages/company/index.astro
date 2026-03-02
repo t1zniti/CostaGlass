@@ -14,6 +14,102 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/styles.css">
 
+    <style>
+        /* ── Company Timeline ── */
+        .timeline-section {
+            background: var(--blue-50);
+            padding: 80px 0;
+        }
+        .trayectoria-title {
+            font-size: clamp(2rem, 5vw, 2.8rem) !important;
+            font-weight: 800 !important;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+        }
+        .company-timeline {
+            position: relative;
+            max-width: 860px;
+            margin: 56px auto 0;
+            padding: 0 24px;
+        }
+        .company-timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(
+                to bottom,
+                transparent 0px,
+                var(--blue-400) 60px,
+                var(--blue-400) calc(100% - 60px),
+                transparent 100%
+            );
+            transform: translateX(-50%);
+        }
+        .tl-item {
+            display: flex;
+            justify-content: flex-end;
+            padding-right: calc(50% + 48px);
+            padding-left: 0;
+            position: relative;
+            margin-bottom: 56px;
+            opacity: 0;
+            transform: translateX(-42px);
+            transition: opacity 0.7s cubic-bezier(.4,0,.2,1), transform 0.7s cubic-bezier(.4,0,.2,1);
+        }
+        .tl-item.tl-right {
+            justify-content: flex-start;
+            padding-right: 0;
+            padding-left: calc(50% + 48px);
+            transform: translateX(42px);
+        }
+        .tl-item.tl-visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        .tl-dot {
+            position: absolute;
+            left: 50%;
+            top: 6px;
+            width: 13px;
+            height: 13px;
+            background: var(--blue-500);
+            border-radius: 3px;
+            transform: translateX(-50%);
+            z-index: 1;
+            box-shadow: 0 0 0 4px var(--blue-100);
+        }
+        .tl-content { max-width: 360px; }
+        .tl-year {
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--blue-600);
+            letter-spacing: 0.1em;
+            margin-bottom: 6px;
+        }
+        .tl-desc {
+            font-size: 0.95rem;
+            color: #2d3748;
+            line-height: 1.65;
+            margin: 0;
+        }
+        @media (max-width: 640px) {
+            .company-timeline::before { left: 18px; transform: none; }
+            .tl-item,
+            .tl-item.tl-right {
+                justify-content: flex-start;
+                padding-left: 52px;
+                padding-right: 0;
+                transform: translateY(24px);
+            }
+            .tl-item.tl-visible { transform: translateY(0); }
+            .tl-dot { left: 18px; transform: none; }
+        }
+    </style>
+
     <!-- Google Consent Mode V2 -->
     <script is:inline>
       window.dataLayer = window.dataLayer || [];
@@ -47,12 +143,12 @@
                 <li class="nav-dropdown">
                     <a href="#" class="dropdown-trigger">Productos <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
                     <ul class="dropdown-menu">
-                        <li><a href="/bioclimatic">Bioclimatic</a></li>
-                        <li><a href="/glass-curtain-walls">Cortinas de Cristal</a></li>
-                        <li><a href="/guillotine-glass">Guillotina Cristal</a></li>
-                        <li><a href="/zip-screen">Toldo Zip</a></li>
+                        <li><a href="/pergolas-bioclimaticas">Bioclimatic</a></li>
+                        <li><a href="/cortinas-de-cristal">Cortinas de Cristal</a></li>
+                        <li><a href="/guillotina-de-cristal">Guillotina Cristal</a></li>
+                        <li><a href="/toldo-zip">Toldo Zip</a></li>
                         <li><a href="/retractable-pvc-roof">Sistemas de Techo Retráctil</a></li>
-                        <li><a href="/paravientos-de-cristal">Paravientos de Cristal</a></li>
+                        <li><a href="/paraviento-de-cristal">Paravientos de Cristal</a></li>
                     </ul>
                 </li>
                 <li><a href="/company" class="active">Empresa</a></li>
@@ -60,7 +156,7 @@
                 <li><a href="/contact">Contacto</a></li>
             </ul>
             <a href="tel:+34951074067" class="nav-phone">+34 951 074 067</a>
-            <a href="contact.html" class="nav-cta">Consulta Gratuita</a>
+            <a href="/contact" class="nav-cta">Consulta Gratuita</a>
             <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
         </div>
     </nav>
@@ -71,24 +167,24 @@
             <div class="mobile-dropdown">
                 <button class="mobile-dropdown-trigger">Productos <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
                 <div class="mobile-dropdown-menu">
-                    <a href="/bioclimatic">Bioclimatic</a>
-                    <a href="/glass-curtain-walls">Cortinas de Cristal</a>
-                    <a href="/guillotine-glass">Guillotina Cristal</a>
-                    <a href="/zip-screen">Toldo Zip</a>
+                    <a href="/pergolas-bioclimaticas">Bioclimatic</a>
+                    <a href="/cortinas-de-cristal">Cortinas de Cristal</a>
+                    <a href="/guillotina-de-cristal">Guillotina Cristal</a>
+                    <a href="/toldo-zip">Toldo Zip</a>
                     <a href="/retractable-pvc-roof">Sistemas de Techo Retráctil</a>
-                    <a href="/paravientos-de-cristal">Paravientos de Cristal</a>
+                    <a href="/paraviento-de-cristal">Paravientos de Cristal</a>
                 </div>
             </div>
             <a href="/company" class="active">Empresa</a>
             <a href="/blog">Blog</a>
             <a href="/contact">Contacto</a>
-            <a href="contact.html" class="mobile-cta">Consulta Gratuita</a>
+            <a href="/contact" class="mobile-cta">Consulta Gratuita</a>
         </div>
     </div>
 
     <!-- Page Hero -->
     <section class="page-hero">
-        <div class="page-hero-bg" style="background: linear-gradient(135deg, #2563eb 0%, #ffffff 100%); background-image: none;">
+        <div class="page-hero-bg" style="background-image: url('/Assets/products/glass curtain walls/c3.jpg'); background-size: cover; background-position: center;">
             <div class="page-hero-overlay"></div>
         </div>
         <div class="page-hero-content fade-up">
@@ -107,47 +203,6 @@
                 <p>Contamos con expertos respaldados por una considerable experiencia en la fabricación e instalación de Cortinas de Cristal. Logramos abordar el mercado con mayor seguridad, ofreciendo un producto con valor añadido que nos diferencia de otras empresas de cerramientos de cristal. Esta situación nos está permitiendo posicionarnos de forma diferente a la mayoría de nuestros competidores directos. En conclusión, el interés de nuestra empresa es ofrecer el mejor producto y servicio que logre la satisfacción de nuestros clientes.</p>
                 <p>Todas las operaciones en el proceso de fabricación e instalación de nuestras Cortinas de Cristal se realizan bajo una perspectiva ética y responsable.</p>
                 <p>Nuestra política de Calidad, Medio Ambiente, Seguridad de la Información e I+D+i se demuestra a través de nuestro firme compromiso con los CLIENTES para satisfacer plenamente sus requisitos y expectativas. Para ello, garantizamos promover una cultura de calidad basada en los principios de honestidad, liderazgo y desarrollo de personas, solidaridad, compromiso con la mejora y seguridad en nuestras operaciones.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Core Values -->
-    <section class="company-values" style="background: var(--gray-50);">
-        <div class="container">
-            <div class="section-header text-center fade-up">
-                <span class="section-tag">Valores Fundamentales</span>
-                <h2 class="section-title">Lo Que Nos Impulsa</h2>
-                <p class="section-subtitle">Principalmente, la fabricación e instalación de cortinas de cristal y cerramientos de cristal, todo teniendo en cuenta las siguientes premisas fundamentales.</p>
-            </div>
-            <div class="values-grid fade-up">
-                <div class="value-card">
-                    <div class="value-card-icon">
-                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-                    </div>
-                    <h3>Orientación al Cliente</h3>
-                    <p>Lograr la satisfacción y fidelización de nuestros clientes.</p>
-                </div>
-                <div class="value-card">
-                    <div class="value-card-icon">
-                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
-                    </div>
-                    <h3>Orientación a Procesos</h3>
-                    <p>Mediante la gestión sistemática de nuestros procesos.</p>
-                </div>
-                <div class="value-card">
-                    <div class="value-card-icon">
-                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="12" y1="20" x2="12" y2="10"/><line x1="18" y1="20" x2="18" y2="4"/><line x1="6" y1="20" x2="6" y2="16"/></svg>
-                    </div>
-                    <h3>Orientación a Resultados</h3>
-                    <p>Buscando el equilibrio para todas las partes interesadas.</p>
-                </div>
-                <div class="value-card">
-                    <div class="value-card-icon">
-                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-                    </div>
-                    <h3>Protección Medioambiental</h3>
-                    <p>Integrando las acciones necesarias dentro de nuestra gestión sistemática.</p>
-                </div>
             </div>
         </div>
     </section>
@@ -177,62 +232,54 @@
         </div>
     </section>
 
-    <!-- Key Strategies -->
-    <section class="strategy-section">
+    <!-- Timeline / Nuestra Trayectoria -->
+    <section class="timeline-section">
         <div class="container">
             <div class="section-header text-center fade-up">
-                <span class="section-tag">
-                <h2 class="section-title">Estrategias Clave para el Crecimiento Continuo</h2>
-                <p class="section-subtitle">Nuestra empresa de cortinas de cristal ha desarrollado una serie de estrategias clave que han permitido el crecimiento continuo de la organización y la consolidación de la marca.</p>
+                <span class="section-tag">Nuestra Historia</span>
+                <h2 class="section-title trayectoria-title">Nuestra Trayectoria</h2>
             </div>
-            <div class="strategy-grid fade-up">
-                <div class="strategy-item">
-                    <div class="strategy-number">1</div>
-                    <div>
-                        <h4>Cambio Permanente / Evolución</h4>
-                        <p>Las ventajas competitivas no perdurarán en el tiempo si no evolucionan en línea con los cambios de nuestro entorno.</p>
+            <div class="company-timeline">
+                <div class="tl-item">
+                    <div class="tl-dot"></div>
+                    <div class="tl-content">
+                        <div class="tl-year">2010</div>
+                        <p class="tl-desc">Fundación de Costa Glass en la Costa del Sol</p>
                     </div>
                 </div>
-                <div class="strategy-item">
-                    <div class="strategy-number">2</div>
-                    <div>
-                        <h4>Mejora Continua y Excelencia</h4>
-                        <p>Aspirando a los más altos estándares en cada aspecto de nuestras operaciones empresariales.</p>
+                <div class="tl-item tl-right">
+                    <div class="tl-dot"></div>
+                    <div class="tl-content">
+                        <div class="tl-year">2013</div>
+                        <p class="tl-desc">Primeros proyectos de pérgolas retráctiles en Marbella</p>
                     </div>
                 </div>
-                <div class="strategy-item">
-                    <div class="strategy-number">3</div>
-                    <div>
-                        <h4>Compromiso con el Talento</h4>
-                        <p>Esta estrategia de apoyo y motivación de los recursos humanos ha permitido que el equipo sea sin duda una pieza clave y el principal generador de ventajas competitivas en todas las áreas.</p>
+                <div class="tl-item">
+                    <div class="tl-dot"></div>
+                    <div class="tl-content">
+                        <div class="tl-year">2016</div>
+                        <p class="tl-desc">Incorporación de sistemas de cristal guillotina</p>
                     </div>
                 </div>
-                <div class="strategy-item">
-                    <div class="strategy-number">4</div>
-                    <div>
-                        <h4>Reinversión Continua</h4>
-                        <p>De los beneficios empresariales — asegurando crecimiento sostenible e innovación.</p>
+                <div class="tl-item tl-right">
+                    <div class="tl-dot"></div>
+                    <div class="tl-content">
+                        <div class="tl-year">2018</div>
+                        <p class="tl-desc">Ampliación del equipo técnico y comercial</p>
                     </div>
                 </div>
-                <div class="strategy-item">
-                    <div class="strategy-number">5</div>
-                    <div>
-                        <h4>Internacionalización</h4>
-                        <p>La diversificación de capacidades nos permite obtener clientes heterogéneos. Gracias a la experiencia en proyectos internacionales, mejoramos nuestros productos y servicios de forma sistemática y sistémica.</p>
+                <div class="tl-item">
+                    <div class="tl-dot"></div>
+                    <div class="tl-content">
+                        <div class="tl-year">2020</div>
+                        <p class="tl-desc">Consolidación en toda la provincia de Málaga</p>
                     </div>
                 </div>
-                <div class="strategy-item">
-                    <div class="strategy-number">6</div>
-                    <div>
-                        <h4>Crecer, Crecer, Crecer</h4>
-                        <p>El crecimiento de la empresa debe aspirar a alcanzar la Escala Mínima Eficiente (EME) que nos permita mantener una posición competitiva en el mercado.</p>
-                    </div>
-                </div>
-                <div class="strategy-item">
-                    <div class="strategy-number">7</div>
-                    <div>
-                        <h4>Innovación</h4>
-                        <p>Innovación continua y perpetua en productos, procesos y servicios.</p>
+                <div class="tl-item tl-right">
+                    <div class="tl-dot"></div>
+                    <div class="tl-content">
+                        <div class="tl-year">2023</div>
+                        <p class="tl-desc">Más de 500 proyectos residenciales y comerciales</p>
                     </div>
                 </div>
             </div>
@@ -246,7 +293,7 @@
             <div class="cta-content fade-up">
                 <h2>Colabora con Costa Glass</h2>
                 <p>El mejor producto y servicio que logre la satisfacción de nuestros clientes — esa es nuestra promesa.</p>
-                <a href="contact.html" class="btn btn-white">Contáctenos</a>
+                <a href="/contact" class="btn btn-white">Contáctenos</a>
             </div>
         </div>
     </section>
@@ -263,9 +310,9 @@
                         <a href="http://www.youtube.com/@cortinasdecristalbioclimaticas" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19.1c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.43z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" fill="#fff"/></svg></a>
                     </div>
                 </div>
-                <div class="footer-col"><h4>Productos</h4><ul><li><a href="bioclimatic.html">Bioclimatic</a></li><li><a href="glass-curtain-walls.html">Cortinas de Cristal</a></li><li><a href="guillotine-glass.html">Guillotina Cristal</a></li><li><a href="zip-screen.html">Toldo Zip</a></li><li><a href="retractable-pvc-roof.html">Sistemas de Techo Retráctil</a></li><li><a href="paravientos-de-cristal.html">Paravientos de Cristal</a></li></ul></div>
-                <div class="footer-col"><h4>Enlaces Rápidos</h4><ul><li><a href="index.html">Inicio</a></li><li><a href="company.html">Empresa</a></li><li><a href="contact.html">Contáctenos</a></li></ul></div>
-                <div class="footer-col"><h4>Legal</h4><ul><li><a href="politica-de-privacidad.html">Política de Privacidad</a></li><li><a href="#">Política de Cookies</a></li></ul></div>
+                <div class="footer-col"><h4>Productos</h4><ul><li><a href="/pergolas-bioclimaticas">Bioclimatic</a></li><li><a href="/cortinas-de-cristal">Cortinas de Cristal</a></li><li><a href="/guillotina-de-cristal">Guillotina Cristal</a></li><li><a href="/toldo-zip">Toldo Zip</a></li><li><a href="/retractable-pvc-roof">Sistemas de Techo Retráctil</a></li><li><a href="/paraviento-de-cristal">Paravientos de Cristal</a></li></ul></div>
+                <div class="footer-col"><h4>Enlaces Rápidos</h4><ul><li><a href="/">Inicio</a></li><li><a href="/company">Empresa</a></li><li><a href="/contact">Contáctenos</a></li></ul></div>
+                <div class="footer-col"><h4>Legal</h4><ul><li><a href="/politica-de-privacidad">Política de Privacidad</a></li><li><a href="#">Política de Cookies</a></li></ul></div>
             </div>
             <div class="footer-bottom"><p>&copy; 2025 Costa Glass. Todos los derechos reservados.</p></div>
         </div>
@@ -285,9 +332,25 @@
     </div>
 
     <div id="google_translate_element" style="display:none;"></div>
-    <script is:inline type="module" src="./js/main.js"></script>
+    <script is:inline type="module" src="/js/main.js"></script>
+    <script is:inline>
+        // Timeline scroll-in animation
+        (function () {
+            var items = document.querySelectorAll('.company-timeline .tl-item');
+            if (!items.length) return;
+            var observer = new IntersectionObserver(function (entries) {
+                entries.forEach(function (entry) {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('tl-visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.15 });
+            items.forEach(function (item) { observer.observe(item); });
+        })();
+    </script>
     <script is:inline>function googleTranslateElementInit(){new google.translate.TranslateElement({pageLanguage:'es',includedLanguages:'es,en,fr,de,ru,ar',autoDisplay:false},'google_translate_element');}</script>
     <script is:inline src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-    <script is:inline type="module" src="./js/consent.js"></script>
+    <script is:inline type="module" src="/js/consent.js"></script>
 </body>
 </html>
