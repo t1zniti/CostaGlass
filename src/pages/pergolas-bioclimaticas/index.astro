@@ -1,0 +1,751 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const pageSchema = JSON.stringify([{
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "Pérgolas Bioclimáticas Motorizadas a Medida",
+      "description": "Pérgola bioclimática de aluminio extruido con lamas orientables motorizadas de 0° a 135°, techo 100% estanco con canalizaciones ocultas en los pilares e integración con domótica. Fabricación e instalación a medida en la Costa del Sol.",
+      "brand": { "@type": "Brand", "name": "Costa Glass" },
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "EUR",
+        "availability": "https://schema.org/InStock",
+        "url": "https://costaglass.es/pergolas-bioclimaticas/"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "reviewCount": "134"
+      }
+    },{
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "¿Protege realmente de la lluvia intensa?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sí. Cuando las lamas se cierran verticalmente encajan entre sí formando un techo 100% estanco. El agua de lluvia se canaliza hacia el interior de los pilares de aluminio y se evacua por el suelo, sin ningún chorreo visible ni daño en la estructura. La pérgola está diseñada para aguantar aguaceros intensos propios del clima mediterráneo."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Se pueden cerrar los laterales de la pérgola bioclimática?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sí. La pérgola bioclimática es la base estructural perfecta sobre la que integrar cerramientos laterales: Cortinas de Cristal para una vista panorámica, Guillotinas de Cristal para apertura total o Toldos Zip para protección solar y privacidad. Todos los sistemas se instalan con los perfiles de la pérgola como guía, logrando un espacio cerrado llave en mano."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Necesito licencia de obra para instalar una pérgola bioclimática?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "En general no. Al tratarse de una estructura no permanente sin cimentación fija en la mayoría de municipios de la Costa del Sol, no requiere licencia de obra mayor. Nuestro equipo te asesora sobre los requisitos específicos de tu municipio y comunidad de propietarios para que el trámite sea completamente transparente."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cómo funcionan las lamas orientables y en cuántos ángulos se pueden regular?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Las lamas de aluminio extruido giran desde posición horizontal (0°, techo completamente abierto) hasta vertical (135°, techo herméticamente cerrado). En cualquier ángulo intermedio puedes regular la entrada de sol, la ventilación y la privacidad. El efecto chimenea se activa abriendo las lamas ligeramente: el aire caliente sube y sale por los huecos mientras entra aire fresco por debajo, refrescando el espacio de forma natural."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Qué mantenimiento requiere una pérgola bioclimática?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Mínimo. La estructura de aluminio extruido con tratamiento anodizado o lacado en polvo no se oxida, no se pudre y no necesita pintura. Se recomienda una limpieza anual con agua y jabón neutro en las lamas y una revisión del motor cada 3-5 años. El perfil de vida útil de la estructura supera los 30 años."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Se puede integrar la pérgola bioclimática en un sistema de domótica?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sí. Los motores de las lamas son compatibles con los principales protocolos de domótica del mercado: KNX, Somfy TaHoma, Zigbee y control por app móvil. Es posible programar horarios de apertura/cierre según la posición del sol, conectar sensores de lluvia que cierran automáticamente las lamas ante una tormenta, o integrar la pérgola en escenas de iluminación y climatización de toda la propiedad."
+          }
+        }
+      ]
+    }]);
+---
+
+<BaseLayout
+  title="Pérgolas Bioclimáticas Motorizadas a Medida | Costa Glass"
+  description="Pérgolas bioclimáticas motorizadas con lamas de aluminio orientables para terrazas de hostelería y jardines de lujo en la Costa del Sol. Techo 100% estanco con canalizaciones ocultas. Presupuesto gratuito en 24h."
+  canonical="https://costaglass.es/pergolas-bioclimaticas/"
+  pageSchema={pageSchema}
+>
+  <style is:global>
+/* ========== BIOCLIMATIC PAGE SPECIFIC STYLES ========== */
+
+    /* --- Benefits Grid --- */
+    .benefits-grid-section { padding: 100px 0; background: var(--gray-50); }
+    .benefits-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 28px;
+        margin-top: 48px;
+    }
+    .benefit-card {
+        background: var(--white);
+        padding: 40px 32px;
+        border-radius: var(--radius-lg);
+        border: 1px solid var(--gray-100);
+        transition: all var(--transition-base);
+        text-align: center;
+    }
+    .benefit-card:hover {
+        border-color: var(--blue-200);
+        transform: translateY(-6px);
+        box-shadow: var(--shadow-lg);
+    }
+    .benefit-icon {
+        width: 64px;
+        height: 64px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: var(--gradient-light);
+        border-radius: var(--radius-md);
+        margin: 0 auto 22px;
+        color: var(--blue-500);
+    }
+    .benefit-card h3 {
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: var(--gray-800);
+        margin-bottom: 12px;
+    }
+    .benefit-card p {
+        font-size: 0.9rem;
+        color: var(--gray-500);
+        line-height: 1.7;
+    }
+
+    /* --- Use Cases Z-Pattern --- */
+    .use-cases-section { padding: 100px 0; background: var(--white); }
+    .use-case-block {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 72px;
+        align-items: center;
+        margin-bottom: 80px;
+    }
+    .use-case-block:last-child { margin-bottom: 0; }
+    .use-case-block.reverse { direction: rtl; }
+    .use-case-block.reverse > * { direction: ltr; }
+    .use-case-text h2 {
+        font-family: var(--font-serif);
+        font-size: clamp(1.6rem, 3vw, 2.1rem);
+        color: var(--gray-900);
+        margin-bottom: 18px;
+        line-height: 1.25;
+    }
+    .use-case-text p {
+        color: var(--gray-600);
+        line-height: 1.8;
+        margin-bottom: 14px;
+    }
+    .use-case-text ul {
+        list-style: none;
+        padding: 0;
+        margin: 20px 0 28px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    .use-case-text ul li {
+        position: relative;
+        padding-left: 28px;
+        font-size: 0.92rem;
+        color: var(--gray-700);
+        line-height: 1.6;
+    }
+    .use-case-text ul li::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 2px;
+        width: 18px;
+        height: 18px;
+        background: var(--gradient-primary);
+        border-radius: 50%;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+    .use-case-image {
+        border-radius: var(--radius-lg);
+        overflow: hidden;
+        aspect-ratio: 4/3;
+    }
+    .use-case-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: var(--radius-lg);
+        display: block;
+    }
+
+    /* --- Social Proof --- */
+    .social-proof { padding: 100px 0; background: var(--gray-50); }
+    .reviews-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+        margin-top: 48px;
+    }
+    .review-card {
+        background: var(--white);
+        padding: 32px 28px;
+        border-radius: var(--radius-lg);
+        border: 1px solid var(--gray-100);
+        display: flex;
+        flex-direction: column;
+    }
+    .review-stars {
+        display: flex;
+        gap: 2px;
+        margin-bottom: 16px;
+        color: #f59e0b;
+    }
+    .review-card blockquote {
+        font-size: 0.92rem;
+        color: var(--gray-600);
+        line-height: 1.7;
+        margin-bottom: 20px;
+        font-style: italic;
+        flex: 1;
+    }
+    .review-author {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-top: auto;
+        padding-top: 16px;
+        border-top: 1px solid var(--gray-100);
+    }
+    .review-avatar {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: var(--gradient-light);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 600;
+        font-size: 0.85rem;
+        color: var(--blue-600);
+        flex-shrink: 0;
+    }
+    .review-author-info { min-width: 0; overflow-wrap: break-word; }
+    .review-author-info span { display: block; }
+    .review-author-name { font-size: 0.88rem; font-weight: 600; color: var(--gray-800); }
+    .review-author-loc { font-size: 0.78rem; color: var(--gray-400); }
+    .partners-bar {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 48px;
+        flex-wrap: wrap;
+        margin-top: 56px;
+        padding-top: 48px;
+        border-top: 1px solid var(--gray-100);
+    }
+    .partner-badge {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 0.85rem;
+        font-weight: 500;
+        color: var(--gray-400);
+    }
+    .partner-badge svg { color: var(--gray-300); }
+
+    /* --- FAQ Accordion --- */
+    .faq-section { padding: 100px 0; background: var(--white); }
+    .faq-list {
+        max-width: 800px;
+        margin: 48px auto 0;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+    .faq-item {
+        background: var(--gray-50);
+        border-radius: var(--radius-md);
+        border: 1px solid var(--gray-100);
+        overflow: hidden;
+        transition: border-color var(--transition-fast);
+    }
+    .faq-item.open { border-color: var(--blue-200); }
+    .faq-question {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 24px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        font-family: var(--font-sans);
+        font-size: 0.95rem;
+        font-weight: 600;
+        color: var(--gray-800);
+        text-align: left;
+        gap: 16px;
+    }
+    .faq-question svg {
+        flex-shrink: 0;
+        transition: transform var(--transition-base);
+        color: var(--blue-500);
+    }
+    .faq-item.open .faq-question svg { transform: rotate(180deg); }
+    .faq-answer {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease, padding 0.3s ease;
+    }
+    .faq-item.open .faq-answer { max-height: 600px; }
+    .faq-answer-inner {
+        padding: 0 24px 24px;
+        font-size: 0.9rem;
+        color: var(--gray-600);
+        line-height: 1.8;
+    }
+
+    /* --- Sticky CTA --- */
+    .sticky-cta-bar {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 990;
+        background: var(--white);
+        box-shadow: 0 -4px 20px rgba(0,0,0,0.08);
+        padding: 12px 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 12px;
+        transform: translateY(100%);
+        transition: transform var(--transition-base);
+    }
+    .sticky-cta-bar.visible { transform: translateY(0); }
+    .sticky-cta-bar .btn { padding: 12px 28px; font-size: 0.9rem; }
+    .sticky-cta-text { font-size: 0.82rem; color: var(--gray-500); display: none; }
+
+    /* --- Responsive --- */
+    @media (max-width: 1024px) {
+        .benefits-grid { grid-template-columns: repeat(3, 1fr); }
+        .reviews-grid { grid-template-columns: repeat(2, 1fr); }
+        .product-content-grid { grid-template-columns: 1fr; }
+        .use-case-block { grid-template-columns: 1fr; gap: 40px; }
+        .use-case-block.reverse { direction: ltr; }
+    }
+    .product-inline-img { display: none; }
+
+    @media (max-width: 768px) {
+        .benefits-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+        .benefit-card { padding: 20px 14px; }
+        .benefit-icon { width: 44px; height: 44px; margin-bottom: 10px; }
+        .benefit-card h3 { font-size: 0.88rem; margin-bottom: 6px; }
+        .benefit-card p { display: none; }
+        .reviews-grid { display: flex; overflow-x: auto; -webkit-overflow-scrolling: touch; scroll-snap-type: x mandatory; gap: 16px; padding-bottom: 16px; scrollbar-width: none; }
+        .reviews-grid::-webkit-scrollbar { display: none; }
+        .reviews-grid .review-card { flex: 0 0 82%; scroll-snap-align: start; display: flex; flex-direction: column; min-height: 360px; }
+        .reviews-grid .review-card blockquote { flex: 1; margin-bottom: 20px; }
+        .reviews-grid .review-card .review-author { flex-shrink: 0; margin-top: 10px; padding-top: 12px; border-top: 1px solid var(--gray-200); }
+        .product-content-grid { grid-template-columns: 1fr; }
+        .product-gallery { display: none; }
+        .product-inline-img { display: block; width: 100%; height: 200px; object-fit: cover; border-radius: 12px; margin: 14px 0; }
+        .use-case-block { grid-template-columns: 1fr; gap: 32px; }
+        .use-case-block.reverse { direction: ltr; }
+        .use-case-image { order: -1; }
+        .sticky-cta-bar { display: none; }
+        .sticky-cta-text { display: block; }
+        .partners-bar { gap: 24px; }
+    }
+  </style>
+
+<!-- Page Hero -->
+    <section class="page-hero">
+        <div class="page-hero-bg">
+            <img src="/Assets/products/bioclimatic/p1.jpg" alt="Pérgola bioclimática motorizada en terraza de lujo en la Costa del Sol" loading="eager">
+            <div class="page-hero-overlay"></div>
+        </div>
+        <div class="page-hero-content fade-up">
+            <h1>Pérgolas Bioclimáticas Motorizadas a Medida</h1>
+            <p class="hero-subtitle">Lamas de aluminio orientables que convierten cualquier terraza en un espacio premium habitable los 365 días del año.</p>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         PRODUCT INFO — Text + Gallery
+         ============================================================ -->
+    <section class="product-content">
+        <div class="container">
+            <div class="product-content-grid">
+                <div class="product-text fade-left">
+                    <span class="section-tag">Aluminio Extruido Premium</span>
+                    <h2>El Techo que Respira, Protege y Dura Décadas</h2>
+                    <p>La pérgola bioclimática de Costa Glass es la solución de cerramiento de exterior más sofisticada del mercado. Sus lamas de aluminio extruido de alta resistencia giran de 0° a 135° mediante un motor silencioso, permitiendo controlar con precisión la entrada de sol, la ventilación y la privacidad. Cuando las lamas se cierran herméticamente a 135°, el techo se convierte en un sistema de drenaje total: el agua de lluvia se canaliza por el interior de los perfiles huecos hacia los pilares y se evacua por el suelo sin ningún chorreo exterior.</p>
+                    <img class="product-inline-img" src="/Assets/products/bioclimatic/download.webp" alt="Pérgola bioclimática con lamas de aluminio orientables abiertas" loading="lazy">
+                    <p>El perfil de aluminio extruido cuenta con cámaras interiores de alta resistencia que le permiten soportar cargas de nieve, vientos huracanados y la exposición permanente al ambiente salino del Mediterráneo. El tratamiento de lacado en polvo o anodizado garantiza un acabado impecable por más de 30 años sin mantenimiento. <strong>No hay pérgola más duradera ni más eficiente en la Costa del Sol.</strong></p>
+                    <img class="product-inline-img" src="/Assets/products/bioclimatic/p2.jpg" alt="Detalle del mecanismo de lamas motorizadas de la pérgola bioclimática" loading="lazy">
+                    <p>Fabricamos cada pérgola completamente a medida, desde 3 m² hasta instalaciones modulares de cientos de metros cuadrados para grandes terrazas hosteleras. El resultado es siempre el mismo: una pieza de arquitectura que aumenta el valor de la propiedad y transforma el espacio exterior en el lugar más utilizado de la casa o el restaurante.</p>
+                </div>
+                <div class="product-gallery fade-right">
+                    <img src="/Assets/products/bioclimatic/download.webp" alt="Pérgola bioclimática con lamas de aluminio orientables abiertas" loading="lazy">
+                    <img src="/Assets/products/bioclimatic/p2.jpg" alt="Detalle del mecanismo de lamas motorizadas de la pérgola bioclimática" loading="lazy">
+                    <img src="/Assets/products/bioclimatic/p3.jpg" alt="Pérgola bioclimática instalada en terraza de lujo en Marbella" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         TECHNICAL FEATURES — 3-Column Grid
+         ============================================================ -->
+    <section class="benefits-grid-section" id="caracteristicas">
+        <div class="container">
+            <div class="text-center fade-up">
+                <span class="section-tag">Características Técnicas</span>
+                <h2 class="section-title">¿Por Qué Elegir una Pérgola Bioclimática?</h2>
+                <p class="section-subtitle">Cuatro ventajas ingenieriles que hacen de la pérgola bioclimática la inversión más rentable para cualquier terraza premium en el Mediterráneo.</p>
+            </div>
+            <div class="benefits-grid fade-up">
+                <!-- Lamas Orientables -->
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="4" rx="1"/><rect x="3" y="10" width="18" height="4" rx="1"/><rect x="3" y="17" width="18" height="4" rx="1"/></svg>
+                    </div>
+                    <h3>Lamas Orientables Motorizadas</h3>
+                    <p>Rotación precisa de 0° a 135° con un solo botón. Regula la entrada de luz, activa el <strong>efecto chimenea</strong> para ventilación natural o cierra herméticamente ante la lluvia. Control por mando, app o domótica.</p>
+                </div>
+                <!-- Estanqueidad -->
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    </div>
+                    <h3>Estanqueidad Total 100%</h3>
+                    <p>Las lamas encajan entre sí formando un techo completamente hermético. El agua se canaliza por el interior de los pilares de aluminio: <strong>cero chorreos, cero goteras</strong>. Drenaje invisible y totalmente oculto.</p>
+                </div>
+                <!-- Resistencia -->
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                    </div>
+                    <h3>Máxima Resistencia Estructural</h3>
+                    <p>Aluminio extruido de alta densidad diseñado para soportar <strong>vientos huracanados y cargas de nieve</strong>. Sin oxidación, sin mantenimiento, con una vida útil estructural superior a 30 años en el ambiente marino del Mediterráneo.</p>
+                </div>
+                <!-- Domótica -->
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18" stroke-linecap="round" stroke-width="2.5"/></svg>
+                    </div>
+                    <h3>Domótica Integrada</h3>
+                    <p>Control por mando, app o domótica (KNX, Somfy). Sensor de lluvia automático que cierra las lamas ante la adversidad — sin intervención manual.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         USE CASES — Z-Pattern Layout
+         ============================================================ -->
+    <section class="use-cases-section" id="aplicaciones">
+        <div class="container">
+            <div class="text-center fade-up" style="margin-bottom: 64px;">
+                <span class="section-tag">Casos de Uso</span>
+                <h2 class="section-title">La Pérgola Premium para Cada Proyecto</h2>
+                <p class="section-subtitle">Del restaurante de lujo a la villa privada, la pérgola bioclimática es la inversión que transforma una terraza en el espacio más rentable y más habitado de la propiedad.</p>
+            </div>
+
+            <!-- Block 1: Para Hostelería — image left, text right -->
+            <div class="use-case-block">
+                <div class="use-case-image fade-left">
+                    <img src="/Assets/products/bioclimatic/p4.jpg" alt="Pérgola bioclimática en terraza de restaurante de lujo en la Costa del Sol" loading="lazy">
+                </div>
+                <div class="use-case-text fade-right">
+                    <span class="section-tag">Para Hostelería</span>
+                    <h2>Convierte Tu Terraza en un Comedor Premium Abierto 365 Días</h2>
+                    <p>Una terraza sin pérgola bioclimática es una terraza que cierra en invierno, se vacía en las tardes de viento y pierde aforo en cada aguacero de primavera. Con la pérgola bioclimática de Costa Glass, tu terraza se convierte en el mejor comedor del establecimiento durante todo el año: temperatura regulada, protección total de los elementos y una estética de arquitectura de lujo que posiciona tu local en el segmento premium.</p>
+                    <ul>
+                        <li>Ambiente perfecto en cualquier condición meteorológica — abre las lamas para ventilación natural o ciérralas ante la lluvia sin interrumpir el servicio.</li>
+                        <li><strong>Máxima rentabilidad por metro cuadrado</strong>: cada mesa de terraza cubierta son ingresos directos que antes se perdían en la mitad del año.</li>
+                        <li>Integración con cerramientos laterales — Cortinas de Cristal, Guillotinas o Toldos Zip — para crear un espacio completamente cerrado en invierno.</li>
+                        <li>Domótica con sensor de lluvia: las lamas se cierran automáticamente sin que el personal tenga que actuar.</li>
+                    </ul>
+                    <a href="/contact" class="btn btn-primary">Ampliar Mi Temporada</a>
+                </div>
+            </div>
+
+            <!-- Block 2: Para Hogares — text left, image right (Z-pattern) -->
+            <div class="use-case-block reverse">
+                <div class="use-case-text fade-left">
+                    <span class="section-tag">Para Hogares</span>
+                    <h2>Extiende Tu Salón al Jardín y Multiplica el Valor de Tu Propiedad</h2>
+                    <p>Para villas, áticos y chalets privados, la pérgola bioclimática es la inversión más inteligente que puedes hacer en tu propiedad. Transforma una terraza infrautilizada en una estancia de lujo que funciona como salón exterior, cocina al aire libre, zona chill-out o cabana junto a la piscina. La calidad arquitectónica del aluminio premium y los acabados a medida aumentan el valor catastral y el atractivo del inmueble de forma visible e inmediata.</p>
+                    <ul>
+                        <li>Diseño e ingeniería completamente a medida: cualquier forma, tamaño y color de lacado para integrar la pérgola en la estética de la propiedad.</li>
+                        <li><strong>Efecto chimenea natural</strong>: abre las lamas en posición intermedia y el aire circula de forma pasiva, refrescando el espacio sin aire acondicionado.</li>
+                        <li>Iluminación LED integrada en los perfiles de aluminio para crear ambientes nocturnos de diseño sin instalaciones a la vista.</li>
+                        <li>Sensorizada con domótica: se abre al amanecer, regula el sol según la hora y se cierra automáticamente con la lluvia.</li>
+                    </ul>
+                    <a href="/contact" class="btn btn-primary">Ver Mi Proyecto</a>
+                </div>
+                <div class="use-case-image fade-right">
+                    <img src="/Assets/products/bioclimatic/p3.jpg" alt="Pérgola bioclimática en jardín de villa privada en Marbella con iluminación LED" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         SOCIAL PROOF — Reviews + Certifications
+         ============================================================ -->
+    <section class="social-proof" id="opiniones">
+        <div class="container">
+            <div class="text-center fade-up">
+                <span class="section-tag">Lo Que Dicen Nuestros Clientes</span>
+                <h2 class="section-title">Incontables Proyectos Completados en la Costa del Sol</h2>
+            </div>
+            <div class="reviews-grid fade-up">
+                <div class="review-card">
+                    <div class="review-stars">
+                        <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+                        <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+                        <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+                        <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+                        <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+                    </div>
+                    <blockquote>&ldquo;Instalamos la pérgola bioclimática en nuestra terraza de Marbella el pasado otoño. Esta temporada de invierno seguimos llenando el patio exterior como en verano. La inversión se amortizó en menos de tres meses de temporada extra.&rdquo;</blockquote>
+                    <div class="review-author">
+                        <div class="review-avatar">JR</div>
+                        <div class="review-author-info">
+                            <span class="review-author-name">Javier R.</span>
+                            <span class="review-author-loc">Marbella, Málaga</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="review-card">
+                    <div class="review-stars">
+                        <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+                        <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+                        <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+                        <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+                        <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+                    </div>
+                    <blockquote>&ldquo;Lo que más me impactó fue la calidad del aluminio. Es imposible saber que tiene más de un año instalada. La integramos en la domótica de la casa y ahora se abre y cierra sola. Es literalmente la estancia que más usamos.&rdquo;</blockquote>
+                    <div class="review-author">
+                        <div class="review-avatar">SH</div>
+                        <div class="review-author-info">
+                            <span class="review-author-name">Sophie H.</span>
+                            <span class="review-author-loc">Benahavís, Málaga</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="review-card">
+                    <div class="review-stars">
+                        <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+                        <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+                        <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+                        <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+                        <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+                    </div>
+                    <blockquote>&ldquo;El arquitecto que diseñó nuestra reforma incluyó la pérgola bioclimática como parte del proyecto principal. Costa Glass hizo el trabajo con una precisión artesanal. El acabado a medida encaja perfectamente con la estética de la villa.&rdquo;</blockquote>
+                    <div class="review-author">
+                        <div class="review-avatar">MK</div>
+                        <div class="review-author-info">
+                            <span class="review-author-name">Michael K.</span>
+                            <span class="review-author-loc">Estepona, Málaga</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Certifications -->
+            <div class="partners-bar fade-up">
+                <div class="partner-badge">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    Marcado CE
+                </div>
+                <div class="partner-badge">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="2"/><polyline points="9 11 12 14 22 4"/></svg>
+                    ISO 9001
+                </div>
+                <div class="partner-badge">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+                    +500 Instalaciones
+                </div>
+                <div class="partner-badge">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2l1.09 3.41L16.5 4.5l-1 3.41L19 9l-3.41 1.09L16.5 13.5l-3.41-1L12 16l-1.09-3.5L7.5 13.5l1-3.41L5 9l3.41-1.09L7.5 4.5l3.41 1z"/></svg>
+                    Fabricante Directo
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         FAQ — SEO-Rich Accordion
+         ============================================================ -->
+    <section class="faq-section" id="preguntas-frecuentes">
+        <div class="container">
+            <div class="text-center fade-up">
+                <span class="section-tag">Preguntas Frecuentes</span>
+                <h2 class="section-title">Todo lo que Necesitas Saber sobre Pérgolas Bioclimáticas</h2>
+            </div>
+            <div class="faq-list fade-up">
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        ¿Protege realmente de la lluvia intensa?
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="faq-answer" role="region">
+                        <div class="faq-answer-inner">
+                            <p>Sí. Cuando las lamas se cierran verticalmente <strong>encajan entre sí formando un techo 100% estanco</strong>. El agua de lluvia se canaliza hacia el interior de los pilares de aluminio y se evacua por el suelo, sin ningún chorreo visible ni daño en la estructura. La pérgola está diseñada para aguantar aguaceros intensos propios del clima mediterráneo.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        ¿Se pueden cerrar los laterales de la pérgola bioclimática?
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="faq-answer" role="region">
+                        <div class="faq-answer-inner">
+                            <p>Sí. La pérgola bioclimática es la base estructural perfecta sobre la que integrar <strong>cerramientos laterales</strong>: Cortinas de Cristal para una vista panorámica, Guillotinas de Cristal para apertura total o Toldos Zip para protección solar y privacidad. Todos los sistemas se instalan con los perfiles de la pérgola como guía, logrando un espacio <strong>cerrado llave en mano</strong>.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        ¿Necesito licencia de obra para instalar una pérgola bioclimática?
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="faq-answer" role="region">
+                        <div class="faq-answer-inner">
+                            <p>En general no. Al tratarse de una estructura no permanente sin cimentación fija en la mayoría de municipios de la Costa del Sol, <strong>no requiere licencia de obra mayor</strong>. Nuestro equipo te asesora sobre los requisitos específicos de tu municipio y comunidad de propietarios para que el trámite sea completamente transparente y sin sorpresas.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        ¿Cómo funcionan las lamas y en cuántos ángulos se pueden regular?
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="faq-answer" role="region">
+                        <div class="faq-answer-inner">
+                            <p>Las lamas giran de forma continua desde posición horizontal (0°, techo completamente abierto al sol) hasta vertical (135°, techo herméticamente cerrado). En cualquier ángulo intermedio puedes regular la entrada de luz y la ventilación. El llamado <strong>efecto chimenea</strong> se activa abriendo las lamas ligeramente: el aire caliente sube y sale mientras entra aire fresco por debajo, refrescando el espacio de forma natural sin ningún sistema mecánico.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        ¿Qué mantenimiento requiere una pérgola bioclimática?
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="faq-answer" role="region">
+                        <div class="faq-answer-inner">
+                            <p>Mínimo. La estructura de aluminio extruido con tratamiento anodizado o lacado en polvo <strong>no se oxida, no se pudre y no necesita pintura</strong>. Se recomienda una limpieza anual con agua y jabón neutro en las lamas y una revisión del motor cada 3–5 años. El perfil de vida útil de la estructura supera <strong>los 30 años</strong> en exposición marina directa.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        ¿Se puede integrar en un sistema de domótica?
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="faq-answer" role="region">
+                        <div class="faq-answer-inner">
+                            <p>Sí. Los motores son compatibles con <strong>KNX, Somfy TaHoma, Zigbee y app móvil</strong>. Es posible programar horarios de apertura y cierre automático según la posición del sol, conectar sensores de lluvia que cierran las lamas antes de que llegue la tormenta, e integrar la pérgola en escenas de iluminación y climatización de toda la propiedad.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         FINAL CTA
+         ============================================================ -->
+    <section class="cta-section">
+        <div class="cta-bg"></div>
+        <div class="container">
+            <div class="cta-content fade-up">
+                <h2>Diseña Tu Pérgola Bioclimática a Medida</h2>
+                <p>Obtén un presupuesto gratuito y sin compromiso para tu pérgola bioclimática motorizada. Fabricamos, instalamos y garantizamos a medida en toda la Costa del Sol. Respuesta en menos de 24 horas.</p>
+                <a href="/contact" class="btn btn-white">Solicitar Presupuesto Gratuito</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         STICKY CTA BAR
+         ============================================================ -->
+    <div class="sticky-cta-bar" id="stickyCta">
+        <span class="sticky-cta-text">¿Listo para su pérgola bioclimática?</span>
+        <a href="/contact" class="btn btn-primary">Presupuesto Gratis</a>
+        <a href="tel:+34951074067" class="btn btn-outline" style="padding: 12px 20px; font-size: 0.9rem;">Llamar Ahora</a>
+    </div>
+
+  <script is:inline slot="scripts">
+document.addEventListener('DOMContentLoaded', () => {
+
+        // ===== FAQ ACCORDION =====
+        document.querySelectorAll('.faq-question').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const item = btn.parentElement;
+                const isOpen = item.classList.contains('open');
+
+                document.querySelectorAll('.faq-item.open').forEach(openItem => {
+                    openItem.classList.remove('open');
+                    openItem.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+                });
+
+                if (!isOpen) {
+                    item.classList.add('open');
+                    btn.setAttribute('aria-expanded', 'true');
+                }
+            });
+        });
+
+        // ===== STICKY CTA BAR =====
+        const stickyCta = document.getElementById('stickyCta');
+        const heroSection = document.querySelector('.page-hero');
+        const footerEl = document.querySelector('.footer');
+
+        if (stickyCta && heroSection) {
+            const stickyObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.target === heroSection) {
+                        if (!entry.isIntersecting) {
+                            stickyCta.classList.add('visible');
+                        } else {
+                            stickyCta.classList.remove('visible');
+                        }
+                    }
+                });
+            }, { threshold: 0 });
+            stickyObserver.observe(heroSection);
+
+            if (footerEl) {
+                const footerObserver = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            stickyCta.classList.remove('visible');
+                        }
+                    });
+                }, { threshold: 0.1 });
+                footerObserver.observe(footerEl);
+            }
+        }
+    });
+  </script>
+</BaseLayout>

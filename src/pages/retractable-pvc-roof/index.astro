@@ -1,0 +1,751 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const pageSchema = JSON.stringify([{
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "Pérgolas Retráctiles Motorizadas a Medida",
+      "description": "Pérgolas de aluminio plegables con techo de lona tensada de PVC impermeable. Motorización con mando a distancia o domótica. Apertura total del techo con canalones invisibles integrados en los perfiles. Ideales para terrazas de restaurantes y hogares en la Costa del Sol.",
+      "brand": { "@type": "Brand", "name": "Costa Glass" },
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "EUR",
+        "availability": "https://schema.org/InStock",
+        "url": "https://costaglass.es/retractable-pvc-roof/"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "reviewCount": "112"
+      }
+    },{
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "¿Cuál es la diferencia entre una pérgola retráctil y una bioclimática?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "La retráctil tiene un techo de lona tensada de PVC que se pliega y desaparece por completo, dejando el cielo totalmente abierto. La bioclimática tiene lamas de aluminio que rotan sobre su propio eje, controlando la luz pero sin destapar el techo al 100%."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Se puede cerrar por los lados?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sí, nuestras pérgolas retráctiles están diseñadas para integrarse perfectamente con Cortinas de Cristal, Ventanas de Guillotina o Toldos Zip laterales, creando un cerramiento total."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Qué mantenimiento necesita la lona?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "La lona de PVC técnica tiene un tratamiento especial anti-moho y anti-rayos UV. Basta con limpiarla ocasionalmente con agua y jabón neutro; no requiere el mantenimiento mecánico complejo de las lamas de aluminio."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Es impermeable la pérgola retráctil cuando está cerrada?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sí, al 100%. El tejido técnico de PVC de alta tensión es completamente impermeable. Además, los postes de aluminio llevan incorporados canalones invisibles que recogen el agua de lluvia y la evacuan hacia el exterior sin goteos."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Se puede motorizar e integrar en domótica?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sí. El sistema de apertura y cierre de la lona es completamente motorizado, controlable por mando a distancia, app móvil o sistemas de domótica. También es posible añadir sensores de lluvia y viento que cierran la pérgola automáticamente ante condiciones adversas."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Se puede incorporar iluminación en la pérgola retráctil?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sí. Las tiras LED se integran directamente en las vigas transversales de la estructura, proporcionando una iluminación ambiental perfecta para el uso nocturno sin cables visibles ni instalaciones adicionales."
+          }
+        }
+      ]
+    }]);
+---
+
+<BaseLayout
+  title="Pérgolas Retráctiles Motorizadas a Medida | Costa Glass"
+  description="Pérgolas retráctiles motorizadas con techo de lona tensada de PVC impermeable al 100%. Techo retráctil motorizado para terrazas de hostelería y hogar en la Costa del Sol. Apertura total del cielo y canalones invisibles. Presupuesto en 24h."
+  canonical="https://costaglass.es/retractable-pvc-roof/"
+  pageSchema={pageSchema}
+>
+  <style is:global>
+/* ========== PÉRGOLAS RETRÁCTILES PAGE SPECIFIC STYLES ========== */
+
+    /* --- Benefits Grid --- */
+    .benefits-grid-section { padding: 100px 0; background: var(--gray-50); }
+    .benefits-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 28px;
+        margin-top: 48px;
+    }
+    .benefit-card {
+        background: var(--white);
+        padding: 40px 32px;
+        border-radius: var(--radius-lg);
+        border: 1px solid var(--gray-100);
+        transition: all var(--transition-base);
+        text-align: center;
+    }
+    .benefit-card:hover {
+        border-color: var(--blue-200);
+        transform: translateY(-6px);
+        box-shadow: var(--shadow-lg);
+    }
+    .benefit-icon {
+        width: 64px;
+        height: 64px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: var(--gradient-light);
+        border-radius: var(--radius-md);
+        margin: 0 auto 22px;
+        color: var(--blue-500);
+    }
+    .benefit-card h3 {
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: var(--gray-800);
+        margin-bottom: 12px;
+    }
+    .benefit-card p {
+        font-size: 0.9rem;
+        color: var(--gray-500);
+        line-height: 1.7;
+    }
+
+    /* --- Use Cases Z-Pattern --- */
+    .use-cases-section { padding: 100px 0; background: var(--white); }
+    .use-case-block {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 72px;
+        align-items: center;
+        margin-bottom: 80px;
+    }
+    .use-case-block:last-child { margin-bottom: 0; }
+    .use-case-block.reverse { direction: rtl; }
+    .use-case-block.reverse > * { direction: ltr; }
+    .use-case-text h2 {
+        font-family: var(--font-serif);
+        font-size: clamp(1.6rem, 3vw, 2.1rem);
+        color: var(--gray-900);
+        margin-bottom: 18px;
+        line-height: 1.25;
+    }
+    .use-case-text p {
+        color: var(--gray-600);
+        line-height: 1.8;
+        margin-bottom: 14px;
+    }
+    .use-case-text ul {
+        list-style: none;
+        padding: 0;
+        margin: 20px 0 28px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    .use-case-text ul li {
+        position: relative;
+        padding-left: 28px;
+        font-size: 0.92rem;
+        color: var(--gray-700);
+        line-height: 1.6;
+    }
+    .use-case-text ul li::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 2px;
+        width: 18px;
+        height: 18px;
+        background: var(--gradient-primary);
+        border-radius: 50%;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+    .use-case-image {
+        border-radius: var(--radius-lg);
+        overflow: hidden;
+        aspect-ratio: 4/3;
+    }
+    .use-case-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: var(--radius-lg);
+        display: block;
+    }
+
+    /* --- Social Proof --- */
+    .social-proof { padding: 100px 0; background: var(--gray-50); }
+    .reviews-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+        margin-top: 48px;
+    }
+    .review-card {
+        background: var(--white);
+        padding: 32px 28px;
+        border-radius: var(--radius-lg);
+        border: 1px solid var(--gray-100);
+        display: flex;
+        flex-direction: column;
+    }
+    .review-stars {
+        display: flex;
+        gap: 2px;
+        margin-bottom: 16px;
+        color: #f59e0b;
+    }
+    .review-card blockquote {
+        font-size: 0.92rem;
+        color: var(--gray-600);
+        line-height: 1.7;
+        margin-bottom: 20px;
+        font-style: italic;
+        flex: 1;
+    }
+    .review-author {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-top: auto;
+        padding-top: 16px;
+        border-top: 1px solid var(--gray-100);
+    }
+    .review-avatar {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: var(--gradient-light);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 600;
+        font-size: 0.85rem;
+        color: var(--blue-600);
+        flex-shrink: 0;
+    }
+    .review-author-info { min-width: 0; overflow-wrap: break-word; }
+    .review-author-info span { display: block; }
+    .review-author-name { font-size: 0.88rem; font-weight: 600; color: var(--gray-800); }
+    .review-author-loc { font-size: 0.78rem; color: var(--gray-400); }
+    .partners-bar {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 48px;
+        flex-wrap: wrap;
+        margin-top: 56px;
+        padding-top: 48px;
+        border-top: 1px solid var(--gray-100);
+    }
+    .partner-badge {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 0.85rem;
+        font-weight: 500;
+        color: var(--gray-400);
+    }
+    .partner-badge svg { color: var(--gray-300); }
+
+    /* --- FAQ Accordion --- */
+    .faq-section { padding: 100px 0; background: var(--white); }
+    .faq-list {
+        max-width: 800px;
+        margin: 48px auto 0;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+    .faq-item {
+        background: var(--gray-50);
+        border-radius: var(--radius-md);
+        border: 1px solid var(--gray-100);
+        overflow: hidden;
+        transition: border-color var(--transition-fast);
+    }
+    .faq-item.open { border-color: var(--blue-200); }
+    .faq-question {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 24px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        font-family: var(--font-sans);
+        font-size: 0.95rem;
+        font-weight: 600;
+        color: var(--gray-800);
+        text-align: left;
+        gap: 16px;
+    }
+    .faq-question svg {
+        flex-shrink: 0;
+        transition: transform var(--transition-base);
+        color: var(--blue-500);
+    }
+    .faq-item.open .faq-question svg { transform: rotate(180deg); }
+    .faq-answer {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease, padding 0.3s ease;
+    }
+    .faq-item.open .faq-answer { max-height: 600px; }
+    .faq-answer-inner {
+        padding: 0 24px 24px;
+        font-size: 0.9rem;
+        color: var(--gray-600);
+        line-height: 1.8;
+    }
+
+    /* --- Sticky CTA --- */
+    .sticky-cta-bar {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 990;
+        background: var(--white);
+        box-shadow: 0 -4px 20px rgba(0,0,0,0.08);
+        padding: 12px 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 12px;
+        transform: translateY(100%);
+        transition: transform var(--transition-base);
+    }
+    .sticky-cta-bar.visible { transform: translateY(0); }
+    .sticky-cta-bar .btn { padding: 12px 28px; font-size: 0.9rem; }
+    .sticky-cta-text { font-size: 0.82rem; color: var(--gray-500); display: none; }
+
+    /* --- Responsive --- */
+    @media (max-width: 1024px) {
+        .benefits-grid { grid-template-columns: repeat(3, 1fr); }
+        .reviews-grid { grid-template-columns: repeat(2, 1fr); }
+        .product-content-grid { grid-template-columns: 1fr; }
+        .use-case-block { grid-template-columns: 1fr; gap: 40px; }
+        .use-case-block.reverse { direction: ltr; }
+    }
+    .product-inline-img { display: none; }
+
+    @media (max-width: 768px) {
+        .benefits-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+        .benefit-card { padding: 20px 14px; }
+        .benefit-icon { width: 44px; height: 44px; margin-bottom: 10px; }
+        .benefit-card h3 { font-size: 0.88rem; margin-bottom: 6px; }
+        .benefit-card p { display: none; }
+        .reviews-grid { display: flex; overflow-x: auto; -webkit-overflow-scrolling: touch; scroll-snap-type: x mandatory; gap: 16px; padding-bottom: 16px; scrollbar-width: none; }
+        .reviews-grid::-webkit-scrollbar { display: none; }
+        .reviews-grid .review-card { flex: 0 0 82%; scroll-snap-align: start; display: flex; flex-direction: column; min-height: 360px; }
+        .reviews-grid .review-card blockquote { flex: 1; margin-bottom: 20px; }
+        .reviews-grid .review-card .review-author { flex-shrink: 0; margin-top: 10px; padding-top: 12px; border-top: 1px solid var(--gray-200); }
+        .product-content-grid { grid-template-columns: 1fr; }
+        .product-gallery { display: none; }
+        .product-inline-img { display: block; width: 100%; height: 200px; object-fit: cover; border-radius: 12px; margin: 14px 0; }
+        .use-case-block { grid-template-columns: 1fr; gap: 32px; }
+        .use-case-block.reverse { direction: ltr; }
+        .use-case-image { order: -1; }
+        .sticky-cta-bar { display: none; }
+        .sticky-cta-text { display: block; }
+        .partners-bar { gap: 24px; }
+    }
+  </style>
+
+<!-- Page Hero -->
+    <section class="page-hero">
+        <div class="page-hero-bg">
+            <img src="/Assets/products/Retractable PVC Roof/g1.jpg" alt="Pérgola retráctil motorizada en terraza con techo de lona PVC abierto al cielo en la Costa del Sol" loading="eager">
+            <div class="page-hero-overlay"></div>
+        </div>
+        <div class="page-hero-content fade-up">
+            <h1>Pérgolas Retráctiles Motorizadas a Medida</h1>
+            <p class="hero-subtitle">Techo retráctil de lona impermeabilizada al 100% — abre el cielo en verano, cubre el espacio en segundos cuando llueve.</p>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         PRODUCT INFO — Text + Gallery
+         ============================================================ -->
+    <section class="product-content">
+        <div class="container">
+            <div class="product-content-grid">
+                <div class="product-text fade-left">
+                    <span class="section-tag">Techo Retráctil Motorizado</span>
+                    <h2>El Único Techo que Desaparece del Todo</h2>
+                    <p>La pérgola retráctil de Costa Glass lleva la versatilidad al máximo: cuando el tiempo lo pide, la lona de PVC técnico se pliega completamente hacia un lateral, dejando el <strong>cielo al 100 % libre</strong>. Cenas de verano bajo las estrellas, mañanas de invierno con el sol directo en la piel — sin barreras. Cuando cambia el tiempo, un solo botón cierra el techo en segundos y convierte la terraza en un espacio completamente protegido.</p>
+                    <img class="product-inline-img" src="/Assets/products/Retractable PVC Roof/download.webp" alt="Pérgola retráctil con lona PVC abierta mostrando el cielo despejado" loading="lazy">
+                    <p>La estructura de <strong>aluminio extruido de grado aeronáutico</strong> combina ligereza y rigidez extrema. Los postes llevan incorporados canalones invisibles que recogen el agua de lluvia y la evacuan hacia el exterior sin goteos ni humedades. El resultado es un cerramiento de techo impecable en estética y funcionalidad, fabricado completamente a medida para adaptarse a cualquier terraza, patio o jardín.</p>
+                    <img class="product-inline-img" src="/Assets/products/Retractable PVC Roof/download-1.webp" alt="Detalle de la estructura de aluminio y el mecanismo de plegado de la lona" loading="lazy">
+                    <p>Diseñada para integrarse con el resto de sistemas de Costa Glass — Cortinas de Cristal, Guillotinas o Toldos Zip laterales — la pérgola retráctil puede convertirse en un <strong>cerramiento total de cuatro estaciones</strong> con un solo proyecto.</p>
+                </div>
+                <div class="product-gallery fade-right">
+                    <img src="/Assets/products/Retractable PVC Roof/download.webp" alt="Pérgola retráctil con lona PVC abierta mostrando el cielo despejado" loading="lazy">
+                    <img src="/Assets/products/Retractable PVC Roof/download-1.webp" alt="Detalle de la estructura de aluminio y el mecanismo de plegado de la lona" loading="lazy">
+                    <img src="/Assets/products/Retractable PVC Roof/download-2.webp" alt="Pérgola retráctil cerrada con iluminación LED integrada en las vigas" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         TECHNICAL FEATURES — 3-Column Grid
+         ============================================================ -->
+    <section class="benefits-grid-section" id="caracteristicas">
+        <div class="container">
+            <div class="text-center fade-up">
+                <span class="section-tag">Características Técnicas</span>
+                <h2 class="section-title">¿Por Qué Elegir una Pérgola Retráctil?</h2>
+                <p class="section-subtitle">Cuatro ventajas que la convierten en la cubierta exterior más versátil del mercado — apertura total, impermeabilidad absoluta y tecnología integrada.</p>
+            </div>
+            <div class="benefits-grid fade-up">
+                <!-- 100% Apertura -->
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
+                    </div>
+                    <h3>100 % Apertura del Techo</h3>
+                    <p>La lona de PVC se pliega completamente hacia un lateral, dejando el cielo totalmente despejado. Ninguna lama de aluminio ni estructura permanece visible — <strong>cielo puro</strong> desde cualquier ángulo.</p>
+                </div>
+                <!-- Impermeabilidad -->
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg>
+                    </div>
+                    <h3>Impermeabilidad Total con Canalones Invisibles</h3>
+                    <p>El tejido técnico de PVC de alta tensión es <strong>100 % impermeable</strong>. Los postes de aluminio integran canalones ocultos que evacuan el agua hacia el exterior — el espacio de debajo queda completamente seco.</p>
+                </div>
+                <!-- LED -->
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+                    </div>
+                    <h3>Iluminación LED Integrada en las Vigas</h3>
+                    <p>Tiras LED embutidas directamente en las vigas transversales de la estructura. Iluminación ambiental con intensidad regulable para uso nocturno — <strong>sin cables visibles</strong> ni instalaciones adicionales.</p>
+                </div>
+                <!-- Integración Total -->
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                    </div>
+                    <h3>Integración Total Costa Glass</h3>
+                    <p>Compatible con Cortinas de Cristal, Guillotinas y Toldos Zip laterales para crear un cerramiento completo de cuatro estaciones en un solo proyecto.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         USE CASES — Z-Pattern Layout
+         ============================================================ -->
+    <section class="use-cases-section" id="aplicaciones">
+        <div class="container">
+            <div class="text-center fade-up" style="margin-bottom: 64px;">
+                <span class="section-tag">Casos de Uso</span>
+                <h2 class="section-title">Un Techo para Cada Proyecto</h2>
+                <p class="section-subtitle">Desde el restaurante que necesita rentabilizar cada mesa hasta el hogar que quiere extender el salón al jardín — la pérgola retráctil se adapta a cualquier espacio.</p>
+            </div>
+
+            <!-- Block 1: Para Hostelería — image left, text right -->
+            <div class="use-case-block">
+                <div class="use-case-image fade-left">
+                    <img src="/Assets/products/Retractable PVC Roof/Screenshot_2-1030x717.webp" alt="Pérgola retráctil motorizada en terraza de restaurante con lona PVC cerrada durante una noche de lluvia en la Costa del Sol" loading="lazy">
+                </div>
+                <div class="use-case-text fade-right">
+                    <span class="section-tag">Para Hostelería</span>
+                    <h2>Convierte Tu Terraza en un Comedor de Cuatro Estaciones</h2>
+                    <p>Una terraza sin cubierta impermeable es dinero perdido en los meses de lluvia y en las noches de viento. Con la pérgola retráctil de Costa Glass, tu espacio exterior deja de depender del tiempo para convertirse en un <strong>comedor de alto valor añadido los 365 días del año</strong>. En noches de verano, abres el techo con el mando y ofreces a tus clientes cenar bajo las estrellas. Cuando cambia el tiempo, lo cierras en segundos sin mover ni una silla.</p>
+                    <ul>
+                        <li>Transformación de patios interiores y terrazas en <strong>salas de comedor impermeables</strong> sin obra civil mayor.</li>
+                        <li>Apertura total del techo en verano para crear la experiencia de <strong>"cena bajo las estrellas"</strong> que diferencia a tu local.</li>
+                        <li>Iluminación LED integrada en las vigas para una atmósfera nocturna premium sin instalación eléctrica adicional.</li>
+                        <li>Compatible con cierres laterales de Cortinas de Cristal o Toldos Zip para un cerramiento total en invierno.</li>
+                    </ul>
+                    <a href="/contact" class="btn btn-primary">Rentabilizar Mi Terraza</a>
+                </div>
+            </div>
+
+            <!-- Block 2: Para Hogares — text left, image right (Z-pattern) -->
+            <div class="use-case-block reverse">
+                <div class="use-case-text fade-left">
+                    <span class="section-tag">Para Hogares</span>
+                    <h2>Extiende el Salón al Jardín sin Cargar la Fachada</h2>
+                    <p>La pérgola retráctil es la solución más ligera visualmente para cubrir una terraza adosada a la fachada de una vivienda. Su perfil de aluminio minimalista <strong>no sobrecarga la arquitectura</strong> del hogar como lo haría una estructura de obra, y el aspecto con la lona recogida es completamente limpio — solo los perfiles de aluminio son visibles. Un espacio exterior que en verano es jardín y en invierno es salón.</p>
+                    <ul>
+                        <li>Instalación sin obra en patios, jardines y terrazas adosadas a viviendas existentes o de nueva construcción.</li>
+                        <li>Estética arquitectónica minimalista: con la lona recogida solo quedan visibles los perfiles de aluminio lacado.</li>
+                        <li>Protección total frente a lluvias y granizo para disfrutar del exterior incluso en los <strong>meses más fríos</strong>.</li>
+                        <li>Colores RAL personalizables en la estructura y opciones de tela en múltiples gamas para integrarse con el diseño del hogar.</li>
+                    </ul>
+                    <a href="/contact" class="btn btn-primary">Ver mi Proyecto</a>
+                </div>
+                <div class="use-case-image fade-right">
+                    <img src="/Assets/products/Retractable PVC Roof/download-3.webp" alt="Pérgola retráctil instalada en terraza de vivienda privada con lona de PVC recogida mostrando el jardín" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         SOCIAL PROOF — Reviews + Certifications
+         ============================================================ -->
+    <section class="social-proof" id="opiniones">
+        <div class="container">
+            <div class="text-center fade-up">
+                <span class="section-tag">Lo Que Dicen Nuestros Clientes</span>
+                <h2 class="section-title">Incontables Proyectos Completados en la Costa del Sol</h2>
+            </div>
+            <div class="reviews-grid fade-up">
+                <div class="review-card">
+                    <div class="review-stars">
+                        <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+                        <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+                        <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+                        <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+                        <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+                    </div>
+                    <blockquote>&ldquo;Teníamos un patio interior que solo usábamos 4 meses al año. Desde que instalamos la pérgola retráctil con cortinas de cristal en los laterales, es el espacio más rentable del restaurante. Lleno incluso en diciembre.&rdquo;</blockquote>
+                    <div class="review-author">
+                        <div class="review-avatar">RG</div>
+                        <div class="review-author-info">
+                            <span class="review-author-name">Roberto G.</span>
+                            <span class="review-author-loc">Marbella, Málaga</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="review-card">
+                    <div class="review-stars">
+                        <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+                        <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+                        <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+                        <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+                        <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+                    </div>
+                    <blockquote>&ldquo;Lo que más me gustó es que con la lona recogida no se ve casi nada — solo los perfiles de aluminio. Mi arquitecto pensaba que iba a romper la estética de la fachada y al final fue todo lo contrario.&rdquo;</blockquote>
+                    <div class="review-author">
+                        <div class="review-avatar">SL</div>
+                        <div class="review-author-info">
+                            <span class="review-author-name">Sofía L.</span>
+                            <span class="review-author-loc">Benahavís, Málaga</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="review-card">
+                    <div class="review-stars">
+                        <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+                        <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+                        <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+                        <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+                        <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+                    </div>
+                    <blockquote>&ldquo;Instalé la pérgola retráctil con iluminación LED en las vigas. Las noches de verano con el techo abierto y las luces a media intensidad son espectaculares. Mis clientes la mencionan constantemente en los reviews de Google.&rdquo;</blockquote>
+                    <div class="review-author">
+                        <div class="review-avatar">JC</div>
+                        <div class="review-author-info">
+                            <span class="review-author-name">José C.</span>
+                            <span class="review-author-loc">Estepona, Málaga</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Certifications -->
+            <div class="partners-bar fade-up">
+                <div class="partner-badge">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    Marcado CE
+                </div>
+                <div class="partner-badge">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="2"/><polyline points="9 11 12 14 22 4"/></svg>
+                    ISO 9001
+                </div>
+                <div class="partner-badge">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+                    +500 Instalaciones
+                </div>
+                <div class="partner-badge">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2l1.09 3.41L16.5 4.5l-1 3.41L19 9l-3.41 1.09L16.5 13.5l-3.41-1L12 16l-1.09-3.5L7.5 13.5l1-3.41L5 9l3.41-1.09L7.5 4.5l3.41 1z"/></svg>
+                    Fabricante Directo
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         FAQ — SEO-Rich Accordion
+         ============================================================ -->
+    <section class="faq-section" id="preguntas-frecuentes">
+        <div class="container">
+            <div class="text-center fade-up">
+                <span class="section-tag">Preguntas Frecuentes</span>
+                <h2 class="section-title">Todo lo que Necesitas Saber sobre Pérgolas Retráctiles</h2>
+            </div>
+            <div class="faq-list fade-up">
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        ¿Cuál es la diferencia entre una pérgola retráctil y una bioclimática?
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="faq-answer" role="region">
+                        <div class="faq-answer-inner">
+                            <p>La <strong>retráctil</strong> tiene un techo de lona tensada de PVC que se pliega y <strong>desaparece por completo</strong>, dejando el cielo totalmente abierto. La <strong>bioclimática</strong> tiene lamas de aluminio que rotan sobre su propio eje, controlando la luz pero sin destapar el techo al 100 %.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        ¿Es impermeable la pérgola retráctil cuando está cerrada?
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="faq-answer" role="region">
+                        <div class="faq-answer-inner">
+                            <p>Sí, al 100 %. El tejido técnico de PVC de alta tensión es <strong>completamente impermeable</strong>. Además, los postes de aluminio llevan incorporados <strong>canalones invisibles</strong> que recogen el agua de lluvia y la evacuan hacia el exterior sin goteos ni humedades en el espacio cubierto.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        ¿Se puede cerrar por los lados?
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="faq-answer" role="region">
+                        <div class="faq-answer-inner">
+                            <p>Sí. Las pérgolas retráctiles de Costa Glass están diseñadas para integrarse con <strong>Cortinas de Cristal, Ventanas de Guillotina o Toldos Zip laterales</strong>, creando un cerramiento total de cuatro estaciones con una estética perfectamente coordinada.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        ¿Qué mantenimiento necesita la lona?
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="faq-answer" role="region">
+                        <div class="faq-answer-inner">
+                            <p>La lona de PVC técnica tiene un tratamiento especial <strong>anti-moho y anti-rayos UV</strong>. Basta con limpiarla ocasionalmente con agua y jabón neutro. No requiere el mantenimiento mecánico complejo de las lamas de aluminio de una pérgola bioclimática.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        ¿Se puede motorizar e integrar en domótica?
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="faq-answer" role="region">
+                        <div class="faq-answer-inner">
+                            <p>Sí. El sistema de apertura y cierre de la lona es <strong>completamente motorizado</strong>, controlable por mando a distancia, app móvil o integrado en sistemas de domótica. También es posible añadir <strong>sensores de lluvia y viento</strong> que cierran la pérgola automáticamente ante condiciones adversas.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        ¿Se puede incorporar iluminación en la pérgola retráctil?
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="faq-answer" role="region">
+                        <div class="faq-answer-inner">
+                            <p>Sí. Las tiras LED se integran directamente en las <strong>vigas transversales de la estructura</strong>, proporcionando iluminación ambiental con intensidad regulable para el uso nocturno — sin cables visibles ni instalaciones adicionales de electricidad.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         FINAL CTA
+         ============================================================ -->
+    <section class="cta-section">
+        <div class="cta-bg"></div>
+        <div class="container">
+            <div class="cta-content fade-up">
+                <h2>Abre el Cielo en Verano. Cubre Tu Terraza en Segundos.</h2>
+                <p>Obtén un presupuesto gratuito y sin compromiso para tu pérgola retráctil motorizada. Fabricamos, instalamos y garantizamos a medida en toda la Costa del Sol. Respuesta en menos de 24 horas.</p>
+                <a href="/contact" class="btn btn-white">Solicitar Presupuesto Gratuito</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         STICKY CTA BAR
+         ============================================================ -->
+    <div class="sticky-cta-bar" id="stickyCta">
+        <span class="sticky-cta-text">¿Listo para empezar?</span>
+        <a href="/contact" class="btn btn-primary">Presupuesto Gratis</a>
+        <a href="tel:+34951074067" class="btn btn-outline" style="padding: 12px 20px; font-size: 0.9rem;">Llamar Ahora</a>
+    </div>
+
+  <script is:inline slot="scripts">
+document.addEventListener('DOMContentLoaded', () => {
+
+        // ===== FAQ ACCORDION =====
+        document.querySelectorAll('.faq-question').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const item = btn.parentElement;
+                const isOpen = item.classList.contains('open');
+
+                document.querySelectorAll('.faq-item.open').forEach(openItem => {
+                    openItem.classList.remove('open');
+                    openItem.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+                });
+
+                if (!isOpen) {
+                    item.classList.add('open');
+                    btn.setAttribute('aria-expanded', 'true');
+                }
+            });
+        });
+
+        // ===== STICKY CTA BAR =====
+        const stickyCta = document.getElementById('stickyCta');
+        const heroSection = document.querySelector('.page-hero');
+        const footerEl = document.querySelector('.footer');
+
+        if (stickyCta && heroSection) {
+            const stickyObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.target === heroSection) {
+                        if (!entry.isIntersecting) {
+                            stickyCta.classList.add('visible');
+                        } else {
+                            stickyCta.classList.remove('visible');
+                        }
+                    }
+                });
+            }, { threshold: 0 });
+            stickyObserver.observe(heroSection);
+
+            if (footerEl) {
+                const footerObserver = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            stickyCta.classList.remove('visible');
+                        }
+                    });
+                }, { threshold: 0.1 });
+                footerObserver.observe(footerEl);
+            }
+        }
+    });
+  </script>
+</BaseLayout>

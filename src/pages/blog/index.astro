@@ -1,15 +1,483 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
-<BaseLayout 
-  title="Blog - Costa Glass"
-  description="Artículos sobre cortinas de cristal, pérgolas bioclimáticas, y soluciones para terrazas en la Costa del Sol."
-  canonical="https://costaglass.es/blog/"
-  activeNav="blog"
->
-  <div class="container">
-    <h1>Blog Costa Glass</h1>
-    <p>Información, consejos y guías sobre soluciones para tu terraza.</p>
-  </div>
-</BaseLayout>
+<!DOCTYPE html>
+<html lang="es-ES">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog sobre Cerramientos y Pérgolas en la Costa del Sol | CostaGlass</title>
+    <meta name="description" content="Descubre artículos y guías de expertos sobre cortinas de cristal, pérgolas bioclimáticas, cerramientos de terraza y soluciones de acristalamiento en la Costa del Sol.">
+    <link rel="icon" href="/Assets/logo/favicon.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/styles.css">
+
+    <!-- Google Consent Mode V2 -->
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('consent', 'default', {
+        'analytics_storage': 'denied',
+        'ad_storage': 'denied',
+        'ad_user_data': 'denied',
+        'ad_personalization': 'denied',
+        'wait_for_update': 1000
+      });
+    </script>
+    <!-- Google Analytics 4 -->
+    <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-3GZ6B4G65Y"></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-3GZ6B4G65Y');
+      gtag('config', 'GT-TBB98WMX');
+    </script>
+</head>
+<body>
+
+    <!-- ========== NAVIGATION ========== -->
+    <nav class="navbar scrolled" id="navbar">
+        <div class="nav-container">
+                <a href="/" class="nav-logo">
+                <img src="/Assets/logo/download.webp" alt="Costa Glass Logo">
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Inicio</a></li>
+                <li class="nav-dropdown">
+                    <a href="#products" class="dropdown-trigger">Productos <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="bioclimatic.html">Bioclimatic</a></li>
+                        <li><a href="glass-curtain-walls.html">Cortinas de Cristal</a></li>
+                        <li><a href="guillotine-glass.html">Guillotina Cristal</a></li>
+                        <li><a href="zip-screen.html">Toldo Zip</a></li>
+                        <li><a href="retractable-pvc-roof.html">Sistemas de Techo Retráctil</a></li>
+                        <li><a href="paravientos-de-cristal.html">Paravientos de Cristal</a></li>
+                    </ul>
+                </li>
+                <li><a href="company.html">Empresa</a></li>
+                <li><a href="blog.html" class="active">Blog</a></li>
+                <li><a href="contact.html">Contacto</a></li>
+            </ul>
+            <a href="tel:+34951074067" class="nav-phone">+34 951 074 067</a>
+            <a href="contact.html" class="nav-cta">Consulta Gratuita</a>
+            <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- ========== MOBILE MENU ========== -->
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-content">
+            <a href="index.html">Inicio</a>
+            <div class="mobile-dropdown">
+                <button class="mobile-dropdown-trigger">Productos <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+                <div class="mobile-dropdown-menu">
+                    <a href="bioclimatic.html">Bioclimatic</a>
+                    <a href="glass-curtain-walls.html">Cortinas de Cristal</a>
+                    <a href="guillotine-glass.html">Guillotina Cristal</a>
+                    <a href="zip-screen.html">Toldo Zip</a>
+                    <a href="retractable-pvc-roof.html">Sistemas de Techo Retráctil</a>
+                    <a href="paravientos-de-cristal.html">Paravientos de Cristal</a>
+                </div>
+            </div>
+            <a href="company.html">Empresa</a>
+            <a href="blog.html" class="active">Blog</a>
+            <a href="contact.html">Contacto</a>
+            <a href="contact.html" class="mobile-cta">Consulta Gratuita</a>
+        </div>
+    </div>
+
+    <!-- ========== BLOG HERO ========== -->
+    <section class="blog-hero">
+        <div class="blog-hero-bg"></div>
+        <div class="container">
+            <div class="blog-hero-content fade-up">
+                <span class="section-tag">Nuestro Blog</span>
+                <h1 class="section-title">Insights & Inspiration</h1>
+                <p class="blog-hero-subtitle">Consejos de expertos sobre cerramientos de cristal, soluciones para terrazas y acristalamiento arquitectónico — del equipo de Costa Glass.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== CATEGORY FILTERS ========== -->
+    <section class="blog-categories">
+        <div class="container">
+            <div class="categories-track fade-up">
+                <button class="category-pill active" data-category="all">Todos los Artículos</button>
+                <button class="category-pill" data-category="glass-enclosures">Cerramientos de Cristal</button>
+                <button class="category-pill" data-category="glass-curtains">Cortinas de Cristal</button>
+                <button class="category-pill" data-category="awnings-pergolas">Toldos y Pérgolas</button>
+                <button class="category-pill" data-category="windows">Ventanas</button>
+                <button class="category-pill" data-category="guides-tips">Guías y Consejos</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== LATEST ARTICLE (Featured Hero Card) ========== -->
+    <section class="blog-featured section-padding">
+        <div class="container">
+            <div class="featured-label fade-up">
+                <span class="section-tag">Último Artículo</span>
+            </div>
+            <article class="featured-card fade-up">
+                <div class="featured-card-image">
+                    <img src="/Assets/products/bioclimatic/1-5-q3txhpt7z29hvigt931b7uqhs9rukjuin78tzdxlsw.webp" alt="Pérgola bioclimática con lamas orientables en terraza de villa en la Costa del Sol">
+                    <div class="featured-card-overlay"></div>
+                </div>
+                <div class="featured-card-body">
+                    <div class="featured-card-meta">
+                        <span class="meta-category">
+                        <span class="meta-date">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                            10 febrero, 2026
+                        </span>
+                    </div>
+                    <h2 class="featured-card-title">Pérgola Bioclimática vs Toldo Tradicional: ¿Qué resiste mejor en la Costa del Sol?</h2>
+                    <p class="featured-card-excerpt">El sol intenso, la radiación UV y el viento de Levante destruyen los toldos de lona en pocos años. Comparamos durabilidad, resistencia al viento, uso con lluvia y coste total a 10 años para ayudarte a elegir con datos reales.</p>
+                    <a href="pergola-bioclimatica-vs-toldo-tradicional-costa-del-sol.html" class="btn-read-more">
+                        Leer Más
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                    </a>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- ========== MOST VIEWED POSTS ========== -->
+    <section class="blog-most-viewed">
+        <div class="container">
+            <div class="section-header fade-up">
+                <span class="section-tag">Artículos Más Vistos</span>
+                <h2 class="section-title">Trending on Nuestro Blog</h2>
+            </div>
+            <div class="most-viewed-grid">
+                <!-- Most Viewed 1 -->
+                <article class="most-viewed-card fade-up">
+                    <div class="most-viewed-rank">01</div>
+                    <div class="most-viewed-image">
+                        <img src="/Assets/products/glass curtain walls/p2h-768x636.webp" alt="Terraza cerrada con cortinas de cristal en vivienda de Málaga con vistas al Mediterráneo">
+                    </div>
+                    <div class="most-viewed-body">
+                        <span class="meta-category">
+                        <h3>¿Cuánto cuesta cerrar una terraza con cortinas de cristal en Málaga?</h3>
+                        <a href="cerramientos-de-terrazas-cristal-precio-m2/" class="btn-read-more-sm">
+                            Leer Más
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                        </a>
+                    </div>
+                </article>
+                <!-- Most Viewed 2 -->
+                <article class="most-viewed-card fade-up" style="--delay: 0.1s">
+                    <div class="most-viewed-rank">02</div>
+                    <div class="most-viewed-image">
+                        <img src="/Assets/products/glass curtain walls/c1.jpg" alt="Cortinas de cristal sin perfilería en terraza de apartamento en comunidad de propietarios Estepona">
+                    </div>
+                    <div class="most-viewed-body">
+                        <span class="meta-category">Normativa y Trámites</span>
+                        <h3>¿Necesito permiso de la comunidad para cerrar mi terraza en Andalucía?</h3>
+                        <a href="permiso-comunidad-cerrar-terraza-andalucia.html" class="btn-read-more-sm">
+                            Leer Más
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                        </a>
+                    </div>
+                </article>
+                <!-- Most Viewed 3 -->
+                <article class="most-viewed-card fade-up" style="--delay: 0.2s">
+                    <div class="most-viewed-rank">03</div>
+                    <div class="most-viewed-image">
+                        <img src="/Assets/products/bioclimatic/5-1-q3txhuiex8fxhk9zhn2g2bjsr74on1d6bui9drqmxs.webp" alt="Pérgola bioclimática CostaGlass con lamas en posición semiabierta en terraza de Marbella">
+                    </div>
+                    <div class="most-viewed-body">
+                        <span class="meta-category">
+                        <h3>Pérgola Bioclimática vs Toldo Tradicional en la Costa del Sol</h3>
+                        <a href="pergola-bioclimatica-vs-toldo-tradicional-costa-del-sol.html" class="btn-read-more-sm">
+                            Leer Más
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                        </a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== ALL BLOG ARTICLES ========== -->
+    <section class="blog-all section-padding" id="all-articles">
+        <div class="container">
+            <div class="section-header text-center fade-up">
+                <span class="section-tag">
+                <h2 class="section-title">All Nuestro Blog Articles</h2>
+            </div>
+            <div class="blog-grid">
+
+                <!-- Article 1: Pricing Guide -->
+                <article class="blog-card fade-up">
+                    <div class="blog-card-image">
+                        <img src="/Assets/products/glass curtain walls/p2h-768x636.webp" alt="Terraza cerrada con cortinas de cristal en vivienda de Málaga con vistas al Mediterráneo">
+                    </div>
+                    <div class="blog-card-body">
+                        <div class="blog-card-date">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                            15 enero, 2026
+                        </div>
+                        <h3 class="blog-card-title">¿Cuánto cuesta cerrar una terraza con cortinas de cristal en Málaga? Guía de precios 2026</h3>
+                        <p class="blog-card-excerpt">Rangos de precio reales por m², factores que mueven el presupuesto y por qué comprar directamente a fábrica en Estepona puede ahorrarte entre un 20 y un 40 %.</p>
+                        <a href="cerramientos-de-terrazas-cristal-precio-m2/" class="btn-read-more">
+                            Leer Más
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Article 2: Legal/Community Guide -->
+                <article class="blog-card fade-up" style="--delay: 0.1s">
+                    <div class="blog-card-image">
+                        <img src="/Assets/products/glass curtain walls/c1.jpg" alt="Cortinas de cristal sin perfilería instaladas en terraza de apartamento en comunidad de propietarios de la Costa del Sol">
+                    </div>
+                    <div class="blog-card-body">
+                        <div class="blog-card-date">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                            1 febrero, 2026
+                        </div>
+                        <h3 class="blog-card-title">¿Necesito permiso de la comunidad para cerrar mi terraza en Andalucía? Normativa 2026</h3>
+                        <p class="blog-card-excerpt">Todo sobre la Ley de Propiedad Horizontal, el papel clave de las cortinas sin perfilería y los pasos prácticos para obtener el permiso en tu urbanización de la Costa del Sol.</p>
+                        <a href="permiso-comunidad-cerrar-terraza-andalucia.html" class="btn-read-more">
+                            Leer Más
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Article 3: Product Comparison -->
+                <article class="blog-card fade-up" style="--delay: 0.2s">
+                    <div class="blog-card-image">
+                        <img src="/Assets/products/bioclimatic/1-5-q3txhpt7z29hvigt931b7uqhs9rukjuin78tzdxlsw.webp" alt="Pérgola bioclimática con lamas orientables en terraza de villa en la Costa del Sol">
+                    </div>
+                    <div class="blog-card-body">
+                        <div class="blog-card-date">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                            10 febrero, 2026
+                        </div>
+                        <h3 class="blog-card-title">Pérgola Bioclimática vs Toldo Tradicional: ¿Qué resiste mejor en la Costa del Sol?</h3>
+                        <p class="blog-card-excerpt">Comparativa completa con tabla: durabilidad, resistencia al viento de Levante, uso con lluvia y coste real a 10 años. Datos objetivos para que elijas sin arrepentirte.</p>
+                        <a href="pergola-bioclimatica-vs-toldo-tradicional-costa-del-sol.html" class="btn-read-more">
+                            Leer Más
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Article 4: Close Terrace Without Construction -->
+                <article class="blog-card fade-up" style="--delay: 0.1s">
+                    <div class="blog-card-image">
+                        <img src="/Assets/products/glass curtain walls/c2.jpg" alt="Terraza cerrada con cortinas de cristal sin obra ni albañilería en urbanización de la Costa del Sol">
+                    </div>
+                    <div class="blog-card-body">
+                        <div class="blog-card-date">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                            17 febrero, 2026
+                        </div>
+                        <h3 class="blog-card-title">Cómo Cerrar una Terraza sin Obra: Soluciones sin Permisos de Construcción (2026)</h3>
+                        <p class="blog-card-excerpt">Cortinas de cristal, guillotina, toldo zip y paravientos: cuatro sistemas que no requieren albañilería, se instalan en 1–2 días y son reversibles. Ideal para comunidades de vecinos.</p>
+                        <a href="como-cerrar-una-terraza-sin-obra/" class="btn-read-more">
+                            Leer Más
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Article 6: Recambios para cortinas de cristal -->
+                <article class="blog-card fade-up" style="--delay: 0.2s">
+                    <div class="blog-card-image">
+                        <img src="/Assets/products/glass curtain walls/download.webp" alt="Recambios y piezas de repuesto para cortinas de cristal frameless en terraza">
+                    </div>
+                    <div class="blog-card-body">
+                        <div class="blog-card-date">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                            24 febrero, 2026
+                        </div>
+                        <h3 class="blog-card-title">Recambios para Cortinas de Cristal: Piezas, Guías y Mantenimiento (2026)</h3>
+                        <p class="blog-card-excerpt">Guías, pivotes, gomas de sellado, tiradores y rieles: todo lo que necesitas saber sobre recambios para cortinas de cristal frameless y cómo alargar la vida útil de tu instalación.</p>
+                        <a href="recambios-para-cortinas-de-cristal/" class="btn-read-more">
+                            Leer Más
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Article 7: Precios cerramientos de aluminio -->
+                <article class="blog-card fade-up" style="--delay: 0.1s">
+                    <div class="blog-card-image">
+                        <img src="/Assets/products/glass curtain walls/p2h-768x636.webp" alt="Cerramiento de aluminio con cristal en terraza de vivienda en la Costa del Sol">
+                    </div>
+                    <div class="blog-card-body">
+                        <div class="blog-card-date">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                            24 febrero, 2026
+                        </div>
+                        <h3 class="blog-card-title">Precios de Cerramientos de Aluminio: Guía Completa 2026</h3>
+                        <p class="blog-card-excerpt">¿Cuánto cuesta cerrar una terraza con aluminio? Rangos de precio por m², diferencias entre aluminio y cristal, factores que encarecen el presupuesto y alternativas en la Costa del Sol.</p>
+                        <a href="precios-de-cerramientos-de-aluminio/" class="btn-read-more">
+                            Leer Más
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Article 5: Glass Curtain Disadvantages -->
+                <article class="blog-card fade-up" style="--delay: 0.2s">
+                    <div class="blog-card-image">
+                        <img src="/Assets/products/glass curtain walls/download.webp" alt="Cortinas de cristal frameless en terraza de villa de lujo en la Costa del Sol — instalación CostaGlass">
+                    </div>
+                    <div class="blog-card-body">
+                        <div class="blog-card-date">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                            23 febrero, 2026
+                        </div>
+                        <h3 class="blog-card-title">Inconvenientes de las Cortinas de Cristal: Lo que Nadie te Cuenta (2026)</h3>
+                        <p class="blog-card-excerpt">Precio, limpieza, calor en verano, aprobación de comunidades — analizamos cada desventaja con honestidad y te explicamos cómo CostaGlass aborda cada una de ellas.</p>
+                        <a href="cortinas-de-cristal-inconvenientes/" class="btn-read-more">
+                            Leer Más
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Article 8: Cerrar un Porche en Invierno -->
+                <article class="blog-card fade-up" style="--delay: 0.1s">
+                    <div class="blog-card-image">
+                        <img src="/Assets/products/glass curtain walls/p2h-768x636.webp" alt="Porche cerrado con cortinas de cristal en invierno en propiedad de la Costa del Sol">
+                    </div>
+                    <div class="blog-card-body">
+                        <div class="blog-card-date">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                            27 febrero, 2026
+                        </div>
+                        <h3 class="blog-card-title">Ideas para Cerrar un Porche en Invierno</h3>
+                        <p class="blog-card-excerpt">Soluciones prácticas y efectivas para cerrar tu porche durante los meses fríos: cortinas de cristal, toldo zip, paravientos y más opciones adaptadas a tu presupuesto y necesidades.</p>
+                        <a href="ideas-para-cerrar-un-porche-en-invierno/" class="btn-read-more">
+                            Leer Más
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                        </a>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== BLOG CTA ========== -->
+    <section class="cta-section">
+        <div class="cta-bg"></div>
+        <div class="container">
+            <div class="cta-content fade-up">
+                <h2>¿Tienes un Proyecto en Mente?</h2>
+                <p>Ponte en contacto con nuestro equipo para una consulta gratuita y descubre cómo los cerramientos de cristal pueden transformar tu espacio.</p>
+                <a href="contact.html" class="btn btn-white">Solicitar Consulta Gratuita</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <img src="/Assets/logo/download.webp" alt="Costa Glass">
+                    <p>Sistemas innovadores de pérgolas, techos corredizos y toldos zip.</p>
+                    <div class="footer-social">
+                        <a href="https://www.facebook.com/cortinasdecristalcosta" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+                        </a>
+                        <a href="http://www.youtube.com/@cortinasdecristalbioclimaticas" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19.1c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.43z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" fill="#fff"/></svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Productos</h4>
+                    <ul>
+                        <li><a href="bioclimatic.html">Bioclimatic</a></li>
+                        <li><a href="glass-curtain-walls.html">Cortinas de Cristal</a></li>
+                        <li><a href="guillotine-glass.html">Guillotina Cristal</a></li>
+                        <li><a href="zip-screen.html">Toldo Zip</a></li>
+                        <li><a href="retractable-pvc-roof.html">Sistemas de Techo Retráctil</a></li>
+                        <li><a href="paravientos-de-cristal.html">Paravientos de Cristal</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Enlaces Rápidos</h4>
+                    <ul>
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="company.html">Empresa</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contact.html">Contáctenos</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="politica-de-privacidad.html">Política de Privacidad</a></li>
+                        <li><a href="#">Política de Cookies</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Costa Glass. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ========== LANGUAGE SWITCHER WIDGET ========== -->
+    <div class="lang-widget" id="langWidget">
+        <button class="lang-widget-toggle" id="langToggle" aria-label="Change Language">
+            <img src="https://flagcdn.com/w40/es.png" alt="Español" class="lang-flag" id="currentFlag">
+            <span class="lang-code" id="currentLang">ES</span>
+        </button>
+        <div class="lang-widget-menu" id="langMenu">
+            <button class="lang-option" data-lang="en">
+                <img src="https://flagcdn.com/w40/gb.png" alt="English">
+                <span>English</span>
+            </button>
+            <button class="lang-option" data-lang="es">
+                <img src="https://flagcdn.com/w40/es.png" alt="Español">
+                <span>Español</span>
+            </button>
+            <button class="lang-option" data-lang="fr">
+                <img src="https://flagcdn.com/w40/fr.png" alt="Français">
+                <span>Français</span>
+            </button>
+            <button class="lang-option" data-lang="de">
+                <img src="https://flagcdn.com/w40/de.png" alt="Deutsch">
+                <span>Deutsch</span>
+            </button>
+            <button class="lang-option" data-lang="ru">
+                <img src="https://flagcdn.com/w40/ru.png" alt="Русский">
+                <span>Русский</span>
+            </button>
+            <button class="lang-option" data-lang="ar">
+                <img src="https://flagcdn.com/w40/sa.png" alt="العربية">
+                <span>العربية</span>
+            </button>
+        </div>
+    </div>
+
+    <div id="google_translate_element" style="display:none;"></div>
+
+    <script is:inline type="module" src="/js/main.js"></script>
+    <script is:inline>
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'es',
+                includedLanguages: 'es,en,fr,de,ru,ar',
+                autoDisplay: false
+            }, 'google_translate_element');
+        }
+    </script>
+    <script is:inline src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <script is:inline type="module" src="/js/consent.js"></script>
+</body>
+</html>

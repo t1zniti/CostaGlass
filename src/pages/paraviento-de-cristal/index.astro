@@ -1,0 +1,751 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const pageSchema = JSON.stringify([{
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "Paravientos de Cristal Extensibles",
+      "description": "Mamparas cortavientos de cristal templado o laminado con sistema telescópico regulable en altura. Instalación sin obra mayor, base autoportante o anclada al suelo. Ideales para terrazas de restaurantes, zonas de piscina y patios privados en la Costa del Sol.",
+      "brand": { "@type": "Brand", "name": "Costa Glass" },
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "EUR",
+        "availability": "https://schema.org/InStock",
+        "url": "https://costaglass.es/paraviento-de-cristal/"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.8",
+        "reviewCount": "96"
+      }
+    },{
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "¿Los paravientos de cristal resisten rachas de viento fuertes o temporales?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sí. Los perfiles estructurales de aluminio y el vidrio de seguridad están específicamente diseñados para soportar grandes cargas de viento en primera línea de playa. Todos los sistemas de Costa Glass se dimensionan según la zona climática de la Costa del Sol, teniendo en cuenta el viento de Levante y las rachas costeras. El cristal templado o laminado cumple la normativa europea EN 12150 y EN 14449."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Necesito licencia de obras para instalar paravientos de cristal?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "En general, no. Al ser elementos modulares que no incorporan techo ni modifican la estructura del edificio, la mayoría de los ayuntamientos los clasifican como elementos desmontables o mobiliario exterior. Esto los convierte en la solución perfecta para hostelería en municipios con normativa municipal estricta, como Marbella o Estepona, donde otras obras requieren licencias complejas."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Se pueden personalizar los paravientos de cristal?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sí, completamente. El color del perfil de aluminio se puede seleccionar de la carta RAL para integrarse con cualquier proyecto arquitectónico. El tipo de vidrio también es configurable: transparente para máximas vistas, translúcido o satinado para más privacidad, o con vinilo personalizado con el logotipo del negocio. También es posible integrar jardineras en la base para un acabado más natural."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Qué significa que el sistema sea extensible o telescópico?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "El panel superior de cristal puede deslizarse hacia arriba o hacia abajo dentro del perfil de aluminio, permitiendo regular la altura de protección en función del viento y las condiciones del momento. En días calmados se puede bajar para maximizar la apertura y la ventilación; cuando arrecia el viento, el panel sube en segundos y ofrece una barrera sólida sin necesidad de herramientas."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cuánto tarda la instalación de paravientos de cristal?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "La mayoría de proyectos residenciales y de hostelería de tamaño estándar se instalan en 1 día sin obra civil significativa. Los sistemas con base autoportante o jardinera no requieren ni siquiera taladrar el suelo. Nuestro equipo realiza la toma de medidas, fabricación a medida y montaje optimizando los tiempos para no interrumpir el negocio ni la vida cotidiana."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Qué mantenimiento necesitan los paravientos de cristal?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Mínimo. Los perfiles de aluminio anodizado son resistentes a la corrosión salina, especialmente importantes en entornos costeros. El mantenimiento se limita a la limpieza periódica del vidrio con agua y jabón neutro y una revisión anual de los anclajes y el sistema telescópico. Costa Glass ofrece servicio postventa con garantía de 5 años en todos sus sistemas."
+          }
+        }
+      ]
+    }]);
+---
+
+<BaseLayout
+  title="Paravientos de Cristal para Terrazas y Hostelería | Costa Glass"
+  description="Paravientos de cristal extensibles y regulables en altura para terrazas, restaurantes y zonas de piscina en la Costa del Sol. Cerramientos cortavientos sin obra, con vidrio templado de seguridad. Presupuesto gratuito en 24h."
+  canonical="https://costaglass.es/paraviento-de-cristal/"
+  pageSchema={pageSchema}
+>
+  <style is:global>
+/* ========== PARAVIENTOS PAGE SPECIFIC STYLES ========== */
+
+    /* --- Benefits Grid --- */
+    .benefits-grid-section { padding: 100px 0; background: var(--gray-50); }
+    .benefits-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 28px;
+        margin-top: 48px;
+    }
+    .benefit-card {
+        background: var(--white);
+        padding: 40px 32px;
+        border-radius: var(--radius-lg);
+        border: 1px solid var(--gray-100);
+        transition: all var(--transition-base);
+        text-align: center;
+    }
+    .benefit-card:hover {
+        border-color: var(--blue-200);
+        transform: translateY(-6px);
+        box-shadow: var(--shadow-lg);
+    }
+    .benefit-icon {
+        width: 64px;
+        height: 64px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: var(--gradient-light);
+        border-radius: var(--radius-md);
+        margin: 0 auto 22px;
+        color: var(--blue-500);
+    }
+    .benefit-card h3 {
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: var(--gray-800);
+        margin-bottom: 12px;
+    }
+    .benefit-card p {
+        font-size: 0.9rem;
+        color: var(--gray-500);
+        line-height: 1.7;
+    }
+
+    /* --- Use Cases Z-Pattern --- */
+    .use-cases-section { padding: 100px 0; background: var(--white); }
+    .use-case-block {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 72px;
+        align-items: center;
+        margin-bottom: 80px;
+    }
+    .use-case-block:last-child { margin-bottom: 0; }
+    .use-case-block.reverse { direction: rtl; }
+    .use-case-block.reverse > * { direction: ltr; }
+    .use-case-text h2 {
+        font-family: var(--font-serif);
+        font-size: clamp(1.6rem, 3vw, 2.1rem);
+        color: var(--gray-900);
+        margin-bottom: 18px;
+        line-height: 1.25;
+    }
+    .use-case-text p {
+        color: var(--gray-600);
+        line-height: 1.8;
+        margin-bottom: 14px;
+    }
+    .use-case-text ul {
+        list-style: none;
+        padding: 0;
+        margin: 20px 0 28px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    .use-case-text ul li {
+        position: relative;
+        padding-left: 28px;
+        font-size: 0.92rem;
+        color: var(--gray-700);
+        line-height: 1.6;
+    }
+    .use-case-text ul li::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 2px;
+        width: 18px;
+        height: 18px;
+        background: var(--gradient-primary);
+        border-radius: 50%;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+    .use-case-image {
+        border-radius: var(--radius-lg);
+        overflow: hidden;
+        aspect-ratio: 4/3;
+    }
+    .use-case-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: var(--radius-lg);
+        display: block;
+    }
+
+    /* --- Social Proof --- */
+    .social-proof { padding: 100px 0; background: var(--gray-50); }
+    .reviews-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+        margin-top: 48px;
+    }
+    .review-card {
+        background: var(--white);
+        padding: 32px 28px;
+        border-radius: var(--radius-lg);
+        border: 1px solid var(--gray-100);
+        display: flex;
+        flex-direction: column;
+    }
+    .review-stars {
+        display: flex;
+        gap: 2px;
+        margin-bottom: 16px;
+        color: #f59e0b;
+    }
+    .review-card blockquote {
+        font-size: 0.92rem;
+        color: var(--gray-600);
+        line-height: 1.7;
+        margin-bottom: 20px;
+        font-style: italic;
+        flex: 1;
+    }
+    .review-author {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-top: auto;
+        padding-top: 16px;
+        border-top: 1px solid var(--gray-100);
+    }
+    .review-avatar {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: var(--gradient-light);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 600;
+        font-size: 0.85rem;
+        color: var(--blue-600);
+        flex-shrink: 0;
+    }
+    .review-author-info { min-width: 0; overflow-wrap: break-word; }
+    .review-author-info span { display: block; }
+    .review-author-name { font-size: 0.88rem; font-weight: 600; color: var(--gray-800); }
+    .review-author-loc { font-size: 0.78rem; color: var(--gray-400); }
+    .partners-bar {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 48px;
+        flex-wrap: wrap;
+        margin-top: 56px;
+        padding-top: 48px;
+        border-top: 1px solid var(--gray-100);
+    }
+    .partner-badge {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 0.85rem;
+        font-weight: 500;
+        color: var(--gray-400);
+    }
+    .partner-badge svg { color: var(--gray-300); }
+
+    /* --- FAQ Accordion --- */
+    .faq-section { padding: 100px 0; background: var(--white); }
+    .faq-list {
+        max-width: 800px;
+        margin: 48px auto 0;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+    .faq-item {
+        background: var(--gray-50);
+        border-radius: var(--radius-md);
+        border: 1px solid var(--gray-100);
+        overflow: hidden;
+        transition: border-color var(--transition-fast);
+    }
+    .faq-item.open { border-color: var(--blue-200); }
+    .faq-question {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 24px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        font-family: var(--font-sans);
+        font-size: 0.95rem;
+        font-weight: 600;
+        color: var(--gray-800);
+        text-align: left;
+        gap: 16px;
+    }
+    .faq-question svg {
+        flex-shrink: 0;
+        transition: transform var(--transition-base);
+        color: var(--blue-500);
+    }
+    .faq-item.open .faq-question svg { transform: rotate(180deg); }
+    .faq-answer {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease, padding 0.3s ease;
+    }
+    .faq-item.open .faq-answer { max-height: 600px; }
+    .faq-answer-inner {
+        padding: 0 24px 24px;
+        font-size: 0.9rem;
+        color: var(--gray-600);
+        line-height: 1.8;
+    }
+
+    /* --- Sticky CTA --- */
+    .sticky-cta-bar {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 990;
+        background: var(--white);
+        box-shadow: 0 -4px 20px rgba(0,0,0,0.08);
+        padding: 12px 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 12px;
+        transform: translateY(100%);
+        transition: transform var(--transition-base);
+    }
+    .sticky-cta-bar.visible { transform: translateY(0); }
+    .sticky-cta-bar .btn { padding: 12px 28px; font-size: 0.9rem; }
+    .sticky-cta-text { font-size: 0.82rem; color: var(--gray-500); display: none; }
+
+    /* --- Responsive --- */
+    @media (max-width: 1024px) {
+        .benefits-grid { grid-template-columns: repeat(3, 1fr); }
+        .reviews-grid { grid-template-columns: repeat(2, 1fr); }
+        .product-content-grid { grid-template-columns: 1fr; }
+        .use-case-block { grid-template-columns: 1fr; gap: 40px; }
+        .use-case-block.reverse { direction: ltr; }
+    }
+    .product-inline-img { display: none; }
+
+    @media (max-width: 768px) {
+        .benefits-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+        .benefit-card { padding: 20px 14px; }
+        .benefit-icon { width: 44px; height: 44px; margin-bottom: 10px; }
+        .benefit-card h3 { font-size: 0.88rem; margin-bottom: 6px; }
+        .benefit-card p { display: none; }
+        .reviews-grid { display: flex; overflow-x: auto; -webkit-overflow-scrolling: touch; scroll-snap-type: x mandatory; gap: 16px; padding-bottom: 16px; scrollbar-width: none; }
+        .reviews-grid::-webkit-scrollbar { display: none; }
+        .reviews-grid .review-card { flex: 0 0 82%; scroll-snap-align: start; display: flex; flex-direction: column; min-height: 360px; }
+        .reviews-grid .review-card blockquote { flex: 1; margin-bottom: 20px; }
+        .reviews-grid .review-card .review-author { flex-shrink: 0; margin-top: 10px; padding-top: 12px; border-top: 1px solid var(--gray-200); }
+        .product-content-grid { grid-template-columns: 1fr; }
+        .product-gallery { display: none; }
+        .product-inline-img { display: block; width: 100%; height: 200px; object-fit: cover; border-radius: 12px; margin: 14px 0; }
+        .use-case-block { grid-template-columns: 1fr; gap: 32px; }
+        .use-case-block.reverse { direction: ltr; }
+        .use-case-image { order: -1; }
+        .sticky-cta-bar { display: none; }
+        .sticky-cta-text { display: block; }
+        .partners-bar { gap: 24px; }
+    }
+  </style>
+
+<!-- Page Hero -->
+    <section class="page-hero">
+        <div class="page-hero-bg">
+            <img src="/Assets/products/paraviento de criustal/a1.jpg" alt="Paravientos de cristal en terraza con vistas panorámicas al mar" loading="eager">
+            <div class="page-hero-overlay"></div>
+        </div>
+        <div class="page-hero-content fade-up">
+            <h1>Paravientos de Cristal para Terrazas y Hostelería</h1>
+            <p class="hero-subtitle">Mamparas cortavientos extensibles y regulables en altura. Protección invisible frente al viento, arena y ruido — sin perder las vistas.</p>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         PRODUCT INFO — Text + Gallery
+         ============================================================ -->
+    <section class="product-content">
+        <div class="container">
+            <div class="product-content-grid">
+                <div class="product-text fade-left">
+                    <span class="section-tag">Cerramientos Cortavientos</span>
+                    <h2>Separadores de Terraza que Desaparecen en el Paisaje</h2>
+                    <p>Los paravientos de cristal de Costa Glass son la solución definitiva para proteger tu terraza, zona de piscina o restaurante del viento, la arena y el ruido — sin sacrificar ni un centímetro de vista. Fabricados con vidrio templado o laminado de seguridad arquitectónico y perfiles de aluminio mecanizados con precisión, ofrecen una barrera robusta que es prácticamente invisible.</p>
+                    <img class="product-inline-img" src="/Assets/products/paraviento de criustal/paravientos-terraza-cristal.jpg" alt="Paravientos de cristal instalados en terraza residencial" loading="lazy">
+                    <p>Nuestro sistema telescópico permite regular la altura del panel superior en segundos, adaptando la protección a las condiciones del momento: cuando el tiempo acompaña, bajas el panel y disfrutas de máxima apertura; cuando el viento arrecia, subes el cristal y tienes una barrera sólida sin herramientas ni obra.</p>
+                    <img class="product-inline-img" src="/Assets/products/paraviento de criustal/paravientos-restaurante-cortavientos.webp" alt="Mamparas cortavientos de cristal en terraza de restaurante" loading="lazy">
+                    <p>Cada sistema se fabrica completamente a medida, con opciones de herraje en toda la carta RAL y vidrio en múltiples acabados: transparente, satinado, con tinte solar o personalizado con el logotipo de tu negocio en vinilo. Instalación en un día, sin escombros y sin interrumpir tu actividad.</p>
+                </div>
+                <div class="product-gallery fade-right">
+                    <img src="/Assets/products/paraviento de criustal/paravientos-terraza-cristal.jpg" alt="Paravientos de cristal instalados en terraza residencial" loading="lazy">
+                    <img src="/Assets/products/paraviento de criustal/paravientos-restaurante-cortavientos.webp" alt="Mamparas cortavientos de cristal en terraza de restaurante" loading="lazy">
+                    <img src="/Assets/products/paraviento de criustal/paraviento_flk_slide-945x420-1.webp" alt="Detalle del perfil de aluminio y sistema telescópico del paraviento de cristal" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         TECHNICAL FEATURES — 3-Column Grid
+         ============================================================ -->
+    <section class="benefits-grid-section" id="caracteristicas">
+        <div class="container">
+            <div class="text-center fade-up">
+                <span class="section-tag">Características Técnicas</span>
+                <h2 class="section-title">¿Por Qué Elegir Paravientos de Cristal?</h2>
+                <p class="section-subtitle">Sistema modular con tecnología telescópica que combina protección máxima, diseño invisible y montaje sin obra en un solo producto.</p>
+            </div>
+            <div class="benefits-grid fade-up">
+                <!-- Extensible -->
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg>
+                    </div>
+                    <h3>Sistema Extensible Regulable</h3>
+                    <p>El panel superior de cristal se desliza verticalmente en segundos para adaptar la altura de protección al viento del momento — sin herramientas ni obra.</p>
+                </div>
+                <!-- Invisible -->
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                    </div>
+                    <h3>Protección Invisible</h3>
+                    <p>Bloquea el viento, la arena y el ruido urbano manteniendo el 100% de las vistas panorámicas. Cristal edge-to-edge con perfiles de aluminio minimalistas.</p>
+                </div>
+                <!-- Modular -->
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="3" width="9" height="9" rx="1"/><rect x="13" y="3" width="9" height="9" rx="1"/><rect x="2" y="13" width="9" height="9" rx="1"/><rect x="13" y="13" width="9" height="9" rx="1"/></svg>
+                    </div>
+                    <h3>Modularidad y Seguridad</h3>
+                    <p>Instalación rápida sin obra mayor. Base autoportante con contrapesos o anclaje directo al suelo. Vidrio templado homologado para vientos costeros de alta intensidad.</p>
+                </div>
+                <!-- Personalización Total -->
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+                    </div>
+                    <h3>Personalización Total</h3>
+                    <p>Herraje disponible en toda la carta RAL, vidrio transparente, satinado o con tinte solar. Posibilidad de incorporar el logotipo de tu negocio en vinilo.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         USE CASES — Z-Pattern Layout
+         ============================================================ -->
+    <section class="use-cases-section" id="aplicaciones">
+        <div class="container">
+            <div class="text-center fade-up" style="margin-bottom: 64px;">
+                <span class="section-tag">Casos de Uso</span>
+                <h2 class="section-title">Una Solución para Cada Espacio</h2>
+                <p class="section-subtitle">De la terraza de tu hogar al comedor exterior de tu restaurante, el paraviento de cristal se adapta a cualquier proyecto sin obra ni permisos.</p>
+            </div>
+
+            <!-- Block 1: Para Hostelería — image left, text right -->
+            <div class="use-case-block">
+                <div class="use-case-image fade-left">
+                    <img src="/Assets/products/paraviento de criustal/paravientos-restaurante-cortavientos.webp" alt="Paravientos de cristal en terraza de restaurante en la Costa del Sol" loading="lazy">
+                </div>
+                <div class="use-case-text fade-right">
+                    <span class="section-tag">Para Hostelería</span>
+                    <h2>Tu Terraza Rentable los 365 Días del Año</h2>
+                    <p>En la Costa del Sol, el viento de Levante puede vaciar una terraza rentable en minutos. Con los paravientos de cristal de Costa Glass, creas espacios íntimos y confortables que alargan la temporada de terraza hasta el invierno — sin reformas ni licencias de obra complejas.</p>
+                    <ul>
+                        <li>Separadores de terraza para restaurantes que delimitan zonas sin perder la luminosidad ni las vistas.</li>
+                        <li>Personalización del vidrio inferior con el logotipo o branding del negocio en vinilo o satinado.</li>
+                        <li>Integración de jardineras en la base para un acabado más natural y atractivo.</li>
+                        <li>Compatible con la normativa hostelera de la mayoría de municipios al ser elemento desmontable.</li>
+                    </ul>
+                    <a href="/contact" class="btn btn-primary">Proteger Mi Terraza</a>
+                </div>
+            </div>
+
+            <!-- Block 2: Para Hogares — text left, image right (Z-pattern) -->
+            <div class="use-case-block reverse">
+                <div class="use-case-text fade-left">
+                    <span class="section-tag">Para Hogares</span>
+                    <h2>Un Microclima Seguro en Tu Jardín o Piscina</h2>
+                    <p>Protege la zona de piscina, el ático, el porche o el patio privado del viento sin cerrar el espacio. Los paravientos de cristal crean un microclima cálido y protegido que hace habitable el exterior incluso en los días más ventosos, ideal para familias con niños y mascotas.</p>
+                    <ul>
+                        <li>Protección de zonas de piscina y jardín frente al viento de Levante y el polvo de arena.</li>
+                        <li>Instalación sin obra en áticos, penthouses y terrazas comunitarias sin dañar la estructura.</li>
+                        <li>Reducción de ruido de hasta 25 dB en entornos urbanos o junto a vías de tráfico.</li>
+                        <li>Sistema telescópico que se adapta en segundos: máxima protección o apertura total según el día.</li>
+                    </ul>
+                    <a href="/contact" class="btn btn-primary">Ver mi Proyecto</a>
+                </div>
+                <div class="use-case-image fade-right">
+                    <img src="/Assets/products/paraviento de criustal/paravientos_0000_OCT21_FLKe.webp" alt="Paravientos de cristal en zona de piscina de villa privada en la Costa del Sol" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         SOCIAL PROOF — Reviews + Certifications
+         ============================================================ -->
+    <section class="social-proof" id="opiniones">
+        <div class="container">
+            <div class="text-center fade-up">
+                <span class="section-tag">Lo Que Dicen Nuestros Clientes</span>
+                <h2 class="section-title">Incontables Proyectos Completados en la Costa del Sol</h2>
+            </div>
+            <div class="reviews-grid fade-up">
+                <div class="review-card">
+                    <div class="review-stars">
+                        <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+                        <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+                        <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+                        <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+                        <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+                    </div>
+                    <blockquote>&ldquo;Nuestro restaurante en Estepona perdía mesas por el viento cada otoño. Los paravientos de cristal nos permiten tener la terraza completa operativa hasta diciembre. El cristal satinado con nuestro logo quedó espectacular.&rdquo;</blockquote>
+                    <div class="review-author">
+                        <div class="review-avatar">PG</div>
+                        <div class="review-author-info">
+                            <span class="review-author-name">Pablo G.</span>
+                            <span class="review-author-loc">Estepona, Málaga</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="review-card">
+                    <div class="review-stars">
+                        <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+                        <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+                        <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+                        <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+                        <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+                    </div>
+                    <blockquote>&ldquo;Instalé los paravientos en la zona de la piscina de mi villa en Sotogrande. El sistema telescópico es una maravilla, en dos segundos tienes la protección que necesitas. Mis hijos pueden jugar fuera sin que el viento sea un problema.&rdquo;</blockquote>
+                    <div class="review-author">
+                        <div class="review-avatar">IR</div>
+                        <div class="review-author-info">
+                            <span class="review-author-name">Isabel R.</span>
+                            <span class="review-author-loc">Sotogrande, Cádiz</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="review-card">
+                    <div class="review-stars">
+                        <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+                        <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+                        <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+                        <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+                        <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+                    </div>
+                    <blockquote>&ldquo;La instalación fue en un día y sin ningún tipo de obra. El acabado es muy elegante, prácticamente no se ven los perfiles. El ayuntamiento tampoco puso problemas porque es un elemento desmontable.&rdquo;</blockquote>
+                    <div class="review-author">
+                        <div class="review-avatar">MF</div>
+                        <div class="review-author-info">
+                            <span class="review-author-name">Marcos F.</span>
+                            <span class="review-author-loc">Marbella, Málaga</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Certifications -->
+            <div class="partners-bar fade-up">
+                <div class="partner-badge">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    Marcado CE
+                </div>
+                <div class="partner-badge">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="2"/><polyline points="9 11 12 14 22 4"/></svg>
+                    ISO 9001
+                </div>
+                <div class="partner-badge">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+                    +500 Instalaciones
+                </div>
+                <div class="partner-badge">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2l1.09 3.41L16.5 4.5l-1 3.41L19 9l-3.41 1.09L16.5 13.5l-3.41-1L12 16l-1.09-3.5L7.5 13.5l1-3.41L5 9l3.41-1.09L7.5 4.5l3.41 1z"/></svg>
+                    Fabricante Directo
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         FAQ — SEO-Rich Accordion
+         ============================================================ -->
+    <section class="faq-section" id="preguntas-frecuentes">
+        <div class="container">
+            <div class="text-center fade-up">
+                <span class="section-tag">Preguntas Frecuentes</span>
+                <h2 class="section-title">Todo lo que Necesitas Saber sobre Paravientos de Cristal</h2>
+            </div>
+            <div class="faq-list fade-up">
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        ¿Los paravientos de cristal resisten rachas de viento fuertes o temporales?
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="faq-answer" role="region">
+                        <div class="faq-answer-inner">
+                            <p>Sí. Los <strong>perfiles estructurales de aluminio</strong> y el vidrio de seguridad están específicamente diseñados para soportar grandes cargas de viento en primera línea de playa. Todos los sistemas de Costa Glass se dimensionan según la zona climática de la Costa del Sol, teniendo en cuenta el <strong>viento de Levante</strong> y las rachas costeras. El cristal templado o laminado cumple la normativa europea <strong>EN 12150 y EN 14449</strong>.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        ¿Necesito licencia de obras para instalar paravientos de cristal?
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="faq-answer" role="region">
+                        <div class="faq-answer-inner">
+                            <p>En general, no. Al ser elementos modulares que <strong>no incorporan techo ni modifican la estructura del edificio</strong>, la mayoría de los ayuntamientos los clasifican como elementos desmontables o mobiliario exterior. Esto los convierte en la solución perfecta para hostelería en municipios con normativa estricta, como Marbella o Estepona, donde otras obras requieren licencias más complejas y costosas.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        ¿Se pueden personalizar los paravientos de cristal?
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="faq-answer" role="region">
+                        <div class="faq-answer-inner">
+                            <p>Sí, completamente. El <strong>color del perfil de aluminio</strong> se puede seleccionar de la carta RAL para integrarse con cualquier proyecto. El tipo de vidrio también es configurable: transparente para máximas vistas, <strong>translúcido o satinado</strong> para más privacidad, o con vinilo personalizado con el logotipo del negocio. También es posible integrar <strong>jardineras</strong> en la base para un acabado más natural.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        ¿Qué significa que el sistema sea extensible o telescópico?
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="faq-answer" role="region">
+                        <div class="faq-answer-inner">
+                            <p>El <strong>panel superior de cristal puede deslizarse hacia arriba o hacia abajo</strong> dentro del perfil de aluminio, permitiendo regular la altura de protección en función del viento. En días calmados se baja para maximizar la ventilación; cuando arrecia el viento, el panel sube en segundos y ofrece una <strong>barrera sólida sin necesidad de herramientas</strong> ni instalaciones adicionales.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        ¿Cuánto tarda la instalación de paravientos de cristal?
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="faq-answer" role="region">
+                        <div class="faq-answer-inner">
+                            <p>La mayoría de proyectos se instalan en <strong>un solo día sin obra civil</strong>. Los sistemas con base autoportante o jardinera no requieren ni siquiera taladrar el suelo. Nuestro equipo realiza la toma de medidas, fabricación a medida y montaje en el mínimo tiempo posible para no interrumpir tu negocio durante el proceso.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        ¿Qué mantenimiento necesitan los paravientos de cristal?
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="faq-answer" role="region">
+                        <div class="faq-answer-inner">
+                            <p>Mínimo. Los perfiles de <strong>aluminio anodizado</strong> son resistentes a la corrosión salina, especialmente diseñados para entornos costeros. El mantenimiento se limita a la limpieza periódica del vidrio con agua y jabón neutro y una <strong>revisión anual</strong> de los anclajes y el sistema telescópico. Costa Glass ofrece servicio postventa con <strong>garantía de 5 años</strong> en todos sus sistemas.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         FINAL CTA
+         ============================================================ -->
+    <section class="cta-section">
+        <div class="cta-bg"></div>
+        <div class="container">
+            <div class="cta-content fade-up">
+                <h2>Protege Tu Espacio del Viento — Sin Perder las Vistas</h2>
+                <p>Obtén un presupuesto gratuito y sin compromiso para tu proyecto de paravientos de cristal. Fabricamos, instalamos y garantizamos. Respuesta en menos de 24 horas.</p>
+                <a href="/contact" class="btn btn-white">Solicitar Presupuesto Gratuito</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         STICKY CTA BAR
+         ============================================================ -->
+    <div class="sticky-cta-bar" id="stickyCta">
+        <span class="sticky-cta-text">¿Listo para empezar?</span>
+        <a href="/contact" class="btn btn-primary">Presupuesto Gratis</a>
+        <a href="tel:+34951074067" class="btn btn-outline" style="padding: 12px 20px; font-size: 0.9rem;">Llamar Ahora</a>
+    </div>
+
+  <script is:inline slot="scripts">
+document.addEventListener('DOMContentLoaded', () => {
+
+        // ===== FAQ ACCORDION =====
+        document.querySelectorAll('.faq-question').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const item = btn.parentElement;
+                const isOpen = item.classList.contains('open');
+
+                document.querySelectorAll('.faq-item.open').forEach(openItem => {
+                    openItem.classList.remove('open');
+                    openItem.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+                });
+
+                if (!isOpen) {
+                    item.classList.add('open');
+                    btn.setAttribute('aria-expanded', 'true');
+                }
+            });
+        });
+
+        // ===== STICKY CTA BAR =====
+        const stickyCta = document.getElementById('stickyCta');
+        const heroSection = document.querySelector('.page-hero');
+        const footerEl = document.querySelector('.footer');
+
+        if (stickyCta && heroSection) {
+            const stickyObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.target === heroSection) {
+                        if (!entry.isIntersecting) {
+                            stickyCta.classList.add('visible');
+                        } else {
+                            stickyCta.classList.remove('visible');
+                        }
+                    }
+                });
+            }, { threshold: 0 });
+            stickyObserver.observe(heroSection);
+
+            if (footerEl) {
+                const footerObserver = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            stickyCta.classList.remove('visible');
+                        }
+                    });
+                }, { threshold: 0.1 });
+                footerObserver.observe(footerEl);
+            }
+        }
+    });
+  </script>
+</BaseLayout>
