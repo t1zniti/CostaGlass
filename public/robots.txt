@@ -1,0 +1,37 @@
+# Costa Glass SEO Configuration
+# Allow all crawlers to index the site
+
+User-agent: *
+Allow: /
+Disallow: /dist/
+Disallow: /.astro/
+Disallow: /node_modules/
+Disallow: /scripts/
+Disallow: /seo-generator/
+Disallow: /site/
+Disallow: /*.php$
+Disallow: /*?*sort=
+Disallow: /*?*page=2
+
+# Specific crawlers
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+# Sitemap location
+Sitemap: https://costaglass.es/sitemap.xml
+Sitemap: https://costaglass.es/sitemap-blog.xml
+
+# Block bad bots
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /

@@ -1,0 +1,156 @@
+---
+/**
+ * Dynamic city landing page for products
+ * Route: /{product}/{city}/
+ * Example: /cortinas-de-cristal/marbella/
+ *
+ * Each page renders the full product page content with the city name injected.
+ * getStaticPaths runs in its own scope — data must be defined inside it.
+ */
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import CortinasDeCristalContent from '../../components/products/CortinasDeCristalContent.astro';
+import PergolasBioclimaticasContent from '../../components/products/PergolasBioclimaticasContent.astro';
+import GuillotinaDeCristalContent from '../../components/products/GuillotinaDeCristalContent.astro';
+import ToldoZipContent from '../../components/products/ToldoZipContent.astro';
+import RetractablePvcRoofContent from '../../components/products/RetractablePvcRoofContent.astro';
+import ParavientoDeCristalContent from '../../components/products/ParavientoDeCristalContent.astro';
+
+export function getStaticPaths() {
+  const products: Record<string, { name: string; description: string; mainUrl: string; image: string }> = {
+    'cortinas-de-cristal': {
+      name: 'Cortinas de Cristal',
+      description: 'Cortinas de cristal sin perfiles',
+      mainUrl: '/cortinas-de-cristal/',
+      image: '/Assets/products/glass%20curtain%20walls/c2.jpg',
+    },
+    'pergolas-bioclimaticas': {
+      name: 'Pérgolas Bioclimáticas',
+      description: 'Pérgolas bioclimáticas motorizadas',
+      mainUrl: '/pergolas-bioclimaticas/',
+      image: '/Assets/products/bioclimatic/1-5-q3txhpt7z29hvigt931b7uqhs9rukjuin78tzdxlsw.webp',
+    },
+    'guillotina-de-cristal': {
+      name: 'Guillotina de Cristal',
+      description: 'Guillotinas de cristal motorizadas',
+      mainUrl: '/guillotina-de-cristal/',
+      image: '/Assets/products/Guillotine-Style%20Glass%20Windows/dsc_0007.jpg',
+    },
+    'toldo-zip': {
+      name: 'Toldo Zip',
+      description: 'Toldos zip motorizados',
+      mainUrl: '/toldo-zip/',
+      image: '/Assets/products/zip%20screen/1-q3txhpt7z29hvigt931b7uqhs9rukjuin78tzdxlsw.webp',
+    },
+    'retractable-pvc-roof': {
+      name: 'Sistemas de Techo Retráctil',
+      description: 'Pérgolas retráctiles con techo',
+      mainUrl: '/retractable-pvc-roof/',
+      image: '/Assets/products/Retractable%20PVC%20Roof/1-q3txhpt7z29hvigt931b7uqhs9rukjuin78tzdxlsw.webp',
+    },
+    'paraviento-de-cristal': {
+      name: 'Paravientos de Cristal',
+      description: 'Paravientos de cristal extensibles',
+      mainUrl: '/paraviento-de-cristal/',
+      image: '/Assets/products/paraviento%20de%20criustal/1-q3txhpt7z29hvigt931b7uqhs9rukjuin78tzdxlsw.webp',
+    },
+  };
+
+  const cities: Record<string, { name: string; region: string; lat: number; lon: number }> = {
+    'marbella':     { name: 'Marbella',     region: 'Málaga', lat: 36.3092, lon: -5.2744 },
+    'estepona':     { name: 'Estepona',     region: 'Málaga', lat: 36.4307, lon: -5.1652 },
+    'malaga':       { name: 'Málaga',       region: 'Málaga', lat: 36.7213, lon: -4.4215 },
+    'fuengirola':   { name: 'Fuengirola',   region: 'Málaga', lat: 36.5371, lon: -4.6323 },
+    'benalmadena':  { name: 'Benalmádena',  region: 'Málaga', lat: 36.5963, lon: -4.5202 },
+    'torremolinos': { name: 'Torremolinos', region: 'Málaga', lat: 36.6370, lon: -4.4980 },
+  };
+
+  const paths: any[] = [];
+  for (const [productKey, product] of Object.entries(products)) {
+    for (const [cityKey, city] of Object.entries(cities)) {
+      paths.push({
+        params: { product: productKey, city: cityKey },
+        props: { product, city, productKey, cityKey },
+      });
+    }
+  }
+  return paths;
+}
+
+interface Props {
+  product: { name: string; description: string; mainUrl: string; image: string };
+  city: { name: string; region: string; lat: number; lon: number };
+  productKey: string;
+  cityKey: string;
+}
+
+const { product, city, productKey, cityKey } = Astro.props;
+
+const title = `${product.name} en ${city.name} | Costa Glass`;
+const description = `Instalación de ${product.description.toLowerCase()} en ${city.name}, ${city.region}. Fabricantes directos, garantía 10 años, presupuesto gratuito en 24h.`;
+const canonical = `https://costaglass.es/${productKey}/${cityKey}/`;
+
+// Map product key to its content component
+const componentMap: Record<string, any> = {
+  'cortinas-de-cristal': CortinasDeCristalContent,
+  'pergolas-bioclimaticas': PergolasBioclimaticasContent,
+  'guillotina-de-cristal': GuillotinaDeCristalContent,
+  'toldo-zip': ToldoZipContent,
+  'retractable-pvc-roof': RetractablePvcRoofContent,
+  'paraviento-de-cristal': ParavientoDeCristalContent,
+};
+const ProductContent = componentMap[productKey];
+
+const pageSchema = JSON.stringify([
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": `Costa Glass — ${product.name} en ${city.name}`,
+    "description": description,
+    "url": canonical,
+    "telephone": "+34951074067",
+    "image": `https://costaglass.es${product.image}`,
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Calle el Cerrillo, Nave 6",
+      "addressLocality": "Estepona",
+      "addressRegion": "Málaga",
+      "postalCode": "29680",
+      "addressCountry": "ES"
+    },
+    "areaServed": {
+      "@type": "City",
+      "name": city.name,
+      "containedInPlace": { "@type": "AdministrativeArea", "name": "Málaga, Andalucía" }
+    },
+    "sameAs": [
+      "https://www.facebook.com/cortinasdecristalcosta",
+      "http://www.youtube.com/@cortinasdecristalbioclimaticas"
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://costaglass.es/" },
+      { "@type": "ListItem", "position": 2, "name": product.name, "item": `https://costaglass.es${product.mainUrl}` },
+      { "@type": "ListItem", "position": 3, "name": city.name, "item": canonical }
+    ]
+  }
+]);
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  ogImage={`https://costaglass.es${product.image}`}
+  pageSchema={pageSchema}
+>
+  <Fragment slot="head">
+    <meta name="geo.region" content="ES-MA">
+    <meta name="geo.placename" content={`${city.name}, Málaga`}>
+    <meta name="geo.position" content={`${city.lat};${city.lon}`}>
+    <meta name="ICBM" content={`${city.lat}, ${city.lon}`}>
+  </Fragment>
+  <ProductContent cityName={city.name} />
+</BaseLayout>
