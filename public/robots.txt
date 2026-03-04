@@ -23,8 +23,8 @@ Allow: /
 Crawl-delay: 1
 
 # Sitemap location
-Sitemap: https://costaglass.es/sitemap.xml
-Sitemap: https://costaglass.es/sitemap-blog.xml
+Sitemap: https://costaglass.com/sitemap.xml
+Sitemap: https://costaglass.com/sitemap-blog.xml
 
 # Block bad bots
 User-agent: MJ12bot

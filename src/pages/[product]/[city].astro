@@ -87,7 +87,7 @@ const { product, city, productKey, cityKey } = Astro.props;
 
 const title = `${product.name} en ${city.name} | Costa Glass`;
 const description = `Instalación de ${product.description.toLowerCase()} en ${city.name}, ${city.region}. Fabricantes directos, garantía 10 años, presupuesto gratuito en 24h.`;
-const canonical = `https://costaglass.es/${productKey}/${cityKey}/`;
+const canonical = `https://costaglass.com/${productKey}/${cityKey}/`;
 
 // Map product key to its content component
 const componentMap: Record<string, any> = {
@@ -108,7 +108,7 @@ const pageSchema = JSON.stringify([
     "description": description,
     "url": canonical,
     "telephone": "+34951074067",
-    "image": `https://costaglass.es${product.image}`,
+    "image": `https://costaglass.com${product.image}`,
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "Calle el Cerrillo, Nave 6",
@@ -131,8 +131,8 @@ const pageSchema = JSON.stringify([
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     "itemListElement": [
-      { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://costaglass.es/" },
-      { "@type": "ListItem", "position": 2, "name": product.name, "item": `https://costaglass.es${product.mainUrl}` },
+      { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://costaglass.com/" },
+      { "@type": "ListItem", "position": 2, "name": product.name, "item": `https://costaglass.com${product.mainUrl}` },
       { "@type": "ListItem", "position": 3, "name": city.name, "item": canonical }
     ]
   }
@@ -143,7 +143,7 @@ const pageSchema = JSON.stringify([
   title={title}
   description={description}
   canonical={canonical}
-  ogImage={`https://costaglass.es${product.image}`}
+  ogImage={`https://costaglass.com${product.image}`}
   pageSchema={pageSchema}
 >
   <Fragment slot="head">
