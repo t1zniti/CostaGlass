@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "astro dev",
     "generate-blog": "node generate-blog.js",
-    "build": "node generate-blog.js && astro build",
+    "build": "astro build",
     "preview": "astro preview"
   },
   "devDependencies": {
