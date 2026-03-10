@@ -5,10 +5,15 @@
   "type": "module",
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build",
+    "generate-blog": "node generate-blog.js",
+    "build": "node generate-blog.js && astro build",
     "preview": "astro preview"
   },
   "devDependencies": {
     "astro": "^5.18.0"
+  },
+  "dependencies": {
+    "@astrojs/sitemap": "^3.7.1",
+    "dotenv": "^17.3.1"
   }
 }

@@ -1,4 +1,11 @@
 ---
+import { Image } from 'astro:assets';
+import imgC1 from '../../assets/products/cortinas/c1.jpg';
+import imgC2 from '../../assets/products/cortinas/c2.jpg';
+import imgC3 from '../../assets/products/cortinas/c3.jpg';
+import imgV1 from '../../assets/products/cortinas/v1.jpg';
+import imgConPerfiles from '../../assets/products/cortinas/con-perfiles.jpg';
+
 interface Props {
   cityName?: string;
 }
@@ -309,7 +316,7 @@ const { cityName } = Astro.props;
 <!-- Page Hero -->
     <section class="page-hero">
         <div class="page-hero-bg">
-            <img src="/Assets/products/glass curtain walls/c1.jpg" alt="Cortinas de cristal sin perfiles en terraza con vistas panorámicas">
+            <Image src={imgC1} alt="Cortinas de cristal sin perfiles en terraza con vistas panorámicas" width={1600} height={900} loading="eager" fetchpriority="high" />
             <div class="page-hero-overlay"></div>
         </div>
         <div class="page-hero-content fade-up">
@@ -326,15 +333,15 @@ const { cityName } = Astro.props;
                     <span class="section-tag">Cerramientos Sin Marco</span>
                     <h2>Especialistas en Cortinas de Cristal</h2>
                     <p>Nos especializamos en cerramientos de espacios sin marco llamados Cortinas de Cristal. La calidad del servicio es uno de los parámetros más importantes para nuestra empresa de acristalamiento, lo que nos permite lograr el máximo aprovechamiento tanto de espacios abiertos (balcones, terrazas, porches, etc.) como de espacios divididos (oficinas, despachos, salas de reuniones, etc.).</p>
-                    <img class="product-inline-img" src="/Assets/products/glass curtain walls/c2.jpg" alt="Terraza cerrada con cortinas de cristal sin perfiles" loading="lazy">
+                    <Image class="product-inline-img" src={imgC2} alt="Terraza cerrada con cortinas de cristal sin perfiles" width={800} height={534} loading="lazy" />
                     <p>Imagina poder disfrutar de tu terraza durante todo el año, sin importar la estación o el clima. Esto es posible gracias a nuestros sistemas de cortinas de cristal.</p>
-                    <img class="product-inline-img" src="/Assets/products/glass curtain walls/c3.jpg" alt="Cortinas de cristal abatibles con apertura total" loading="lazy">
+                    <Image class="product-inline-img" src={imgC3} alt="Cortinas de cristal abatibles con apertura total" width={800} height={534} loading="lazy" />
                     <p>Somos una de las pocas empresas que no solo instala cortinas de cristal en Málaga, sino que también las desarrolla, fabricando nuestro propio sistema de cortinas de cristal. Esto nos permite innovar y, sobre todo, ahorrar costes.</p>
                 </div>
                 <div class="product-gallery fade-right">
-                    <img src="/Assets/products/glass curtain walls/c2.jpg" alt="Terraza cerrada con cortinas de cristal sin perfiles">
-                    <img src="/Assets/products/glass curtain walls/c3.jpg" alt="Cortinas de cristal abatibles en terraza con vistas panorámicas">
-                    <img src="/Assets/products/glass curtain walls/v1.jpg" alt="Sistema de cortinas de cristal mostrando apertura total del hueco">
+                    <Image src={imgC2} alt="Terraza cerrada con cortinas de cristal sin perfiles" width={800} height={534} loading="lazy" />
+                    <Image src={imgC3} alt="Cortinas de cristal abatibles en terraza con vistas panorámicas" width={800} height={534} loading="lazy" />
+                    <Image src={imgV1} alt="Sistema de cortinas de cristal mostrando apertura total del hueco" width={800} height={534} loading="lazy" />
                 </div>
             </div>
         </div>
@@ -416,7 +423,7 @@ const { cityName } = Astro.props;
                     </div>
                 </div>
                 <div class="cleaning-image fade-right">
-                    <img src="/Assets/products/glass curtain walls/Cortinas de cristal con perfiles.jpg" alt="Cortinas de cristal con perfiles mostrando mecanismo de apertura para limpieza segura desde el interior" loading="lazy">
+                    <Image src={imgConPerfiles} alt="Cortinas de cristal con perfiles mostrando mecanismo de apertura para limpieza segura desde el interior" width={800} height={600} loading="lazy" />
                 </div>
             </div>
         </div>

@@ -1,0 +1,83 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Página no encontrada (404) | Costa Glass"
+  description="La página que buscas no existe. Vuelve a la página principal de Costa Glass para descubrir nuestras cortinas de cristal y pérgolas bioclimáticas."
+  canonical="https://costaglass.com/404/"
+>
+  <style>
+    .not-found {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 120px 24px;
+      min-height: 60vh;
+    }
+    .not-found-code {
+      font-size: clamp(5rem, 20vw, 9rem);
+      font-weight: 800;
+      line-height: 1;
+      color: #e2e8f0;
+      margin: 0;
+    }
+    .not-found h1 {
+      font-size: clamp(1.4rem, 4vw, 2rem);
+      color: #0f172a;
+      margin: 16px 0 12px;
+    }
+    .not-found p {
+      color: #64748b;
+      font-size: 1.05rem;
+      max-width: 460px;
+      line-height: 1.7;
+      margin: 0 0 36px;
+    }
+    .not-found-actions {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .btn-primary {
+      display: inline-block;
+      background: #0284c7;
+      color: #fff;
+      padding: 14px 32px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: background 0.2s;
+    }
+    .btn-primary:hover { background: #0369a1; }
+    .btn-secondary {
+      display: inline-block;
+      background: #f1f5f9;
+      color: #0f172a;
+      padding: 14px 32px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: background 0.2s;
+    }
+    .btn-secondary:hover { background: #e2e8f0; }
+  </style>
+
+  <div class="not-found">
+    <p class="not-found-code">404</p>
+    <h1>Página no encontrada</h1>
+    <p>
+      Lo sentimos, la página que estás buscando no existe o ha sido movida.
+      Puede que la URL haya cambiado.
+    </p>
+    <div class="not-found-actions">
+      <a href="/" class="btn-primary">Volver al Inicio</a>
+      <a href="/contact/" class="btn-secondary">Contactar</a>
+    </div>
+  </div>
+</BaseLayout>

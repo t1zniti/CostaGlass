@@ -1,4 +1,12 @@
 ---
+import { Image } from 'astro:assets';
+import imgL1 from '../../assets/products/toldo-zip/l1.jpg';
+import imgDownload from '../../assets/products/toldo-zip/download.webp';
+import imgDownload1 from '../../assets/products/toldo-zip/download-1.webp';
+import imgDownload2 from '../../assets/products/toldo-zip/download-2.webp';
+import imgComercial from '../../assets/products/toldo-zip/uso-comercial.webp';
+import imgResidencial from '../../assets/products/toldo-zip/uso-residencial.webp';
+
 interface Props {
   cityName?: string;
 }
@@ -300,7 +308,7 @@ const { cityName } = Astro.props;
 <!-- Page Hero -->
     <section class="page-hero">
         <div class="page-hero-bg">
-            <img src="/Assets/products/zip screen/l1.jpg" alt="Toldo zip motorizado en terraza de restaurante en la Costa del Sol" loading="eager">
+            <Image src={imgL1} alt="Toldo zip motorizado en terraza de restaurante en la Costa del Sol" width={1600} height={900} loading="eager" fetchpriority="high" />
             <div class="page-hero-overlay"></div>
         </div>
         <div class="page-hero-content fade-up">
@@ -319,15 +327,15 @@ const { cityName } = Astro.props;
                     <span class="section-tag">Screen Exterior Motorizado</span>
                     <h2>La Tecnología Zip que Conquista el Viento</h2>
                     <p>El toldo zip de Costa Glass es la solución de sombreado exterior más avanzada del mercado. A diferencia de los toldos verticales convencionales, el sistema Zip integra una cremallera termosellada en los laterales del tejido que encaja en unas guías de aluminio extruido, bloqueando cualquier hueco. El resultado: <strong>tensión perfecta, sellado total y resistencia a vientos de hasta 150 km/h</strong> sin que la tela aletee ni pierda su posición.</p>
-                    <img class="product-inline-img" src="/Assets/products/zip screen/download.webp" alt="Toldo zip cerrado en terraza exterior con tejido Screen" loading="lazy">
+                    <Image class="product-inline-img" src={imgDownload} alt="Toldo zip cerrado en terraza exterior con tejido Screen" width={800} height={534} loading="lazy" />
                     <p>El tejido técnico tipo <strong>Screen microperforado</strong> filtra hasta el 97 % de la radiación UV directa, reduciendo la temperatura interior de una terraza hasta en 10 ºC y eliminando el efecto invernadero sin perder ni un ápice de las vistas al exterior. Lo ves todo desde dentro; desde fuera, privacidad total durante el día.</p>
-                    <img class="product-inline-img" src="/Assets/products/zip screen/download-1.webp" alt="Detalle de la guía zip de aluminio y cremallera del toldo" loading="lazy">
+                    <Image class="product-inline-img" src={imgDownload1} alt="Detalle de la guía zip de aluminio y cremallera del toldo" width={800} height={534} loading="lazy" />
                     <p>Fabricamos cada toldo zip completamente a medida — desde un balcón de 80 cm hasta un cierre lateral de pérgola de 8 metros. El cofre (caja porta-rollo) de aluminio anodizado guarda el tejido invisible cuando está recogido, manteniendo una estética arquitectónica impecable al 100 %.</p>
                 </div>
                 <div class="product-gallery fade-right">
-                    <img src="/Assets/products/zip screen/download.webp" alt="Toldo zip cerrado en terraza exterior con tejido Screen" loading="lazy">
-                    <img src="/Assets/products/zip screen/download-1.webp" alt="Detalle de la guía zip de aluminio y cremallera del toldo" loading="lazy">
-                    <img src="/Assets/products/zip screen/download-2.webp" alt="Toldo zip motorizado instalado en pérgola bioclimática" loading="lazy">
+                    <Image src={imgDownload} alt="Toldo zip cerrado en terraza exterior con tejido Screen" width={800} height={534} loading="lazy" />
+                    <Image src={imgDownload1} alt="Detalle de la guía zip de aluminio y cremallera del toldo" width={800} height={534} loading="lazy" />
+                    <Image src={imgDownload2} alt="Toldo zip motorizado instalado en pérgola bioclimática" width={800} height={534} loading="lazy" />
                 </div>
             </div>
         </div>
@@ -394,7 +402,7 @@ const { cityName } = Astro.props;
             <!-- Block 1: Para Hostelería — image left, text right -->
             <div class="use-case-block">
                 <div class="use-case-image fade-left">
-                    <img src="/Assets/products/zip screen/Uso-Comercial-1030x718.webp" alt="Toldos zip en terraza de restaurante en la Costa del Sol cerrando los laterales de una pérgola bioclimática" loading="lazy">
+                    <Image src={imgComercial} alt="Toldos zip en terraza de restaurante en la Costa del Sol cerrando los laterales de una pérgola bioclimática" width={800} height={558} loading="lazy" />
                 </div>
                 <div class="use-case-text fade-right">
                     <span class="section-tag">Para Hostelería</span>
@@ -425,7 +433,7 @@ const { cityName } = Astro.props;
                     <a href="/contact" class="btn btn-primary">Ver mi Proyecto</a>
                 </div>
                 <div class="use-case-image fade-right">
-                    <img src="/Assets/products/zip screen/Uso-Residencial.webp" alt="Toldo zip en balcón y ventanal de vivienda residencial con tejido Screen microperforado" loading="lazy">
+                    <Image src={imgResidencial} alt="Toldo zip en balcón y ventanal de vivienda residencial con tejido Screen microperforado" width={800} height={534} loading="lazy" />
                 </div>
             </div>
         </div>

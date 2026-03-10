@@ -1,4 +1,11 @@
 ---
+import { Image } from 'astro:assets';
+import imgC1 from '../../assets/products/guillotina/c1.jpg';
+import imgDownload from '../../assets/products/guillotina/download.webp';
+import imgDownload1 from '../../assets/products/guillotina/download-1.webp';
+import imgDownload2 from '../../assets/products/guillotina/download-2.webp';
+import imgDownload3 from '../../assets/products/guillotina/download-3.webp';
+
 interface Props {
   cityName?: string;
 }
@@ -298,7 +305,7 @@ const { cityName } = Astro.props;
 <!-- Page Hero -->
     <section class="page-hero">
         <div class="page-hero-bg">
-            <img src="/Assets/products/Guillotine-Style Glass Windows/c1.jpg" alt="Guillotina de cristal motorizada en terraza con vistas panorámicas" loading="eager">
+            <Image src={imgC1} alt="Guillotina de cristal motorizada en terraza con vistas panorámicas" width={1600} height={900} loading="eager" fetchpriority="high" />
             <div class="page-hero-overlay"></div>
         </div>
         <div class="page-hero-content fade-up">
@@ -317,15 +324,15 @@ const { cityName } = Astro.props;
                     <span class="section-tag">Motorización Silenciosa</span>
                     <h2>Especialistas en Guillotinas de Cristal Motorizadas</h2>
                     <p>Las guillotinas de cristal motorizadas de Costa Glass representan la evolución del cerramiento de terrazas: paneles de vidrio templado de seguridad que se deslizan verticalmente con un simple toque del mando a distancia. Sin esfuerzo, sin ruido, sin obstáculos visuales.</p>
-                    <img class="product-inline-img" src="/Assets/products/Guillotine-Style Glass Windows/download.webp" alt="Guillotina de cristal motorizada instalada en terraza residencial" loading="lazy">
+                    <Image class="product-inline-img" src={imgDownload} alt="Guillotina de cristal motorizada instalada en terraza residencial" width={800} height={534} loading="lazy" />
                     <p>A diferencia de las cortinas de cristal horizontales, el sistema guillotina ofrece un cierre hermético superior gracias a sus guías verticales de aluminio de precisión. Ideal para terrazas expuestas a viento marino o lluvias en la Costa del Sol, donde la estanqueidad marca la diferencia entre disfrutar o no el espacio durante meses.</p>
-                    <img class="product-inline-img" src="/Assets/products/Guillotine-Style Glass Windows/download-1.webp" alt="Detalle del perfil de aluminio minimalista de la guillotina de cristal" loading="lazy">
+                    <Image class="product-inline-img" src={imgDownload1} alt="Detalle del perfil de aluminio minimalista de la guillotina de cristal" width={800} height={534} loading="lazy" />
                     <p>Fabricamos e instalamos nuestros propios sistemas, lo que nos permite adaptar cada proyecto con total precisión: desde balcones residenciales en Marbella hasta terrazas de restaurantes en Benalmádena con vanos de más de 10 metros.</p>
                 </div>
                 <div class="product-gallery fade-right">
-                    <img src="/Assets/products/Guillotine-Style Glass Windows/download.webp" alt="Guillotina de cristal motorizada instalada en terraza residencial" loading="lazy">
-                    <img src="/Assets/products/Guillotine-Style Glass Windows/download-1.webp" alt="Detalle del perfil de aluminio minimalista de la guillotina de cristal" loading="lazy">
-                    <img src="/Assets/products/Guillotine-Style Glass Windows/download-2.webp" alt="Sistema guillotina de cristal en restaurante costero" loading="lazy">
+                    <Image src={imgDownload} alt="Guillotina de cristal motorizada instalada en terraza residencial" width={800} height={534} loading="lazy" />
+                    <Image src={imgDownload1} alt="Detalle del perfil de aluminio minimalista de la guillotina de cristal" width={800} height={534} loading="lazy" />
+                    <Image src={imgDownload2} alt="Sistema guillotina de cristal en restaurante costero" width={800} height={534} loading="lazy" />
                 </div>
             </div>
         </div>
@@ -392,7 +399,7 @@ const { cityName } = Astro.props;
             <!-- Block 1: Para Hostelería — image left, text right -->
             <div class="use-case-block">
                 <div class="use-case-image fade-left">
-                    <img src="/Assets/products/Guillotine-Style Glass Windows/download-3.webp" alt="Guillotina de cristal en terraza de restaurante en Marbella" loading="lazy">
+                    <Image src={imgDownload3} alt="Guillotina de cristal en terraza de restaurante en Marbella" width={800} height={534} loading="lazy" />
                 </div>
                 <div class="use-case-text fade-right">
                     <span class="section-tag">Para Hostelería</span>
@@ -423,7 +430,7 @@ const { cityName } = Astro.props;
                     <a href="/contact" class="btn btn-primary">Ver mi Proyecto</a>
                 </div>
                 <div class="use-case-image fade-right">
-                    <img src="/Assets/products/Guillotine-Style Glass Windows/download.webp" alt="Guillotina de cristal en balcón residencial con vistas al mar en la Costa del Sol" loading="lazy">
+                    <Image src={imgDownload} alt="Guillotina de cristal en balcón residencial con vistas al mar en la Costa del Sol" width={800} height={534} loading="lazy" />
                 </div>
             </div>
         </div>

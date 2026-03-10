@@ -1,4 +1,12 @@
 ---
+import { Image } from 'astro:assets';
+import imgG1 from '../../assets/products/retractable/g1.jpg';
+import imgDownload from '../../assets/products/retractable/download.webp';
+import imgDownload1 from '../../assets/products/retractable/download-1.webp';
+import imgDownload2 from '../../assets/products/retractable/download-2.webp';
+import imgDownload3 from '../../assets/products/retractable/download-3.webp';
+import imgScreenshot from '../../assets/products/retractable/screenshot.webp';
+
 interface Props {
   cityName?: string;
 }
@@ -300,7 +308,7 @@ const { cityName } = Astro.props;
 <!-- Page Hero -->
     <section class="page-hero">
         <div class="page-hero-bg">
-            <img src="/Assets/products/Retractable PVC Roof/g1.jpg" alt="Pérgola retráctil motorizada en terraza con techo de lona PVC abierto al cielo en la Costa del Sol" loading="eager">
+            <Image src={imgG1} alt="Pérgola retráctil motorizada en terraza con techo de lona PVC abierto al cielo en la Costa del Sol" width={1600} height={900} loading="eager" fetchpriority="high" />
             <div class="page-hero-overlay"></div>
         </div>
         <div class="page-hero-content fade-up">
@@ -319,15 +327,15 @@ const { cityName } = Astro.props;
                     <span class="section-tag">Techo Retráctil Motorizado</span>
                     <h2>El Único Techo que Desaparece del Todo</h2>
                     <p>La pérgola retráctil de Costa Glass lleva la versatilidad al máximo: cuando el tiempo lo pide, la lona de PVC técnico se pliega completamente hacia un lateral, dejando el <strong>cielo al 100 % libre</strong>. Cenas de verano bajo las estrellas, mañanas de invierno con el sol directo en la piel — sin barreras. Cuando cambia el tiempo, un solo botón cierra el techo en segundos y convierte la terraza en un espacio completamente protegido.</p>
-                    <img class="product-inline-img" src="/Assets/products/Retractable PVC Roof/download.webp" alt="Pérgola retráctil con lona PVC abierta mostrando el cielo despejado" loading="lazy">
+                    <Image class="product-inline-img" src={imgDownload} alt="Pérgola retráctil con lona PVC abierta mostrando el cielo despejado" width={800} height={534} loading="lazy" />
                     <p>La estructura de <strong>aluminio extruido de grado aeronáutico</strong> combina ligereza y rigidez extrema. Los postes llevan incorporados canalones invisibles que recogen el agua de lluvia y la evacuan hacia el exterior sin goteos ni humedades. El resultado es un cerramiento de techo impecable en estética y funcionalidad, fabricado completamente a medida para adaptarse a cualquier terraza, patio o jardín.</p>
-                    <img class="product-inline-img" src="/Assets/products/Retractable PVC Roof/download-1.webp" alt="Detalle de la estructura de aluminio y el mecanismo de plegado de la lona" loading="lazy">
+                    <Image class="product-inline-img" src={imgDownload1} alt="Detalle de la estructura de aluminio y el mecanismo de plegado de la lona" width={800} height={534} loading="lazy" />
                     <p>Diseñada para integrarse con el resto de sistemas de Costa Glass — Cortinas de Cristal, Guillotinas o Toldos Zip laterales — la pérgola retráctil puede convertirse en un <strong>cerramiento total de cuatro estaciones</strong> con un solo proyecto.</p>
                 </div>
                 <div class="product-gallery fade-right">
-                    <img src="/Assets/products/Retractable PVC Roof/download.webp" alt="Pérgola retráctil con lona PVC abierta mostrando el cielo despejado" loading="lazy">
-                    <img src="/Assets/products/Retractable PVC Roof/download-1.webp" alt="Detalle de la estructura de aluminio y el mecanismo de plegado de la lona" loading="lazy">
-                    <img src="/Assets/products/Retractable PVC Roof/download-2.webp" alt="Pérgola retráctil cerrada con iluminación LED integrada en las vigas" loading="lazy">
+                    <Image src={imgDownload} alt="Pérgola retráctil con lona PVC abierta mostrando el cielo despejado" width={800} height={534} loading="lazy" />
+                    <Image src={imgDownload1} alt="Detalle de la estructura de aluminio y el mecanismo de plegado de la lona" width={800} height={534} loading="lazy" />
+                    <Image src={imgDownload2} alt="Pérgola retráctil cerrada con iluminación LED integrada en las vigas" width={800} height={534} loading="lazy" />
                 </div>
             </div>
         </div>
@@ -394,7 +402,7 @@ const { cityName } = Astro.props;
             <!-- Block 1: Para Hostelería — image left, text right -->
             <div class="use-case-block">
                 <div class="use-case-image fade-left">
-                    <img src="/Assets/products/Retractable PVC Roof/Screenshot_2-1030x717.webp" alt="Pérgola retráctil motorizada en terraza de restaurante con lona PVC cerrada durante una noche de lluvia en la Costa del Sol" loading="lazy">
+                    <Image src={imgScreenshot} alt="Pérgola retráctil motorizada en terraza de restaurante con lona PVC cerrada durante una noche de lluvia en la Costa del Sol" width={800} height={556} loading="lazy" />
                 </div>
                 <div class="use-case-text fade-right">
                     <span class="section-tag">Para Hostelería</span>
@@ -425,7 +433,7 @@ const { cityName } = Astro.props;
                     <a href="/contact" class="btn btn-primary">Ver mi Proyecto</a>
                 </div>
                 <div class="use-case-image fade-right">
-                    <img src="/Assets/products/Retractable PVC Roof/download-3.webp" alt="Pérgola retráctil instalada en terraza de vivienda privada con lona de PVC recogida mostrando el jardín" loading="lazy">
+                    <Image src={imgDownload3} alt="Pérgola retráctil instalada en terraza de vivienda privada con lona de PVC recogida mostrando el jardín" width={800} height={534} loading="lazy" />
                 </div>
             </div>
         </div>

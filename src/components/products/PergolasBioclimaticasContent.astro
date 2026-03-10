@@ -1,4 +1,11 @@
 ---
+import { Image } from 'astro:assets';
+import imgP1 from '../../assets/products/pergola/p1.jpg';
+import imgP2 from '../../assets/products/pergola/p2.jpg';
+import imgP3 from '../../assets/products/pergola/p3.jpg';
+import imgP4 from '../../assets/products/pergola/p4.jpg';
+import imgDownload from '../../assets/products/pergola/download.webp';
+
 interface Props {
   cityName?: string;
 }
@@ -300,7 +307,7 @@ const { cityName } = Astro.props;
 <!-- Page Hero -->
     <section class="page-hero">
         <div class="page-hero-bg">
-            <img src="/Assets/products/bioclimatic/p1.jpg" alt="Pérgola bioclimática motorizada en terraza de lujo en la Costa del Sol" loading="eager">
+            <Image src={imgP1} alt="Pérgola bioclimática motorizada en terraza de lujo en la Costa del Sol" width={1600} height={900} loading="eager" fetchpriority="high" />
             <div class="page-hero-overlay"></div>
         </div>
         <div class="page-hero-content fade-up">
@@ -319,15 +326,15 @@ const { cityName } = Astro.props;
                     <span class="section-tag">Aluminio Extruido Premium</span>
                     <h2>El Techo que Respira, Protege y Dura Décadas</h2>
                     <p>La pérgola bioclimática de Costa Glass es la solución de cerramiento de exterior más sofisticada del mercado. Sus lamas de aluminio extruido de alta resistencia giran de 0° a 135° mediante un motor silencioso, permitiendo controlar con precisión la entrada de sol, la ventilación y la privacidad. Cuando las lamas se cierran herméticamente a 135°, el techo se convierte en un sistema de drenaje total: el agua de lluvia se canaliza por el interior de los perfiles huecos hacia los pilares y se evacua por el suelo sin ningún chorreo exterior.</p>
-                    <img class="product-inline-img" src="/Assets/products/bioclimatic/download.webp" alt="Pérgola bioclimática con lamas de aluminio orientables abiertas" loading="lazy">
+                    <Image class="product-inline-img" src={imgDownload} alt="Pérgola bioclimática con lamas de aluminio orientables abiertas" width={800} height={534} loading="lazy" />
                     <p>El perfil de aluminio extruido cuenta con cámaras interiores de alta resistencia que le permiten soportar cargas de nieve, vientos huracanados y la exposición permanente al ambiente salino del Mediterráneo. El tratamiento de lacado en polvo o anodizado garantiza un acabado impecable por más de 30 años sin mantenimiento. <strong>No hay pérgola más duradera ni más eficiente en la Costa del Sol.</strong></p>
-                    <img class="product-inline-img" src="/Assets/products/bioclimatic/p2.jpg" alt="Detalle del mecanismo de lamas motorizadas de la pérgola bioclimática" loading="lazy">
+                    <Image class="product-inline-img" src={imgP2} alt="Detalle del mecanismo de lamas motorizadas de la pérgola bioclimática" width={800} height={534} loading="lazy" />
                     <p>Fabricamos cada pérgola completamente a medida, desde 3 m² hasta instalaciones modulares de cientos de metros cuadrados para grandes terrazas hosteleras. El resultado es siempre el mismo: una pieza de arquitectura que aumenta el valor de la propiedad y transforma el espacio exterior en el lugar más utilizado de la casa o el restaurante.</p>
                 </div>
                 <div class="product-gallery fade-right">
-                    <img src="/Assets/products/bioclimatic/download.webp" alt="Pérgola bioclimática con lamas de aluminio orientables abiertas" loading="lazy">
-                    <img src="/Assets/products/bioclimatic/p2.jpg" alt="Detalle del mecanismo de lamas motorizadas de la pérgola bioclimática" loading="lazy">
-                    <img src="/Assets/products/bioclimatic/p3.jpg" alt="Pérgola bioclimática instalada en terraza de lujo en Marbella" loading="lazy">
+                    <Image src={imgDownload} alt="Pérgola bioclimática con lamas de aluminio orientables abiertas" width={800} height={534} loading="lazy" />
+                    <Image src={imgP2} alt="Detalle del mecanismo de lamas motorizadas de la pérgola bioclimática" width={800} height={534} loading="lazy" />
+                    <Image src={imgP3} alt="Pérgola bioclimática instalada en terraza de lujo en Marbella" width={800} height={534} loading="lazy" />
                 </div>
             </div>
         </div>
@@ -394,7 +401,7 @@ const { cityName } = Astro.props;
             <!-- Block 1: Para Hostelería — image left, text right -->
             <div class="use-case-block">
                 <div class="use-case-image fade-left">
-                    <img src="/Assets/products/bioclimatic/p4.jpg" alt="Pérgola bioclimática en terraza de restaurante de lujo en la Costa del Sol" loading="lazy">
+                    <Image src={imgP4} alt="Pérgola bioclimática en terraza de restaurante de lujo en la Costa del Sol" width={800} height={534} loading="lazy" />
                 </div>
                 <div class="use-case-text fade-right">
                     <span class="section-tag">Para Hostelería</span>
@@ -425,7 +432,7 @@ const { cityName } = Astro.props;
                     <a href="/contact" class="btn btn-primary">Ver Mi Proyecto</a>
                 </div>
                 <div class="use-case-image fade-right">
-                    <img src="/Assets/products/bioclimatic/p3.jpg" alt="Pérgola bioclimática en jardín de villa privada en Marbella con iluminación LED" loading="lazy">
+                    <Image src={imgP3} alt="Pérgola bioclimática en jardín de villa privada en Marbella con iluminación LED" width={800} height={534} loading="lazy" />
                 </div>
             </div>
         </div>
