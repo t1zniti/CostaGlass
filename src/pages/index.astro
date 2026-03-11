@@ -1,4 +1,30 @@
 ---
+const localBusinessSchema = {
+  "@context": "https://schema.org",
+  "@type": "HomeAndConstructionBusiness", // or LocalBusiness
+  "name": "CostaGlass",
+  "image": "https://costaglass.com/Assets/logo/download.webp",
+  "@id": "https://costaglass.com",
+  "url": "https://costaglass.com",
+  "telephone": "+34 951 074 067", // Ensure telephone is correct or use a placeholder
+  "description": "Fabricantes e instaladores de cortinas de cristal sin perfiles, pérgolas bioclimáticas y techos retráctiles. Especialistas en cerramientos de terrazas sin marcos.",
+  "logo": "https://costaglass.com/Assets/logo/download.webp",
+  "areaServed": [
+    {
+      "@type": "Place",
+      "name": "Southern Spain"
+    },
+    {
+      "@type": "Place",
+      "name": "Gibraltar"
+    }
+  ],
+  "address": {
+    "@type": "PostalAddress",
+    "addressRegion": "Andalucía",
+    "addressCountry": "ES"
+  }
+};
 ---
 
 <!DOCTYPE html>
@@ -9,6 +35,9 @@
     <title>Costa Glass | Cortinas de Cristal y Pérgolas en la Costa del Sol</title>
     <meta name="description" content="Fabricantes e instaladores de cortinas de cristal sin perfiles, pérgolas bioclimáticas y techos retráctiles. Soluciones a medida para terrazas en Málaga, Marbella y Estepona.">
     <meta name="keywords" content="cortinas de cristal, cerramientos de cristal, pérgolas bioclimáticas, toldos zip, cristal sin marco, Marbella, Estepona, Costa del Sol">
+    
+    <script type="application/ld+json" set:html={JSON.stringify(localBusinessSchema)} />
+    
     <meta name="geo.region" content="ES-AN">
     <meta name="geo.placename" content="Estepona, Málaga">
     <meta name="geo.position" content="36.4307378;-5.1652009">

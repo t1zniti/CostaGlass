@@ -14,6 +14,15 @@ const {
   ogImage = 'https://costaglass.com/Assets/logo/download.webp',
   pageSchema
 } = Astro.props;
+
+// Generate hreflang URLs based on current path
+const currentPath = Astro.url.pathname;
+const siteUrl = 'https://costaglass.com';
+
+const esUrl = new URL(currentPath, siteUrl).toString();
+// For this example, assuming English routes are prefixed with /en if implemented
+// or just showing the dynamic path injection:
+const enUrl = new URL(`/en${currentPath.replace(/^\/en/, '')}`, siteUrl).toString().replace(/\/$/, '') || `${siteUrl}/en`;
 ---
 
 <!DOCTYPE html>
@@ -27,6 +36,12 @@ const {
     <meta property="og:description" content={description}>
     <meta property="og:image" content={ogImage}>
     <meta property="og:type" content="website">
+    
+    <!-- Dynamic Hreflang Tags -->
+    <link rel="alternate" hreflang="es" href={esUrl} />
+    <link rel="alternate" hreflang="en" href={enUrl} />
+    <link rel="alternate" hreflang="x-default" href={esUrl} />
+
     {canonical && <link rel="canonical" href={canonical} />}
     <link rel="icon" href="/Assets/logo/favicon.png" type="image/png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -129,7 +144,7 @@ const {
                 </div>
                 <div class="footer-col"><h4>Productos</h4><ul><li><a href="/pergolas-bioclimaticas">Bioclimatic</a></li><li><a href="/cortinas-de-cristal">Cortinas de Cristal</a></li><li><a href="/guillotina-de-cristal">Guillotina Cristal</a></li><li><a href="/toldo-zip">Toldo Zip</a></li><li><a href="/retractable-pvc-roof">Sistemas de Techo Retr&aacute;ctil</a></li><li><a href="/paraviento-de-cristal">Paravientos de Cristal</a></li></ul></div>
                 <div class="footer-col"><h4>Enlaces R&aacute;pidos</h4><ul><li><a href="/">Inicio</a></li><li><a href="/company">Empresa</a></li><li><a href="/contact">Cont&aacute;ctenos</a></li></ul></div>
-                <div class="footer-col"><h4>Legal</h4><ul><li><a href="/politica-de-privacidad">Pol&iacute;tica de Privacidad</a></li><li><a href="#">Pol&iacute;tica de Cookies</a></li></ul></div>
+                <div class="footer-col"><h4>Legal</h4><ul><li><a href="/politica-de-privacidad">Pol&iacute;tica de Privacidad</a></li><li><a href="/politica-de-cookies">Pol&iacute;tica de Cookies</a></li></ul></div>
             </div>
             <div class="footer-bottom"><p>&copy; 2025 Costa Glass. Todos los derechos reservados.</p></div>
         </div>
