@@ -46,6 +46,22 @@
       gtag('config', 'G-3GZ6B4G65Y');
       gtag('config', 'GT-TBB98WMX');
     </script>
+
+    <!-- Event snippet for BDE_formulario de contacto conversion page -->
+    <script>
+      function gtag_report_conversion(url) {
+        var callback = function () {
+          if (typeof(url) != 'undefined') {
+            window.location = url;
+          }
+        };
+        gtag('event', 'conversion', {
+            'send_to': 'AW-994104405/R4VPCJmnvuUYENWog9oD',
+            'event_callback': callback
+        });
+        return false;
+      }
+    </script>
 </head>
 <body>
 
@@ -282,6 +298,9 @@
                     messageDiv.textContent = result.message;
                     form.reset();
                     turnstile.reset();
+                    if (typeof gtag_report_conversion === 'function') {
+                        gtag_report_conversion();
+                    }
                 } else {
                     messageDiv.style.backgroundColor = '#f8d7da';
                     messageDiv.style.color = '#721c24';
