@@ -12,6 +12,7 @@ interface Props {
   h1: string;
   date: string;
   breadcrumbLabel: string;
+  lang?: string;
 }
 
 const { 
@@ -24,7 +25,8 @@ const {
   articleTag,
   h1,
   date,
-  breadcrumbLabel
+  breadcrumbLabel,
+  lang = 'es'
 } = Astro.props;
 ---
 
@@ -34,6 +36,7 @@ const {
   canonical={canonical}
   pageSchema={pageSchema}
   activeNav="blog"
+  lang={lang}
 >
   <style>
     .breadcrumb { font-size: 0.85rem; color: #64748b; margin: 20px 0; }

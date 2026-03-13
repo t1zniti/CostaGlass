@@ -5,6 +5,8 @@ interface Props {
   canonical?: string;
   ogImage?: string;
   pageSchema?: string;
+  lang?: string;
+  activeNav?: string;
 }
 
 const {
@@ -12,7 +14,9 @@ const {
   description = 'Costa Glass - Cortinas de Cristal, Pérgolas, Toldo Zip y más en la Costa del Sol',
   canonical,
   ogImage = 'https://costaglass.com/Assets/logo/download.webp',
-  pageSchema
+  pageSchema,
+  lang = 'es',
+  activeNav = ''
 } = Astro.props;
 
 // Generate hreflang URLs based on current path
@@ -26,7 +30,7 @@ const enUrl = new URL(`/en${currentPath.replace(/^\/en/, '')}`, siteUrl).toStrin
 ---
 
 <!DOCTYPE html>
-<html lang="es">
+<html lang={lang}>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">

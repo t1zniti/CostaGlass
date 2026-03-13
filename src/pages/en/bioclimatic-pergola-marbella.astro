@@ -1,0 +1,155 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const pageSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Bioclimatic Pergola Marbella",
+  "description": "Motorised aluminium bioclimatic pergolas with adjustable louvres supplied and installed in Marbella by Costa Glass.",
+  "provider": { "@type": "LocalBusiness", "name": "Costa Glass", "url": "https://costaglass.com" },
+  "areaServed": { "@type": "City", "name": "Marbella" },
+  "url": "https://costaglass.com/en/bioclimatic-pergola-marbella/"
+});
+---
+
+<BaseLayout
+  title="Bioclimatic Pergola Marbella | Motorised Louvre Pergolas | Costa Glass"
+  description="Premium bioclimatic pergolas in Marbella. Adjustable motorised louvres, rain drainage system, LED lighting. Extend outdoor living all year. Free quote from Costa Glass."
+  canonical="https://costaglass.com/en/bioclimatic-pergola-marbella/"
+  ogImage="https://costaglass.com/Assets/products/bioclimatic/p3.jpg"
+  pageSchema={pageSchema}
+  lang="en"
+>
+
+<style>
+  .en-hero { background: linear-gradient(135deg, #0f172a 0%, #1b4332 100%); color: white; padding: 100px 20px 80px; text-align: center; }
+  .en-hero h1 { font-size: clamp(2rem, 5vw, 3.2rem); margin: 0 0 20px; font-family: 'Playfair Display', serif; }
+  .en-hero p { font-size: 1.2rem; max-width: 650px; margin: 0 auto 32px; opacity: 0.9; }
+  .en-badge { display: inline-block; background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.3); border-radius: 30px; padding: 6px 20px; font-size: 0.875rem; margin-bottom: 20px; }
+  .en-section { padding: 70px 20px; }
+  .en-section:nth-child(even) { background: #f8fafc; }
+  .en-container { max-width: 900px; margin: 0 auto; }
+  .en-section h2 { font-size: clamp(1.5rem, 3vw, 2.2rem); color: #0f172a; margin: 0 0 24px; font-family: 'Playfair Display', serif; }
+  .en-section p { font-size: 1.05rem; line-height: 1.8; color: #374151; margin: 0 0 18px; }
+  .en-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin: 30px 0; }
+  @media (max-width: 680px) { .en-grid { grid-template-columns: 1fr; } }
+  .en-card { background: white; border-radius: 12px; padding: 24px; border: 1px solid #e2e8f0; }
+  .en-card h3 { font-size: 1.05rem; color: #0f172a; margin: 0 0 10px; font-weight: 700; }
+  .en-card p { font-size: 0.95rem; color: #475569; margin: 0; }
+  .price-table { width: 100%; border-collapse: collapse; margin: 24px 0; }
+  .price-table th { background: #1b4332; color: white; padding: 12px 16px; text-align: left; font-size: 0.9rem; }
+  .price-table td { padding: 12px 16px; border-bottom: 1px solid #e2e8f0; font-size: 0.95rem; }
+  .price-table tr:nth-child(even) td { background: #f8fafc; }
+  .cta-band { background: linear-gradient(135deg, #059669, #10b981); color: white; padding: 60px 20px; text-align: center; }
+  .cta-band h2 { font-size: 2rem; margin: 0 0 16px; }
+  .cta-band p { font-size: 1.1rem; margin: 0 0 28px; opacity: 0.95; max-width: 560px; margin-left: auto; margin-right: auto; }
+  .btn-white { display: inline-block; background: white; color: #059669; padding: 14px 32px; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 1rem; }
+  .btn-white:hover { background: #f0fdf4; }
+  .related-links { list-style: none; padding: 0; margin: 20px 0 0; display: flex; flex-wrap: wrap; gap: 12px; }
+  .related-links a { display: inline-block; background: #dcfce7; color: #059669; padding: 8px 18px; border-radius: 6px; text-decoration: none; font-size: 0.9rem; font-weight: 500; }
+  .seasons-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin: 28px 0; }
+  @media (max-width: 680px) { .seasons-grid { grid-template-columns: 1fr 1fr; } }
+  .season-card { background: white; border-radius: 10px; padding: 18px; text-align: center; border: 1px solid #e2e8f0; }
+  .season-icon { font-size: 2rem; margin-bottom: 8px; }
+  .season-card h3 { font-size: 0.9rem; font-weight: 700; margin: 0 0 6px; }
+  .season-card p { font-size: 0.8rem; color: #64748b; margin: 0; }
+</style>
+
+<section class="en-hero">
+  <div class="en-container">
+    <span class="en-badge">Marbella Specialists</span>
+    <h1>Bioclimatic Pergola Marbella</h1>
+    <p>Motorised aluminium bioclimatic pergolas that extend your outdoor living space to all four seasons. Designed, manufactured and installed by Costa Glass in Marbella and the Costa del Sol.</p>
+    <a href="/contact" class="btn-white">Get a Free Quote</a>
+  </div>
+</section>
+
+<!-- What is a bioclimatic pergola -->
+<section class="en-section">
+  <div class="en-container">
+    <h2>What Is a Bioclimatic Pergola?</h2>
+    <p>A bioclimatic pergola is an aluminium freestanding or wall-mounted pergola structure fitted with adjustable motorised louvres — flat blades that rotate through 0° to 135° at the touch of a button. When open, the louvres allow air circulation and sunlight through. When partially closed, they provide shade without blocking ventilation. Fully closed, they form a watertight roof that channels rainwater through concealed drainage systems inside the uprights.</p>
+    <p>The word "bioclimatic" refers to the system's ability to adapt to the local climate conditions. In Marbella, where summer temperatures regularly exceed 35°C and the sun delivers intense UV radiation from May to October, the ability to control shade and airflow from a smartphone app is not a luxury — it is a genuine quality-of-life upgrade.</p>
+    <p>Costa Glass bioclimatic pergolas are fabricated from powder-coated extruded aluminium in any RAL colour. The structural system is engineered to withstand the coastal winds that affect certain parts of the Costa del Sol, particularly around the Estepona headland and eastern Marbella. Optional additions include integrated LED lighting, motorised side screens (glass curtains, zip awnings, or folding glass panels), and smart home integration via KNX or Z-Wave.</p>
+  </div>
+</section>
+
+<!-- How it extends outdoor living -->
+<section class="en-section">
+  <div class="en-container">
+    <h2>How a Bioclimatic Pergola Extends Outdoor Living in Marbella</h2>
+    <p>Marbella has approximately 320 days of sunshine per year — but that does not mean 320 days of perfect outdoor dining conditions. The real obstacle is comfort, not just weather. In July and August, a south-facing terrace without shade can reach surface temperatures of 50°C, making it completely unusable during the day. In January, a terrace exposed to the northerly Tramontana wind is equally uninviting at 12°C.</p>
+    <p>A bioclimatic pergola addresses both extremes. In summer, you dial the louvres to 45° — allowing breeze through while cutting direct solar radiation by 70%. You sit in the shade in a gentle airflow rather than in a baking sun trap. Add a zip screen on the south side to eliminate the Levante wind and the terrace becomes enjoyable even on the hottest August afternoons.</p>
+    <p>In winter, close the louvres to seal out rain, add glass curtains on the open sides to block wind, and install a patio heater under the pergola. The result is a sheltered outdoor room that you can eat, work, or entertain in from September through to April without discomfort. Our clients in Marbella's Nova Andalucía area consistently report using their pergola-covered terrace 11 months of the year — missing only the coldest couple of weeks in January.</p>
+
+    <div class="seasons-grid">
+      <div class="season-card">
+        <div class="season-icon">☀️</div>
+        <h3>Summer</h3>
+        <p>Louvres at 45° for shade. Breeze circulation keeps terrace cool.</p>
+      </div>
+      <div class="season-card">
+        <div class="season-icon">🍂</div>
+        <h3>Autumn</h3>
+        <p>Louvres open or closed as needed. Full use on warm October evenings.</p>
+      </div>
+      <div class="season-card">
+        <div class="season-icon">🌧️</div>
+        <h3>Winter</h3>
+        <p>Louvres closed = watertight. Add glass curtains for wind protection.</p>
+      </div>
+      <div class="season-card">
+        <div class="season-icon">🌸</div>
+        <h3>Spring</h3>
+        <p>Open up fully. Max light and air on Marbella's finest days.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Motorised louvre systems -->
+<section class="en-section">
+  <div class="en-container">
+    <h2>Motorised Louvre Systems</h2>
+    <p>All Costa Glass bioclimatic pergolas come with motorised louvre control as standard. The motor system integrates with a hand-held remote control, wall keypad, or smartphone app depending on your preference. For properties with existing smart home systems, we offer KNX and Z-Wave integration so the pergola louvres can be controlled alongside lighting, security, and climate systems.</p>
+    <p>The louvre motors are equipped with wind and rain sensors as standard. When the sensor detects wind speeds above a preset threshold (typically 40 km/h), the louvres automatically close to protect the mechanism. When it rains, the louvres close to channel water to the drainage system. This means you will never return home to a flooded terrace because you left the pergola open.</p>
+    <p>LED lighting is integrated into the louvre profiles themselves, invisible when off and providing a warm ambience in the evening. Colour temperature and brightness are adjustable. For large Marbella villa terraces, we can specify multiple lighting zones controlled independently per zone.</p>
+  </div>
+</section>
+
+<!-- Price guide -->
+<section class="en-section">
+  <div class="en-container">
+    <h2>Bioclimatic Pergola Price Guide for Marbella</h2>
+    <p>Bioclimatic pergola prices depend primarily on the covered area, the number of structural uprights, optional additions, and RAL colour choice. Indicative price ranges for Marbella installations are shown below. All prices include manufacture, delivery, and installation.</p>
+
+    <table class="price-table">
+      <thead>
+        <tr><th>Pergola Size</th><th>Configuration</th><th>Estimated Price</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Up to 15 m²</td><td>Freestanding, standard colour</td><td>€8,000 – €14,000</td></tr>
+        <tr><td>15–30 m²</td><td>Wall-mounted or freestanding</td><td>€12,000 – €22,000</td></tr>
+        <tr><td>30–50 m²</td><td>Large terrace or restaurant</td><td>€20,000 – €38,000</td></tr>
+        <tr><td>Add glass curtains</td><td>Per linear metre</td><td>+€300 – €600/m</td></tr>
+        <tr><td>Add LED lighting</td><td>Per zone</td><td>+€600 – €1,200</td></tr>
+      </tbody>
+    </table>
+
+    <p>These are indicative ranges only. For an accurate fixed-price quotation, contact us for a free site survey at your Marbella property.</p>
+
+    <ul class="related-links">
+      <li><a href="/pergolas-bioclimaticas">View the Bioclimatic Pergola product page →</a></li>
+      <li><a href="/en/zip-awnings-marbella">Zip Awnings Marbella →</a></li>
+      <li><a href="/en/glass-curtains-marbella">Glass Curtains Marbella →</a></li>
+    </ul>
+  </div>
+</section>
+
+<section class="cta-band">
+  <h2>Transform Your Marbella Terrace with a Bioclimatic Pergola</h2>
+  <p>Contact Costa Glass for a free site survey and fixed-price quotation. We speak English and Spanish — no language barrier.</p>
+  <a href="/contact" class="btn-white">Request Your Free Quote</a>
+</section>
+
+</BaseLayout>

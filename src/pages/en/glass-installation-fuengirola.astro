@@ -1,0 +1,140 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const pageSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Glass Curtains Fuengirola",
+  "description": "Glass curtain installation in Fuengirola for apartments and villas by Costa Glass, Costa del Sol specialists.",
+  "provider": { "@type": "LocalBusiness", "name": "Costa Glass", "telephone": "+34951074067", "url": "https://costaglass.com" },
+  "areaServed": { "@type": "City", "name": "Fuengirola" },
+  "url": "https://costaglass.com/en/glass-installation-fuengirola/"
+});
+---
+
+<BaseLayout
+  title="Glass Curtains Fuengirola | Terrace Glazing by Costa Glass"
+  description="Glass curtains in Fuengirola — frameless terrace enclosures for apartments and villas. Direct manufacturer prices, English-speaking team. Free quote from Costa Glass."
+  canonical="https://costaglass.com/en/glass-installation-fuengirola/"
+  ogImage="https://costaglass.com/Assets/products/glass curtain walls/v1.jpg"
+  pageSchema={pageSchema}
+  lang="en"
+>
+
+<style>
+  .en-hero { background: linear-gradient(135deg, #0f172a 0%, #292524 100%); color: white; padding: 100px 20px 80px; text-align: center; }
+  .en-hero h1 { font-size: clamp(2rem, 5vw, 3.2rem); margin: 0 0 20px; font-family: 'Playfair Display', serif; }
+  .en-hero p { font-size: 1.2rem; max-width: 650px; margin: 0 auto 32px; opacity: 0.9; }
+  .en-badge { display: inline-block; background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.3); border-radius: 30px; padding: 6px 20px; font-size: 0.875rem; margin-bottom: 20px; }
+  .en-section { padding: 70px 20px; }
+  .en-section:nth-child(even) { background: #f8fafc; }
+  .en-container { max-width: 900px; margin: 0 auto; }
+  .en-section h2 { font-size: clamp(1.5rem, 3vw, 2.2rem); color: #0f172a; margin: 0 0 24px; font-family: 'Playfair Display', serif; }
+  .en-section p { font-size: 1.05rem; line-height: 1.8; color: #374151; margin: 0 0 18px; }
+  .benefit-list { list-style: none; padding: 0; margin: 24px 0; }
+  .benefit-list li { display: flex; gap: 12px; padding: 12px 0; border-bottom: 1px solid #f1f5f9; font-size: 1rem; color: #374151; }
+  .benefit-list li:last-child { border-bottom: none; }
+  .benefit-list li::before { content: "✔"; color: #0284c7; font-weight: 900; flex-shrink: 0; }
+  .cta-band { background: linear-gradient(135deg, #0284c7, #0ea5e9); color: white; padding: 60px 20px; text-align: center; }
+  .cta-band h2 { font-size: 2rem; margin: 0 0 16px; }
+  .cta-band p { font-size: 1.1rem; margin: 0 0 28px; opacity: 0.95; max-width: 560px; margin-left: auto; margin-right: auto; }
+  .btn-white { display: inline-block; background: white; color: #0284c7; padding: 14px 32px; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 1rem; }
+  .btn-white:hover { background: #f0f9ff; }
+  .related-links { list-style: none; padding: 0; margin: 20px 0 0; display: flex; flex-wrap: wrap; gap: 12px; }
+  .related-links a { display: inline-block; background: #e0f2fe; color: #0284c7; padding: 8px 18px; border-radius: 6px; text-decoration: none; font-size: 0.9rem; font-weight: 500; }
+  .process-steps { counter-reset: steps; margin: 24px 0; }
+  .process-step { counter-increment: steps; border: 1px solid #e2e8f0; border-radius: 10px; padding: 20px; margin-bottom: 14px; display: flex; gap: 16px; align-items: flex-start; }
+  .process-step::before { content: counter(steps); background: #0284c7; color: white; border-radius: 50%; width: 34px; height: 34px; display: flex; align-items: center; justify-content: center; font-weight: 700; flex-shrink: 0; font-size: 0.9rem; }
+  .process-step-content h3 { margin: 0 0 6px; font-size: 1rem; font-weight: 700; }
+  .process-step-content p { margin: 0; font-size: 0.95rem; color: #475569; }
+</style>
+
+<section class="en-hero">
+  <div class="en-container">
+    <span class="en-badge">Fuengirola Service Area</span>
+    <h1>Glass Curtains Fuengirola</h1>
+    <p>Costa Glass regularly installs glass curtains in Fuengirola and the surrounding area. Direct manufacturer pricing and our own installation team ensure consistent quality.</p>
+    <a href="/contact" class="btn-white">Get a Free Quote</a>
+  </div>
+</section>
+
+<!-- Fuengirola context -->
+<section class="en-section">
+  <div class="en-container">
+    <h2>Glass Curtains for Fuengirola Properties</h2>
+    <p>Fuengirola is one of the most densely populated areas on the Costa del Sol, with a large expat community — particularly from the UK and Scandinavia — living in apartment complexes along the Paseo Marítimo and inland urbanisations. The typical property profile in Fuengirola is a south or south-east facing apartment with a 6–15 m² terrace and sea or pool views that the owner wants to protect.</p>
+    <p>Glass curtains are the ideal solution for the typical Fuengirola apartment terrace. They provide wind protection against the east wind that funnels along the Costa del Sol coast, extend outdoor use into autumn and winter, and have a minimal visual impact that is generally accepted by community associations. Costa Glass has installed glass curtains in numerous urbanisations in Fuengirola, Mijas Costa and Los Boliches.</p>
+    <p>For properties in Fuengirola's higher zones — urbanisations above the coast road that enjoy panoramic views — frameless glass curtains are particularly valued. The absence of vertical profiles means the view is completely uncompromised, whether you are looking at the Mediterranean, the Sierra de Mijas, or the town below.</p>
+  </div>
+</section>
+
+<!-- Benefits -->
+<section class="en-section">
+  <div class="en-container">
+    <h2>Benefits of Glass Curtains for Fuengirola Apartments</h2>
+    <ul class="benefit-list">
+      <li>Wind protection that extends outdoor use from 4–5 months per year to 10+ months</li>
+      <li>Fully openable panels for maximum ventilation during Fuengirola's warm summers</li>
+      <li>Frameless design does not obstruct sea or pool views</li>
+      <li>8mm or 10mm toughened glass handles the salt air and UV of a coastal environment</li>
+      <li>Low visual impact makes community approval significantly easier than framed systems</li>
+      <li>Adds measurable resale value — glassed terraces are a listed selling feature on the Costa del Sol</li>
+      <li>No wet trade work required — complete installation in one day, no mess</li>
+      <li>2-year warranty on all mechanical components plus manufacturer glass guarantee</li>
+    </ul>
+  </div>
+</section>
+
+<!-- Process -->
+<section class="en-section">
+  <div class="en-container">
+    <h2>Installation Process for Fuengirola</h2>
+
+    <div class="process-steps">
+      <div class="process-step">
+        <div class="process-step-content">
+          <h3>Contact &amp; Initial Enquiry</h3>
+          <p>Call, WhatsApp (+34 951 074 067) or complete our contact form. We collect basic information about your terrace and arrange a site survey at your convenience.</p>
+        </div>
+      </div>
+      <div class="process-step">
+        <div class="process-step-content">
+          <h3>Free Site Survey in Fuengirola</h3>
+          <p>A Costa Glass technician visits your property to measure, assess conditions, and advise on the best system. Same week availability for most Fuengirola locations.</p>
+        </div>
+      </div>
+      <div class="process-step">
+        <div class="process-step-content">
+          <h3>Fixed-Price Quotation</h3>
+          <p>Within 2 working days of the survey, you receive a detailed fixed-price quotation. No surprises on invoice day — what we quote is what you pay.</p>
+        </div>
+      </div>
+      <div class="process-step">
+        <div class="process-step-content">
+          <h3>Manufacture &amp; Delivery</h3>
+          <p>Glass panels are fabricated to measure in our Estepona factory. Lead time is typically 3–4 weeks. We keep you updated by WhatsApp throughout.</p>
+        </div>
+      </div>
+      <div class="process-step">
+        <div class="process-step-content">
+          <h3>Installation Day</h3>
+          <p>Our team arrives with all materials and completes the installation in a single day. No construction waste, no mess in communal areas.</p>
+        </div>
+      </div>
+    </div>
+
+    <ul class="related-links">
+      <li><a href="/en/glass-curtains-costa-del-sol">Glass Curtains — Full Costa del Sol →</a></li>
+      <li><a href="/en/glass-curtains-marbella">Glass Curtains Marbella →</a></li>
+      <li><a href="/cortinas-de-cristal">Our Glass Curtain Products →</a></li>
+    </ul>
+  </div>
+</section>
+
+<section class="cta-band">
+  <h2>Free Glass Curtain Quote in Fuengirola</h2>
+  <p>Ready to extend your Fuengirola terrace season? Contact Costa Glass for a free site survey and fixed-price quote. We speak English.</p>
+  <a href="/contact" class="btn-white">Request a Free Quote</a>
+</section>
+
+</BaseLayout>

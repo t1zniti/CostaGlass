@@ -1,0 +1,193 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const pageSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Frameless Glass Enclosures Costa del Sol",
+  "description": "Frameless glass curtain and enclosure systems for terraces and balconies across the Costa del Sol. No vertical profiles, panoramic views, 100% openable.",
+  "provider": { "@type": "LocalBusiness", "name": "Costa Glass", "url": "https://costaglass.com" },
+  "url": "https://costaglass.com/en/frameless-glass-enclosures/"
+});
+---
+
+<BaseLayout
+  title="Frameless Glass Enclosures Costa del Sol | No Profiles | Costa Glass"
+  description="Frameless glass enclosures for Costa del Sol terraces. No vertical profiles, panoramic views, fully openable. Apartments and villas. Free quote from Costa Glass."
+  canonical="https://costaglass.com/en/frameless-glass-enclosures/"
+  ogImage="https://costaglass.com/Assets/products/glass curtain walls/v1.jpg"
+  pageSchema={pageSchema}
+  lang="en"
+>
+
+<style>
+  .en-hero { background: linear-gradient(135deg, #0c1445 0%, #1a237e 100%); color: white; padding: 100px 20px 80px; text-align: center; }
+  .en-hero h1 { font-size: clamp(2rem, 5vw, 3.2rem); margin: 0 0 20px; font-family: 'Playfair Display', serif; }
+  .en-hero p { font-size: 1.2rem; max-width: 650px; margin: 0 auto 32px; opacity: 0.9; }
+  .en-badge { display: inline-block; background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.3); border-radius: 30px; padding: 6px 20px; font-size: 0.875rem; margin-bottom: 20px; }
+  .en-section { padding: 70px 20px; }
+  .en-section:nth-child(even) { background: #f8fafc; }
+  .en-container { max-width: 900px; margin: 0 auto; }
+  .en-section h2 { font-size: clamp(1.5rem, 3vw, 2.2rem); color: #0f172a; margin: 0 0 24px; font-family: 'Playfair Display', serif; }
+  .en-section p { font-size: 1.05rem; line-height: 1.8; color: #374151; margin: 0 0 18px; }
+  .feature-list { list-style: none; padding: 0; margin: 24px 0; }
+  .feature-list li { display: flex; gap: 12px; align-items: flex-start; padding: 12px 0; border-bottom: 1px solid #f1f5f9; }
+  .feature-list li:last-child { border-bottom: none; }
+  .feature-list .icon { font-size: 1.4rem; flex-shrink: 0; }
+  .feature-list .text h3 { margin: 0 0 4px; font-size: 1rem; font-weight: 700; color: #0f172a; }
+  .feature-list .text p { margin: 0; font-size: 0.95rem; color: #475569; }
+  .maintain-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; margin: 28px 0; }
+  @media (max-width: 680px) { .maintain-grid { grid-template-columns: 1fr; } }
+  .maintain-card { border-radius: 10px; padding: 20px; border: 1px solid #e2e8f0; text-align: center; }
+  .maintain-card .number { font-size: 2.5rem; font-weight: 800; color: #3b82f6; margin-bottom: 8px; }
+  .maintain-card h3 { font-size: 0.95rem; font-weight: 700; margin: 0 0 8px; }
+  .maintain-card p { font-size: 0.85rem; color: #64748b; margin: 0; }
+  .cta-band { background: linear-gradient(135deg, #1a237e, #283593); color: white; padding: 60px 20px; text-align: center; }
+  .cta-band h2 { font-size: 2rem; margin: 0 0 16px; }
+  .cta-band p { font-size: 1.1rem; margin: 0 0 28px; opacity: 0.95; max-width: 560px; margin-left: auto; margin-right: auto; }
+  .btn-white { display: inline-block; background: white; color: #1a237e; padding: 14px 32px; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 1rem; }
+  .btn-white:hover { background: #e8eaf6; }
+  .related-links { list-style: none; padding: 0; margin: 20px 0 0; display: flex; flex-wrap: wrap; gap: 12px; }
+  .related-links a { display: inline-block; background: #e8eaf6; color: #3f51b5; padding: 8px 18px; border-radius: 6px; text-decoration: none; font-size: 0.9rem; font-weight: 500; }
+  .en-vs { display: flex; gap: 24px; margin: 28px 0; }
+  @media (max-width: 680px) { .en-vs { flex-direction: column; } }
+  .vs-box { flex: 1; padding: 24px; border-radius: 12px; border: 2px solid; }
+  .vs-box.frameless { border-color: #3b82f6; background: #eff6ff; }
+  .vs-box.framed { border-color: #e2e8f0; background: #f8fafc; }
+  .vs-box h3 { margin: 0 0 12px; font-size: 1.05rem; }
+  .vs-box ul { list-style: none; padding: 0; margin: 0; }
+  .vs-box li { padding: 5px 0; font-size: 0.9rem; color: #374151; }
+</style>
+
+<section class="en-hero">
+  <div class="en-container">
+    <span class="en-badge">No Profiles. Pure Glass.</span>
+    <h1>Frameless Glass Enclosures</h1>
+    <p>The most elegant way to enclose a Costa del Sol terrace — no vertical aluminium profiles, no obstructed views, fully openable glass panels that disappear when you want them to.</p>
+    <a href="/contact" class="btn-white">Get a Free Quote</a>
+  </div>
+</section>
+
+<!-- System benefits -->
+<section class="en-section">
+  <div class="en-container">
+    <h2>The Benefits of a Frameless Glass Enclosure</h2>
+    <p>Frameless glass enclosures — also called glass curtains, glass curtain walls, or <em>cortinas de cristal sin perfiles</em> in Spanish — represent the premium end of the terrace glazing market. Their defining characteristic is the complete absence of vertical aluminium or PVC profiles between glass panels. The panels sit edge-to-edge, held only by top and bottom track systems and small pivot fittings at the corners.</p>
+
+    <ul class="feature-list">
+      <li>
+        <span class="icon">👁️</span>
+        <div class="text">
+          <h3>Unobstructed panoramic views</h3>
+          <p>No vertical uprights break the view at eye level. Floor-to-ceiling glass gives you the full coastal or mountain panorama from every seat on your terrace.</p>
+        </div>
+      </li>
+      <li>
+        <span class="icon">💨</span>
+        <div class="text">
+          <h3>100% openable for full ventilation</h3>
+          <p>Panels fold and stack to one or both sides, creating completely open sides when you want maximum airflow on a warm summer evening.</p>
+        </div>
+      </li>
+      <li>
+        <span class="icon">🏠</span>
+        <div class="text">
+          <h3>Adds measurable property value</h3>
+          <p>Estate agents across Marbella and the Costa del Sol consistently report that glassed-in outdoor spaces — particularly frameless systems — add significant resale value to apartments and villas.</p>
+        </div>
+      </li>
+      <li>
+        <span class="icon">🏗️</span>
+        <div class="text">
+          <h3>Classified as demountable — easier permits</h3>
+          <p>Because frameless systems use no permanent fixings to the building structure, they are typically classified as demountable in Spanish planning law — simplifying the permit and community approval process.</p>
+        </div>
+      </li>
+      <li>
+        <span class="icon">🌊</span>
+        <div class="text">
+          <h3>Corrosion-resistant for coastal environments</h3>
+          <p>All hardware is marine-grade stainless steel or anodised aluminium — essential for properties within 500 metres of the sea on the Costa del Sol.</p>
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- Frameless vs framed -->
+<section class="en-section">
+  <div class="en-container">
+    <h2>Frameless vs Framed: What Is the Actual Difference?</h2>
+    <p>The terminology around glass enclosures can be confusing. "Framed" systems use aluminium uprights between each glass panel — visible as vertical bars that divide the glazed area into individual windows. "Frameless" (or "profile-free") systems have no uprights at all: the glass panels connect to each other at the edge via discreet pivot mechanisms, creating an unbroken glass wall.</p>
+
+    <div class="en-vs">
+      <div class="vs-box frameless">
+        <h3>✅ Frameless (Cortinas sin Perfiles)</h3>
+        <ul>
+          <li>✅ No vertical uprights visible</li>
+          <li>✅ Panels open full width end-to-end</li>
+          <li>✅ Maximum view preservation</li>
+          <li>✅ Lighter visual impact on façade</li>
+          <li>✅ Classified as demountable in most cases</li>
+          <li>⚠️ Higher cost per m²</li>
+          <li>⚠️ Requires precisely level tracks for smooth operation</li>
+        </ul>
+      </div>
+      <div class="vs-box framed">
+        <h3>⚪ Framed (Aluminium-Frame Systems)</h3>
+        <ul>
+          <li>✅ Lower entry-level price</li>
+          <li>✅ More structural rigidity in extreme winds</li>
+          <li>⚠️ Vertical profiles visible (typically every 50–90 cm)</li>
+          <li>⚠️ Cannot open full width</li>
+          <li>⚠️ Heavier visual impact — harder to get community approval</li>
+          <li>⚠️ Often treated as permanent by planning authorities</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Maintenance guide -->
+<section class="en-section">
+  <div class="en-container">
+    <h2>Maintenance Guide for Frameless Glass Enclosures</h2>
+    <p>One of the most underappreciated benefits of frameless glass enclosures is how little maintenance they require. With fewer components, fewer joints, and no painted timber or powder-coated aluminium profiles to degrade, a well-installed system keeps its appearance with very little effort.</p>
+
+    <div class="maintain-grid">
+      <div class="maintain-card">
+        <div class="number">2×</div>
+        <h3>Glass Cleaning</h3>
+        <p>Clean panels twice per year (or more in dusty, coastal areas) with standard glass cleaner and a squeegee. Do not use abrasive cloths.</p>
+      </div>
+      <div class="maintain-card">
+        <div class="number">1×</div>
+        <h3>Track Inspection</h3>
+        <p>Once per year, clear the lower track of any sand or grit that may cause panels to slide stiffly. A soft brush and compressed air work well.</p>
+      </div>
+      <div class="maintain-card">
+        <div class="number">5yr</div>
+        <h3>Seal Check</h3>
+        <p>Every 5–7 years, have the rubber seals and pivot fittings checked by a technician. Seal replacement is inexpensive and prevents water ingress.</p>
+      </div>
+    </div>
+
+    <p>For coastal properties within 200 metres of the sea, we recommend rinsing the panels with fresh water monthly during summer to remove salt deposits before they cause etching on the glass surface. This adds 10 minutes of maintenance time per month and significantly extends the life of the panels.</p>
+
+    <p><strong>Ideal for apartments and villas:</strong> Frameless glass enclosures work equally well in ground-floor villa terraces (where privacy and wind protection are priorities), penthouse apartments (where views are the main asset), and mid-floor balconies (where planning impact is a consideration). The system scales from a 3-metre balcony to a 40-metre villa terrace without any change in operating principle.</p>
+
+    <ul class="related-links">
+      <li><a href="/cortinas-de-cristal">View Glass Curtain Products →</a></li>
+      <li><a href="/en/terrace-enclosures-spain">Terrace Enclosures Spain Guide →</a></li>
+      <li><a href="/en/glass-curtains-marbella">Glass Curtains Marbella →</a></li>
+    </ul>
+  </div>
+</section>
+
+<section class="cta-band">
+  <h2>Ready for a Frameless Glass Enclosure?</h2>
+  <p>Costa Glass supplies and installs frameless glass systems across the Costa del Sol. Free site survey, fixed-price quote, English-speaking team.</p>
+  <a href="/contact" class="btn-white">Request a Free Quote</a>
+</section>
+
+</BaseLayout>

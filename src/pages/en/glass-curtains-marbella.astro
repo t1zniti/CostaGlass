@@ -1,0 +1,209 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const pageSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Glass Curtains Marbella",
+  "description": "Frameless glass curtain installation for terraces and balconies in Marbella. Manufactured and installed by Costa Glass.",
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "Costa Glass",
+    "telephone": "+34951074067",
+    "url": "https://costaglass.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Calle el Cerrillo, Nave 6",
+      "addressLocality": "Estepona",
+      "addressRegion": "Málaga",
+      "postalCode": "29680",
+      "addressCountry": "ES"
+    }
+  },
+  "areaServed": {
+    "@type": "City",
+    "name": "Marbella"
+  },
+  "url": "https://costaglass.com/en/glass-curtains-marbella/"
+});
+---
+
+<BaseLayout
+  title="Glass Curtains Marbella | Frameless Terrace Glazing | Costa Glass"
+  description="Premium frameless glass curtains for Marbella terraces and balconies. Supplied and installed by Costa Glass — the Costa del Sol's leading manufacturer. Free quote."
+  canonical="https://costaglass.com/en/glass-curtains-marbella/"
+  ogImage="https://costaglass.com/Assets/products/glass curtain walls/v1.jpg"
+  pageSchema={pageSchema}
+  lang="en"
+>
+
+<style>
+  .en-hero { background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 100%); color: white; padding: 100px 20px 80px; text-align: center; }
+  .en-hero h1 { font-size: clamp(2rem, 5vw, 3.2rem); margin: 0 0 20px; font-family: 'Playfair Display', serif; }
+  .en-hero p { font-size: 1.2rem; max-width: 650px; margin: 0 auto 32px; opacity: 0.9; }
+  .en-badge { display: inline-block; background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.3); border-radius: 30px; padding: 6px 20px; font-size: 0.875rem; margin-bottom: 20px; letter-spacing: 0.05em; }
+  .en-section { padding: 70px 20px; }
+  .en-section:nth-child(even) { background: #f8fafc; }
+  .en-container { max-width: 900px; margin: 0 auto; }
+  .en-section h2 { font-size: clamp(1.5rem, 3vw, 2.2rem); color: #0f172a; margin: 0 0 24px; font-family: 'Playfair Display', serif; }
+  .en-section p { font-size: 1.05rem; line-height: 1.8; color: #374151; margin: 0 0 18px; }
+  .en-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin: 30px 0; }
+  @media (max-width: 680px) { .en-grid { grid-template-columns: 1fr; } }
+  .en-card { background: white; border-radius: 12px; padding: 24px; border: 1px solid #e2e8f0; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
+  .en-card h3 { font-size: 1.1rem; color: #0f172a; margin: 0 0 10px; font-weight: 700; }
+  .en-card p { font-size: 0.95rem; color: #475569; margin: 0; }
+  .price-table { width: 100%; border-collapse: collapse; margin: 24px 0; }
+  .price-table th { background: #0f172a; color: white; padding: 12px 16px; text-align: left; font-size: 0.9rem; }
+  .price-table td { padding: 12px 16px; border-bottom: 1px solid #e2e8f0; font-size: 0.95rem; color: #374151; }
+  .price-table tr:nth-child(even) td { background: #f8fafc; }
+  .cta-band { background: linear-gradient(135deg, #0284c7, #0ea5e9); color: white; padding: 60px 20px; text-align: center; }
+  .cta-band h2 { font-size: 2rem; margin: 0 0 16px; }
+  .cta-band p { font-size: 1.1rem; margin: 0 0 28px; opacity: 0.95; max-width: 560px; margin-left: auto; margin-right: auto; }
+  .btn-white { display: inline-block; background: white; color: #0284c7; padding: 14px 32px; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 1rem; }
+  .btn-white:hover { background: #f0f9ff; }
+  .faq-item { border: 1px solid #e2e8f0; border-radius: 10px; margin-bottom: 14px; overflow: hidden; }
+  .faq-q { width: 100%; background: none; border: none; padding: 18px 20px; text-align: left; font-weight: 600; font-size: 1rem; cursor: pointer; display: flex; justify-content: space-between; color: #0f172a; }
+  .faq-a { padding: 0 20px 16px; color: #475569; line-height: 1.7; display: none; }
+  .faq-q[aria-expanded="true"] + .faq-a { display: block; }
+  .related-links { list-style: none; padding: 0; margin: 20px 0 0; display: flex; flex-wrap: wrap; gap: 12px; }
+  .related-links a { display: inline-block; background: #e0f2fe; color: #0284c7; padding: 8px 18px; border-radius: 6px; text-decoration: none; font-size: 0.9rem; font-weight: 500; }
+  .related-links a:hover { background: #bae6fd; }
+</style>
+
+<!-- Hero -->
+<section class="en-hero">
+  <div class="en-container">
+    <span class="en-badge">Marbella & Costa del Sol</span>
+    <h1>Glass Curtains Marbella</h1>
+    <p>Frameless glass curtain systems manufactured and installed by Costa Glass — the Costa del Sol's leading specialist in glass terrace enclosures.</p>
+    <a href="/contact" class="btn-white">Get a Free Quote</a>
+  </div>
+</section>
+
+<!-- What are glass curtains -->
+<section class="en-section">
+  <div class="en-container">
+    <h2>What Are Glass Curtains?</h2>
+    <p>Glass curtains — known in Spanish as <em>cortinas de cristal</em> — are frameless glass panel systems designed to enclose terraces, balconies, and outdoor areas without the visual obstruction of traditional aluminium frames. Each panel is made from toughened safety glass (typically 8 mm or 10 mm thick) and slides or folds open to provide full ventilation when needed.</p>
+    <p>Unlike conventional glazed enclosures, glass curtains have no vertical profiles between panels. This creates a completely unobstructed panoramic view — a feature that has made them enormously popular in Marbella, where villas and apartments often have spectacular sea or mountain views worth preserving.</p>
+    <p>The system can be opened to virtually 100%, stacked neatly to one or both sides. In Marbella's climate — mild winters and long dry summers — glass curtains let you use your terrace comfortably throughout the entire year, sheltering against the wind in spring, warmth in autumn, and the occasional winter rain.</p>
+
+    <div class="en-grid">
+      <div class="en-card">
+        <h3>Frameless Design</h3>
+        <p>No vertical uprights between panels — panoramic views are completely preserved from floor to ceiling.</p>
+      </div>
+      <div class="en-card">
+        <h3>Fully Openable</h3>
+        <p>Panels fold and slide to one side, giving up to 90% open space for ventilation on warm days.</p>
+      </div>
+      <div class="en-card">
+        <h3>Safety Glass</h3>
+        <p>All glass is EN 12150 certified toughened glass, meeting European safety standards for inhabited spaces.</p>
+      </div>
+      <div class="en-card">
+        <h3>Custom Made</h3>
+        <p>Every system is measured and fabricated to fit your exact terrace dimensions — no standard sizes, no compromises.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Why expats in Marbella love them -->
+<section class="en-section">
+  <div class="en-container">
+    <h2>Why Expats in Marbella Love Glass Curtains</h2>
+    <p>Marbella has one of the highest concentrations of foreign residents on the entire Iberian Peninsula. British, Irish, German, Scandinavian and Russian buyers have long favoured the Golden Mile, Nueva Andalucía, Puerto Banús and Sierra Blanca for second homes and full-time residences. Glass curtains are consistently among the first improvements these expat owners request.</p>
+    <p>The reasons are straightforward. Marbella terraces in ocean-facing apartments are often exposed to the Levante wind, which blows in strongly from the east. Without protection, even a mild 25 km/h breeze makes dining outdoors uncomfortable. Glass curtains deflect that wind entirely while keeping your sea view intact. Many of our Marbella clients describe their glass-curtained terrace as "adding an extra room to the property".</p>
+    <p>From a purely financial perspective, a professionally installed glass curtain system adds measurable value to a Marbella property. Estate agents on the Costa del Sol commonly cite glassed-in outdoor spaces as a significant buyer draw, particularly for properties marketed to the Northern European market. The investment typically pays for itself many times over in both usability and resale value.</p>
+    <p>Maintenance is minimal — toughened glass withstands the salt air and strong UV radiation of the Costa del Sol far better than timber or PVC alternatives. An occasional clean with a standard glass cleaner is all that is required to keep the panels looking pristine.</p>
+  </div>
+</section>
+
+<!-- Cost guide -->
+<section class="en-section">
+  <div class="en-container">
+    <h2>Glass Curtain Cost Guide — Marbella 2025</h2>
+    <p>Prices for glass curtains in Marbella vary depending on glass thickness, system type, terrace dimensions, and access complexity. As direct manufacturers based in Estepona, Costa Glass eliminates the middleman and passes those savings on to you. Below are indicative price ranges for typical residential installations in Marbella.</p>
+
+    <table class="price-table">
+      <thead>
+        <tr>
+          <th>Terrace Size</th>
+          <th>Glass Thickness</th>
+          <th>Estimated Price Range</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Up to 10 m²</td><td>8 mm</td><td>€1,800 – €3,000</td></tr>
+        <tr><td>10–20 m²</td><td>8 mm</td><td>€2,800 – €5,500</td></tr>
+        <tr><td>10–20 m²</td><td>10 mm (premium)</td><td>€3,500 – €7,000</td></tr>
+        <tr><td>20–40 m²</td><td>10 mm</td><td>€5,000 – €11,000</td></tr>
+        <tr><td>Large villa terrace</td><td>12 mm motorised</td><td>€9,000 – €20,000+</td></tr>
+      </tbody>
+    </table>
+
+    <p>These prices include manufacture, transport from our Estepona factory, and professional installation by our own technical team. There are no hidden charges. A detailed fixed-price quote is provided before any work begins, so you know exactly what you're paying.</p>
+    <p>For a faster indication, contact us with approximate running metres of terrace to glaze. We'll respond within one working day with an indicative price range before arranging a free site survey.</p>
+  </div>
+</section>
+
+<!-- Installation process -->
+<section class="en-section">
+  <div class="en-container">
+    <h2>The Installation Process</h2>
+    <p>Installing glass curtains in Marbella is surprisingly quick and clean. Because the system requires no wet trade work — no concrete, no drilling into load-bearing walls, no plaster or tiling — a typical residential terrace can be fully glazed in a single day.</p>
+    <p><strong>Step 1 — Free site survey:</strong> A Costa Glass technician visits your Marbella property to take precise measurements, assess the structural conditions of your terrace, and advise on the best system and glass options for your situation.</p>
+    <p><strong>Step 2 — Fabrication:</strong> Your panels are manufactured to measure in our Estepona factory, typically within 3–4 weeks from order confirmation. We use our own manufacturing facilities, which gives us direct quality control over every panel.</p>
+    <p><strong>Step 3 — Installation:</strong> Our installation crew arrives with all hardware, tracks, and panels. For a standard apartment terrace, installation is complete in four to eight hours. There are no mess, no debris, and no large skips outside your property.</p>
+    <p><strong>Step 4 — Handover:</strong> We demonstrate how to operate and clean the system, and leave you with a warranty document covering glass breakage and mechanical components.</p>
+
+    <ul class="related-links">
+      <li><a href="/cortinas-de-cristal">← View our Glass Curtain product page</a></li>
+      <li><a href="/en/glass-curtains-costa-del-sol">Glass Curtains — Costa del Sol coverage</a></li>
+      <li><a href="/en/frameless-glass-enclosures">Frameless Glass Enclosures guide</a></li>
+    </ul>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="en-section">
+  <div class="en-container">
+    <h2>Frequently Asked Questions</h2>
+
+    <div class="faq-item">
+      <button class="faq-q" aria-expanded="false">Do I need community approval to install glass curtains in Marbella? <span>▾</span></button>
+      <div class="faq-a">In most Marbella urbanisations, any modification to a terrace that affects the exterior façade requires approval from the Comunidad de Propietarios (residents' association). The good news is that frameless glass curtains, because they are less visually intrusive than framed aluminium enclosures, are generally easier to get approved. Costa Glass can advise on the documentation required and best practices for presenting the proposal to your community.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" aria-expanded="false">How long do glass curtains last in Marbella's climate? <span>▾</span></button>
+      <div class="faq-a">With minimal maintenance, a well-installed glass curtain system will last 20–30 years. The toughened glass itself is highly resistant to UV degradation, salt air, and thermal cycling. Tracks and fixings are made from marine-grade aluminium or stainless steel, specifically chosen to perform in coastal Mediterranean conditions. Rubber seals should be inspected annually and replaced every 8–10 years.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" aria-expanded="false">Can glass curtains be fitted on an irregular-shaped terrace? <span>▾</span></button>
+      <div class="faq-a">Yes. Every system we supply and install is custom-manufactured to the exact dimensions and geometry of your terrace. We have experience with curved terraces, corner configurations, sloped ceilings, and tapered openings — all common in Marbella's older villas and modern apartment buildings alike.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" aria-expanded="false">Is there a warranty on glass curtains installed by Costa Glass? <span>▾</span></button>
+      <div class="faq-a">Yes. We provide a 2-year warranty on all mechanical components and hardware, and the toughened glass panels carry a manufacturer's guarantee against manufacturing defects. As direct manufacturers and installers, you deal with one company from start to finish — no subcontractors, no finger-pointing between supplier and installer.</div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA Band -->
+<section class="cta-band">
+  <h2>Ready to Transform Your Marbella Terrace?</h2>
+  <p>Get a free, no-obligation quote from Costa Glass. We visit, measure, and advise at no charge — and provide a fixed price before any work begins.</p>
+  <a href="/contact" class="btn-white">Request Your Free Quote</a>
+</section>
+
+<script>
+  document.querySelectorAll('.faq-q').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const expanded = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', String(!expanded));
+    });
+  });
+</script>
+
+</BaseLayout>

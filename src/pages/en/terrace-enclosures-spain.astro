@@ -1,0 +1,155 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const pageSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Terrace Enclosures in Spain: A Guide for Expats",
+  "description": "Everything expats need to know about glazing and enclosing a terrace in Spain — planning rules, comunidad approval, glass vs aluminium options.",
+  "author": { "@type": "Organization", "name": "Costa Glass" },
+  "publisher": { "@type": "Organization", "name": "Costa Glass", "url": "https://costaglass.com" },
+  "url": "https://costaglass.com/en/terrace-enclosures-spain/"
+});
+---
+
+<BaseLayout
+  title="Terrace Enclosures Spain | Rules, Permits & Options for Expats | Costa Glass"
+  description="Complete expat guide to terrace enclosures in Spain. Planning rules in Andalucía, comunidad de propietarios approval, glass vs aluminium, costs and timescales."
+  canonical="https://costaglass.com/en/terrace-enclosures-spain/"
+  ogImage="https://costaglass.com/Assets/products/glass curtain walls/c2.jpg"
+  pageSchema={pageSchema}
+  lang="en"
+>
+
+<style>
+  .en-hero { background: linear-gradient(135deg, #0f172a 0%, #312e81 100%); color: white; padding: 100px 20px 80px; text-align: center; }
+  .en-hero h1 { font-size: clamp(2rem, 5vw, 3.2rem); margin: 0 0 20px; font-family: 'Playfair Display', serif; }
+  .en-hero p { font-size: 1.2rem; max-width: 680px; margin: 0 auto 32px; opacity: 0.9; }
+  .en-badge { display: inline-block; background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.3); border-radius: 30px; padding: 6px 20px; font-size: 0.875rem; margin-bottom: 20px; }
+  .en-section { padding: 70px 20px; }
+  .en-section:nth-child(even) { background: #f8fafc; }
+  .en-container { max-width: 900px; margin: 0 auto; }
+  .en-section h2 { font-size: clamp(1.5rem, 3vw, 2.2rem); color: #0f172a; margin: 0 0 24px; font-family: 'Playfair Display', serif; }
+  .en-section p { font-size: 1.05rem; line-height: 1.8; color: #374151; margin: 0 0 18px; }
+  .info-box { background: #eff6ff; border-left: 4px solid #3b82f6; padding: 18px 20px; border-radius: 0 10px 10px 0; margin: 24px 0; }
+  .info-box p { margin: 0; color: #1e40af; font-size: 1rem; }
+  .warning-box { background: #fffbeb; border-left: 4px solid #f59e0b; padding: 18px 20px; border-radius: 0 10px 10px 0; margin: 24px 0; }
+  .warning-box p { margin: 0; color: #92400e; font-size: 1rem; }
+  .steps { list-style: none; counter-reset: steps; padding: 0; margin: 24px 0; }
+  .steps li { counter-increment: steps; display: flex; gap: 16px; margin-bottom: 20px; align-items: flex-start; }
+  .steps li::before { content: counter(steps); background: #3b82f6; color: white; border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; font-weight: 700; flex-shrink: 0; }
+  .steps li p { margin: 0; font-size: 1rem; line-height: 1.7; color: #374151; }
+  .compare-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin: 28px 0; }
+  @media (max-width: 680px) { .compare-grid { grid-template-columns: 1fr; } }
+  .compare-card { border-radius: 12px; padding: 24px; border: 2px solid; }
+  .compare-card.glass { border-color: #3b82f6; background: #eff6ff; }
+  .compare-card.aluminum { border-color: #94a3b8; background: #f8fafc; }
+  .compare-card h3 { font-size: 1.1rem; margin: 0 0 14px; font-weight: 700; }
+  .compare-card ul { list-style: none; padding: 0; margin: 0; }
+  .compare-card li { padding: 6px 0; font-size: 0.95rem; color: #374151; border-bottom: 1px solid rgba(0,0,0,0.05); }
+  .compare-card li:last-child { border-bottom: none; }
+  .cta-band { background: linear-gradient(135deg, #4f46e5, #6366f1); color: white; padding: 60px 20px; text-align: center; }
+  .cta-band h2 { font-size: 2rem; margin: 0 0 16px; }
+  .cta-band p { font-size: 1.1rem; margin: 0 0 28px; opacity: 0.95; max-width: 560px; margin-left: auto; margin-right: auto; }
+  .btn-white { display: inline-block; background: white; color: #4f46e5; padding: 14px 32px; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 1rem; }
+  .btn-white:hover { background: #eef2ff; }
+  .related-links { list-style: none; padding: 0; margin: 20px 0 0; display: flex; flex-wrap: wrap; gap: 12px; }
+  .related-links a { display: inline-block; background: #e0e7ff; color: #4338ca; padding: 8px 18px; border-radius: 6px; text-decoration: none; font-size: 0.9rem; font-weight: 500; }
+</style>
+
+<section class="en-hero">
+  <div class="en-container">
+    <span class="en-badge">Essential Guide for Expats</span>
+    <h1>Terrace Enclosures in Spain</h1>
+    <p>Everything you need to know about enclosing a terrace or balcony in Spain — from community rules and planning regulations to the best glass and aluminium options available.</p>
+    <a href="/contact" class="btn-white">Ask Our Experts</a>
+  </div>
+</section>
+
+<!-- Rules and regs -->
+<section class="en-section">
+  <div class="en-container">
+    <h2>Planning Rules for Terrace Enclosures in Spain</h2>
+    <p>Enclosing a terrace in Spain sits in a legally nuanced space that many expat homeowners find confusing. The short answer is: it depends on the type of property, the municipality, the regional government (comunidad autónoma), and — crucially — your Comunidad de Propietarios (residents' association).</p>
+    <p>In Andalucía — which covers the entire Costa del Sol — the primary legal framework is the Ley de Ordenación Urbanística de Andalucía (LOUA) and the local Plan General de Ordenación Urbana (PGOU) of your specific municipality. In practice, most municipalities classify a terrace enclosure as a <em>licencia de obra menor</em> (minor works licence) if the structure is non-permanent and does not alter load-bearing elements. Glass curtain systems typically fall into this category.</p>
+
+    <div class="info-box">
+      <p><strong>Good news for glass curtain buyers:</strong> Frameless glass curtain systems are specifically categorised as <em>elementos desmontables</em> (demountable elements) in most Andalusian municipalities. This means they are treated as reversible installations — dramatically simplifying the application process and often requiring only a <em>comunicación previa</em> (prior notification) rather than a full planning application.</p>
+    </div>
+
+    <p>The rules for permanently glazed enclosures — sealed aluminium-framed systems that create fixed interior space — are stricter. These are typically classified as <em>obra de ampliación</em> (extension works) and require a full planning licence from the town hall, plus community consent. They also count as an increase in built surface area, which can affect property taxes (IBI) and notarial value.</p>
+
+    <div class="warning-box">
+      <p><strong>Important:</strong> Always clarify your specific situation with a local gestor or architect before proceeding. Rules vary significantly between municipalities. Costa Glass can advise on common scenarios based on 10+ years of working in Málaga province.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Community approval -->
+<section class="en-section">
+  <div class="en-container">
+    <h2>Getting Comunidad de Propietarios Approval</h2>
+    <p>For most apartment owners on the Costa del Sol, the bigger practical hurdle is not the town hall — it is the Comunidad de Propietarios (community of property owners). Under the Ley de Propiedad Horizontal (LPH), any modification to elements that form part of the building's façade requires a community vote. A terrace enclosure almost always qualifies.</p>
+    <p>The voting threshold varies by type of modification. Standard cases require approval by a simple majority of owners present, with that majority also representing a majority of ownership quotas. In practice, this means getting 50%+ of your neighbours on board. For modifications classified as <em>mejoras</em> (improvements), a 3/5 majority is required.</p>
+    <p>Here are our practical tips for getting your terrace enclosure approved at the next community meeting:</p>
+
+    <ol class="steps">
+      <li><p><strong>Choose glass curtains over framed glazing.</strong> Frameless glass curtains have a dramatically lower visual impact on the building façade than aluminium framed enclosures. Sceptical neighbours are far more likely to approve an almost-invisible glass panel system than a chunky aluminium frame.</p></li>
+      <li><p><strong>Provide visual materials.</strong> Bring before-and-after photographs of similar installations in the same type of building. Costa Glass can provide a portfolio of relevant projects on request.</p></li>
+      <li><p><strong>Get a technical opinion letter.</strong> A brief letter from a local architect or the installation company confirming the demountable nature of the system can reassure communities that the work is reversible.</p></li>
+      <li><p><strong>Check the community statutes first.</strong> Some communities have specific rules about enclosures — either outright prohibitions or requirements for a uniform appearance across all terraces. Read the Estatutos carefully before raising the subject at a meeting.</p></li>
+      <li><p><strong>Propose a uniform solution.</strong> If the community has concerns about visual uniformity, offer to act as the coordinator for a community-wide installation using the same system and colour. This can turn opposition into enthusiasm.</p></li>
+    </ol>
+  </div>
+</section>
+
+<!-- Glass vs aluminium -->
+<section class="en-section">
+  <div class="en-container">
+    <h2>Glass vs Aluminium Terrace Enclosures: Which Is Right for You?</h2>
+    <p>The two main options for enclosing a terrace in Spain are glass curtain systems (frameless or semi-framed) and aluminium-frame enclosures. They differ significantly in aesthetics, planning requirements, cost, and reversibility.</p>
+
+    <div class="compare-grid">
+      <div class="compare-card glass">
+        <h3>🔵 Glass Curtain Systems</h3>
+        <ul>
+          <li>✅ No vertical profiles — full panoramic view</li>
+          <li>✅ Classifications as demountable (easier permits)</li>
+          <li>✅ Full ventilation when panels are open</li>
+          <li>✅ Higher aesthetic appeal — adds property value</li>
+          <li>✅ Easier community approval</li>
+          <li>⚠️ Higher cost than basic aluminium frames</li>
+          <li>⚠️ Less acoustic insulation than sealed systems</li>
+        </ul>
+      </div>
+      <div class="compare-card aluminum">
+        <h3>⚪ Aluminium Frame Enclosures</h3>
+        <ul>
+          <li>✅ Lower entry-level cost</li>
+          <li>✅ Better acoustic insulation (sealed systems)</li>
+          <li>✅ Can include thermal glazing (double glazing)</li>
+          <li>⚠️ Visible vertical profiles break up the view</li>
+          <li>⚠️ Often classified as permanent — full planning needed</li>
+          <li>⚠️ Harder to get community approval</li>
+          <li>⚠️ Cannot be fully opened for ventilation</li>
+        </ul>
+      </div>
+    </div>
+
+    <p>For the majority of expat homeowners on the Costa del Sol — particularly those in apartments or townhouses with sea or mountain views — the frameless glass curtain system represents the better long-term choice. The combination of views, ventilation, planning simplicity, and property value uplift typically justifies the higher initial cost.</p>
+
+    <ul class="related-links">
+      <li><a href="/en/frameless-glass-enclosures">Frameless Glass Enclosures Guide →</a></li>
+      <li><a href="/en/glass-curtains-marbella">Glass Curtains Marbella →</a></li>
+      <li><a href="/cortinas-de-cristal">View Glass Curtain Products →</a></li>
+    </ul>
+  </div>
+</section>
+
+<section class="cta-band">
+  <h2>Have Questions About Enclosing Your Terrace in Spain?</h2>
+  <p>Our bilingual team has guided hundreds of expat homeowners through the process. Contact us for honest, experience-based advice and a free quote.</p>
+  <a href="/contact" class="btn-white">Talk to an Expert</a>
+</section>
+
+</BaseLayout>

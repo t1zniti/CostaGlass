@@ -1,0 +1,178 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const pageSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Glass Curtains Costa del Sol",
+  "description": "Frameless glass curtain systems supplied and installed across the entire Costa del Sol by Costa Glass.",
+  "provider": { "@type": "LocalBusiness", "name": "Costa Glass", "url": "https://costaglass.com" },
+  "areaServed": { "@type": "Place", "name": "Costa del Sol" },
+  "url": "https://costaglass.com/en/glass-curtains-costa-del-sol/"
+});
+---
+
+<BaseLayout
+  title="Glass Curtains Costa del Sol | Frameless Glazing Specialists | Costa Glass"
+  description="Glass curtains across the Costa del Sol — Marbella, Estepona, Benalmádena, Fuengirola, Torremolinos and Nerja. Frameless frameless systems by Costa Glass manufacturers."
+  canonical="https://costaglass.com/en/glass-curtains-costa-del-sol/"
+  ogImage="https://costaglass.com/Assets/products/glass curtain walls/c3.jpg"
+  pageSchema={pageSchema}
+  lang="en"
+>
+
+<style>
+  .en-hero { background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 100%); color: white; padding: 100px 20px 80px; text-align: center; }
+  .en-hero h1 { font-size: clamp(2rem, 5vw, 3.2rem); margin: 0 0 20px; font-family: 'Playfair Display', serif; }
+  .en-hero p { font-size: 1.2rem; max-width: 650px; margin: 0 auto 32px; opacity: 0.9; }
+  .en-badge { display: inline-block; background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.3); border-radius: 30px; padding: 6px 20px; font-size: 0.875rem; margin-bottom: 20px; }
+  .en-section { padding: 70px 20px; }
+  .en-section:nth-child(even) { background: #f8fafc; }
+  .en-container { max-width: 900px; margin: 0 auto; }
+  .en-section h2 { font-size: clamp(1.5rem, 3vw, 2.2rem); color: #0f172a; margin: 0 0 24px; font-family: 'Playfair Display', serif; }
+  .en-section p { font-size: 1.05rem; line-height: 1.8; color: #374151; margin: 0 0 18px; }
+  .en-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin: 30px 0; }
+  .en-card { background: white; border-radius: 12px; padding: 20px; border: 1px solid #e2e8f0; }
+  .en-card h3 { font-size: 1rem; color: #0f172a; margin: 0 0 8px; font-weight: 700; }
+  .en-card p { font-size: 0.9rem; color: #475569; margin: 0; }
+  .coverage-list { list-style: none; padding: 0; margin: 20px 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 10px; }
+  .coverage-list li { background: white; border: 1px solid #bae6fd; border-radius: 8px; padding: 10px 16px; color: #0369a1; font-weight: 600; font-size: 0.95rem; display: flex; align-items: center; gap: 8px; }
+  .cta-band { background: linear-gradient(135deg, #0284c7, #0ea5e9); color: white; padding: 60px 20px; text-align: center; }
+  .cta-band h2 { font-size: 2rem; margin: 0 0 16px; }
+  .cta-band p { font-size: 1.1rem; margin: 0 0 28px; opacity: 0.95; max-width: 560px; margin-left: auto; margin-right: auto; }
+  .btn-white { display: inline-block; background: white; color: #0284c7; padding: 14px 32px; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 1rem; }
+  .btn-white:hover { background: #f0f9ff; }
+  .related-links { list-style: none; padding: 0; margin: 20px 0 0; display: flex; flex-wrap: wrap; gap: 12px; }
+  .related-links a { display: inline-block; background: #e0f2fe; color: #0284c7; padding: 8px 18px; border-radius: 6px; text-decoration: none; font-size: 0.9rem; font-weight: 500; }
+  .compare-table { width: 100%; border-collapse: collapse; margin: 24px 0; }
+  .compare-table th { background: #0f172a; color: white; padding: 12px 16px; text-align: left; font-size: 0.9rem; }
+  .compare-table td { padding: 12px 16px; border-bottom: 1px solid #e2e8f0; font-size: 0.95rem; color: #374151; }
+  .compare-table tr:nth-child(even) td { background: #f8fafc; }
+</style>
+
+<section class="en-hero">
+  <div class="en-container">
+    <span class="en-badge">Full Costa del Sol Coverage</span>
+    <h1>Glass Curtains Costa del Sol</h1>
+    <p>Costa Glass supplies and installs frameless glass curtain systems across the entire Costa del Sol — from Nerja in the east to San Roque and Gibraltar in the west.</p>
+    <a href="/contact" class="btn-white">Get a Free Quote</a>
+  </div>
+</section>
+
+<!-- Coverage -->
+<section class="en-section">
+  <div class="en-container">
+    <h2>Our Service Coverage Area</h2>
+    <p>Based in Estepona and operating throughout the province of Málaga, Costa Glass covers all major residential areas along the Costa del Sol. Whether your property is in a hillside urbanisation above Marbella or a beachfront apartment in Torremolinos, our installation team reaches you with the same quality of service and at the same price per square metre.</p>
+
+    <ul class="coverage-list">
+      <li>📍 Marbella</li>
+      <li>📍 Estepona</li>
+      <li>📍 Benalmádena</li>
+      <li>📍 Fuengirola</li>
+      <li>📍 Torremolinos</li>
+      <li>📍 Nerja</li>
+      <li>📍 San Roque</li>
+      <li>📍 Gibraltar</li>
+      <li>📍 Manilva</li>
+      <li>📍 Casares</li>
+      <li>📍 Vélez-Málaga</li>
+      <li>📍 Málaga City</li>
+    </ul>
+
+    <p>If your town is not listed above, please contact us — the chances are we cover it. We service properties throughout Málaga province on a daily basis.</p>
+  </div>
+</section>
+
+<!-- Types of systems -->
+<section class="en-section">
+  <div class="en-container">
+    <h2>Types of Glass Curtain Systems</h2>
+    <p>Glass curtain systems are not all built the same. Over the years, the market has evolved from basic sliding panel systems to sophisticated frameless configurations with motorised opening options. Understanding the differences helps you choose the right system for your property and budget.</p>
+
+    <table class="compare-table">
+      <thead>
+        <tr>
+          <th>System Type</th>
+          <th>Best For</th>
+          <th>Opening Style</th>
+          <th>Price Range</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Frameless (no profiles)</strong></td>
+          <td>Sea-view terraces, premium villas</td>
+          <td>Fold &amp; stack to one side</td>
+          <td>€€€</td>
+        </tr>
+        <tr>
+          <td><strong>Semi-frameless</strong></td>
+          <td>Budget-conscious installs, community housing</td>
+          <td>Slide &amp; stack</td>
+          <td>€€</td>
+        </tr>
+        <tr>
+          <td><strong>Motorised frameless</strong></td>
+          <td>Large terraces, high-end properties</td>
+          <td>Electric motor, remote or App</td>
+          <td>€€€€</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>For most residential properties on the Costa del Sol, the frameless system represents the best combination of aesthetics, durability, and value. Costa Glass manufactures all three systems and will recommend the most appropriate option after a free site survey.</p>
+  </div>
+</section>
+
+<!-- Frameless vs framed -->
+<section class="en-section">
+  <div class="en-container">
+    <h2>Frameless vs Framed Enclosures: Before and After</h2>
+    <p>The difference between a frameless glass curtain and a traditional aluminium-framed enclosure is dramatic — both visually and functionally. A framed enclosure creates a permanent room: once closed, you cannot open it fully. The aluminium profiles are always visible, breaking up your view and giving the terrace a "boxed-in" feel.</p>
+    <p>A frameless glass curtain, by contrast, is completely reversible. Open it fully on a warm morning and your terrace becomes an extension of the outdoor garden. Close it on a cold evening and it instantly becomes a comfortable, wind-protected room. There are no vertical profiles to block the view — the glass panels sit edge-to-edge, creating a near-invisible barrier.</p>
+    <p>From a planning perspective, frameless systems are also treated more favourably by communities and local councils. Because they have a lighter visual impact on the building's façade, they are less likely to require formal planning permission and more likely to sail through a community vote.</p>
+    <p>After installation, the lifestyle benefits are immediately apparent. Homeowners across the Costa del Sol consistently report using their terraces for 8 to 10 additional months per year after installing glass curtains — compared with perhaps 4 or 5 months with an open terrace subject to wind and rain.</p>
+
+    <ul class="related-links">
+      <li><a href="/en/glass-curtains-marbella">Glass Curtains Marbella →</a></li>
+      <li><a href="/en/frameless-glass-enclosures">Frameless Glass Enclosures Guide →</a></li>
+      <li><a href="/cortinas-de-cristal">Product Page: Cortinas de Cristal →</a></li>
+    </ul>
+  </div>
+</section>
+
+<!-- Why Costa Glass -->
+<section class="en-section">
+  <div class="en-container">
+    <h2>Why Choose Costa Glass?</h2>
+    <p>Costa Glass is the Costa del Sol's only manufacturer-installer of glass curtain systems offering the complete service chain — from design and fabrication to delivery and installation — under one roof. Here is what that means for you in practice.</p>
+
+    <div class="en-grid">
+      <div class="en-card">
+        <h3>Direct from Factory</h3>
+        <p>No middlemen. No distributor margins. You pay manufacturer price for a manufacturer-quality product.</p>
+      </div>
+      <div class="en-card">
+        <h3>10+ Years Experience</h3>
+        <p>We have been installing glass curtains across the Costa del Sol since 2013. Our portfolio includes hundreds of residential and commercial projects.</p>
+      </div>
+      <div class="en-card">
+        <h3>No-Surprise Pricing</h3>
+        <p>Fixed-price quotes provided before work begins. No variations, no surprises on invoice day.</p>
+      </div>
+      <div class="en-card">
+        <h3>English-Speaking Team</h3>
+        <p>Our sales and project management team is fully bilingual. Communicating your requirements has never been easier.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <h2>Get Your Free Costa del Sol Quote</h2>
+  <p>Contact us today for a free, no-obligation site survey and fixed-price quotation anywhere on the Costa del Sol.</p>
+  <a href="/contact" class="btn-white">Request a Free Quote</a>
+</section>
+
+</BaseLayout>

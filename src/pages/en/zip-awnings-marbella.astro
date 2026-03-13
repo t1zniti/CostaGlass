@@ -1,0 +1,133 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const pageSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Zip Awnings Marbella",
+  "description": "Motorised zip screen awnings for terraces, restaurants and homes in Marbella. UV protection, wind resistance up to Beaufort 5. Costa Glass installation.",
+  "provider": { "@type": "LocalBusiness", "name": "Costa Glass", "url": "https://costaglass.com" },
+  "areaServed": { "@type": "City", "name": "Marbella" },
+  "url": "https://costaglass.com/en/zip-awnings-marbella/"
+});
+---
+
+<BaseLayout
+  title="Zip Awnings Marbella | Motorised ZIP Screen Awnings | Costa Glass"
+  description="Zip screen awnings for Marbella terraces and restaurants. Wind-resistant zip guide rail system, motorised, UV 90% protection. Free quote from Costa Glass."
+  canonical="https://costaglass.com/en/zip-awnings-marbella/"
+  ogImage="https://costaglass.com/Assets/products/zip screen/l1.jpg"
+  pageSchema={pageSchema}
+  lang="en"
+>
+
+<style>
+  .en-hero { background: linear-gradient(135deg, #0f172a 0%, #7c2d12 100%); color: white; padding: 100px 20px 80px; text-align: center; }
+  .en-hero h1 { font-size: clamp(2rem, 5vw, 3.2rem); margin: 0 0 20px; font-family: 'Playfair Display', serif; }
+  .en-hero p { font-size: 1.2rem; max-width: 650px; margin: 0 auto 32px; opacity: 0.9; }
+  .en-badge { display: inline-block; background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.3); border-radius: 30px; padding: 6px 20px; font-size: 0.875rem; margin-bottom: 20px; }
+  .en-section { padding: 70px 20px; }
+  .en-section:nth-child(even) { background: #f8fafc; }
+  .en-container { max-width: 900px; margin: 0 auto; }
+  .en-section h2 { font-size: clamp(1.5rem, 3vw, 2.2rem); color: #0f172a; margin: 0 0 24px; font-family: 'Playfair Display', serif; }
+  .en-section p { font-size: 1.05rem; line-height: 1.8; color: #374151; margin: 0 0 18px; }
+  .specs-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: 28px 0; }
+  @media (max-width: 680px) { .specs-grid { grid-template-columns: 1fr; } }
+  .spec-card { background: white; border-radius: 10px; padding: 20px; border: 1px solid #e2e8f0; }
+  .spec-card .label { font-size: 0.8rem; font-weight: 700; color: #64748b; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 6px; }
+  .spec-card .value { font-size: 1.4rem; font-weight: 800; color: #0f172a; }
+  .spec-card .desc { font-size: 0.85rem; color: #64748b; margin-top: 4px; }
+  .cta-band { background: linear-gradient(135deg, #b45309, #d97706); color: white; padding: 60px 20px; text-align: center; }
+  .cta-band h2 { font-size: 2rem; margin: 0 0 16px; }
+  .cta-band p { font-size: 1.1rem; margin: 0 0 28px; opacity: 0.95; max-width: 560px; margin-left: auto; margin-right: auto; }
+  .btn-white { display: inline-block; background: white; color: #b45309; padding: 14px 32px; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 1rem; }
+  .btn-white:hover { background: #fffbeb; }
+  .related-links { list-style: none; padding: 0; margin: 20px 0 0; display: flex; flex-wrap: wrap; gap: 12px; }
+  .related-links a { display: inline-block; background: #fef3c7; color: #92400e; padding: 8px 18px; border-radius: 6px; text-decoration: none; font-size: 0.9rem; font-weight: 500; }
+  .use-list { list-style: none; padding: 0; margin: 20px 0; }
+  .use-list li { padding: 12px 0; border-bottom: 1px solid #f1f5f9; display: flex; gap: 10px; align-items: flex-start; font-size: 1rem; color: #374151; }
+  .use-list li::before { content: "✔"; color: #d97706; font-weight: 900; flex-shrink: 0; }
+</style>
+
+<section class="en-hero">
+  <div class="en-container">
+    <span class="en-badge">Marbella Sun & Wind Protection</span>
+    <h1>Zip Awnings Marbella</h1>
+    <p>Motorised zip screen awnings that lock into side channels for wind resistance up to Beaufort 5 — the most robust sun and privacy protection system for Marbella terraces.</p>
+    <a href="/contact" class="btn-white">Get a Free Quote</a>
+  </div>
+</section>
+
+<!-- What are zip awnings -->
+<section class="en-section">
+  <div class="en-container">
+    <h2>What Is a Zip Screen Awning?</h2>
+    <p>A zip screen awning — known in Spanish as <em>toldo zip</em> or <em>toldo screen</em> — differs from a conventional roller blind or canvas awning in one crucial engineering detail: the fabric screen is fitted with a zip on each side that locks into a guide channel fixed to the wall or structure. This zip-and-channel system keeps the screen taught and flat regardless of wind conditions, preventing the billowing, flapping, and early wear that ruins conventional awnings within a few seasons on the windier parts of the Costa del Sol.</p>
+    <p>Zip awnings are available in two main configurations: vertical drop screens (which descend from a concealed cassette at the top to provide shade and privacy for a terrace frontage) and overhead projecting screens (which extend horizontally from the building to cover the terrace roof space). Costa Glass installs both configurations — or a combination of the two — depending on your property and requirements.</p>
+    <p>All Costa Glass zip awnings are motorised as standard. The electric motor system includes a wind sensor that automatically retracts the screen when wind speeds exceed the rated maximum (typically 50 km/h for our standard systems). This automation protects the fabric from damage during the Levante wind events that affect the eastern Costa del Sol from spring through autumn.</p>
+
+    <div class="specs-grid">
+      <div class="spec-card">
+        <div class="label">UV Protection</div>
+        <div class="value">Up to 97%</div>
+        <div class="desc">Screen fabric blocks up to 97% of UV radiation, protecting furniture and reducing interior temperatures.</div>
+      </div>
+      <div class="spec-card">
+        <div class="label">Wind Rating</div>
+        <div class="value">Beaufort 5</div>
+        <div class="desc">Zip guide rail system tested to 38 km/h — calm on Beaufort scale 5. Auto-retract beyond limit.</div>
+      </div>
+      <div class="spec-card">
+        <div class="label">Max Width</div>
+        <div class="value">Up to 6 m</div>
+        <div class="desc">Single-panel zip screens available up to 6 metres wide without a central post.</div>
+      </div>
+      <div class="spec-card">
+        <div class="label">Fabric Colours</div>
+        <div class="value">200+</div>
+        <div class="desc">Sunscreen fabrics available in over 200 colours and openness factors from 1% to 10%.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Motorised options -->
+<section class="en-section">
+  <div class="en-container">
+    <h2>Motorised Zip Awning Options</h2>
+    <p>All Costa Glass zip awnings in Marbella are supplied with electric motors as standard — manual operation is neither the norm nor the best choice for the Costa del Sol climate, where rapid retraction during a sudden Levante gust is critical. Our motor systems are Somfy or equivalent premium brand, with a 5-year motor warranty.</p>
+    <p>Control options include: wall-mounted rocker switch, handheld RF remote, smartphone app (for Somfy-compatible systems), or integration into a wider smart home system via KNX or Zigbee. For Marbella holiday homes managed remotely, the smartphone connection allows owners to retract screens before a storm even when they are not in residence.</p>
+    <p>Multiple zip awnings on the same property can be grouped and controlled simultaneously. A typical setup for a large Marbella restaurant terrace might be four 3-metre vertical drop screens on the south façade plus two 5-metre overhead projecting screens, all controlled from a single wall panel.</p>
+  </div>
+</section>
+
+<!-- Ideal for restaurants and homes -->
+<section class="en-section">
+  <div class="en-container">
+    <h2>Ideal for Outdoor Restaurants and Marbella Homes</h2>
+    <p>Few improvements deliver a faster return on investment at a Marbella outdoor restaurant than a well-designed zip awning system. The ability to seat 20 diners on a shaded, wind-protected terrace at midday in August — when a competing restaurant with an open terrace is empty — is a competitive advantage with a direct commercial impact.</p>
+
+    <ul class="use-list">
+      <li>Restaurant terraces — control shade and privacy to maintain covers throughout the day in all seasons</li>
+      <li>Residential terraces — eliminate afternoon overheating while preserving the view</li>
+      <li>Pool areas — vertical drop screens around pool decking for privacy without blocking light</li>
+      <li>Hotel and resort terraces — uniform appearance, motorised control from a single building management system</li>
+      <li>Rooftop bars — overhead + vertical combination creates a fully weatherproof rooftop space</li>
+      <li>Villa gardens — privacy screens along boundary with zip system that retracts when not needed</li>
+    </ul>
+
+    <ul class="related-links">
+      <li><a href="/toldo-zip">View Toldo Zip product page →</a></li>
+      <li><a href="/en/bioclimatic-pergola-marbella">Bioclimatic Pergola Marbella →</a></li>
+      <li><a href="/en/glass-curtains-marbella">Glass Curtains Marbella →</a></li>
+    </ul>
+  </div>
+</section>
+
+<section class="cta-band">
+  <h2>Get a Free Quote for Zip Awnings in Marbella</h2>
+  <p>Costa Glass installs motorised zip awnings across Marbella and the Costa del Sol. Contact us for a free site survey and no-obligation quotation.</p>
+  <a href="/contact" class="btn-white">Request Your Free Quote</a>
+</section>
+
+</BaseLayout>

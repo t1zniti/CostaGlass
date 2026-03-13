@@ -1,0 +1,115 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const pageSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Glass Curtains Benalmádena",
+  "description": "Glass curtain installation in Benalmádena. Frameless glass curtains for terraces and balconies by Costa Glass — Costa del Sol specialists.",
+  "provider": { "@type": "LocalBusiness", "name": "Costa Glass", "telephone": "+34951074067", "url": "https://costaglass.com" },
+  "areaServed": { "@type": "City", "name": "Benalmádena" },
+  "url": "https://costaglass.com/en/glass-installation-benalmadena/"
+});
+---
+
+<BaseLayout
+  title="Glass Curtains Benalmádena | Terrace Glazing Specialists | Costa Glass"
+  description="Glass curtains in Benalmádena — frameless terrace glazing for apartments and villas by Costa Glass. Free site survey, direct manufacturer prices. Call today."
+  canonical="https://costaglass.com/en/glass-installation-benalmadena/"
+  ogImage="https://costaglass.com/Assets/products/glass curtain walls/c2.jpg"
+  pageSchema={pageSchema}
+  lang="en"
+>
+
+<style>
+  .en-hero { background: linear-gradient(135deg, #0f172a 0%, #1e3a2b 100%); color: white; padding: 100px 20px 80px; text-align: center; }
+  .en-hero h1 { font-size: clamp(2rem, 5vw, 3.2rem); margin: 0 0 20px; font-family: 'Playfair Display', serif; }
+  .en-hero p { font-size: 1.2rem; max-width: 650px; margin: 0 auto 32px; opacity: 0.9; }
+  .en-badge { display: inline-block; background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.3); border-radius: 30px; padding: 6px 20px; font-size: 0.875rem; margin-bottom: 20px; }
+  .en-section { padding: 70px 20px; }
+  .en-section:nth-child(even) { background: #f8fafc; }
+  .en-container { max-width: 900px; margin: 0 auto; }
+  .en-section h2 { font-size: clamp(1.5rem, 3vw, 2.2rem); color: #0f172a; margin: 0 0 24px; font-family: 'Playfair Display', serif; }
+  .en-section p { font-size: 1.05rem; line-height: 1.8; color: #374151; margin: 0 0 18px; }
+  .en-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin: 28px 0; }
+  @media (max-width: 680px) { .en-grid { grid-template-columns: 1fr; } }
+  .en-card { background: white; border-radius: 12px; padding: 22px; border: 1px solid #e2e8f0; }
+  .en-card h3 { font-size: 1rem; font-weight: 700; margin: 0 0 10px; color: #0f172a; }
+  .en-card p { font-size: 0.92rem; color: #475569; margin: 0; }
+  .cta-band { background: linear-gradient(135deg, #0284c7, #0ea5e9); color: white; padding: 60px 20px; text-align: center; }
+  .cta-band h2 { font-size: 2rem; margin: 0 0 16px; }
+  .cta-band p { font-size: 1.1rem; margin: 0 0 28px; opacity: 0.95; max-width: 560px; margin-left: auto; margin-right: auto; }
+  .btn-white { display: inline-block; background: white; color: #0284c7; padding: 14px 32px; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 1rem; }
+  .btn-white:hover { background: #f0f9ff; }
+  .related-links { list-style: none; padding: 0; margin: 20px 0 0; display: flex; flex-wrap: wrap; gap: 12px; }
+  .related-links a { display: inline-block; background: #e0f2fe; color: #0284c7; padding: 8px 18px; border-radius: 6px; text-decoration: none; font-size: 0.9rem; font-weight: 500; }
+</style>
+
+<section class="en-hero">
+  <div class="en-container">
+    <span class="en-badge">Benalmádena Service Area</span>
+    <h1>Glass Curtains Benalmádena</h1>
+    <p>Costa Glass serves Benalmádena and surrounding areas with premium frameless glass curtain systems. Manufactured in our Estepona factory, installed by our own technicians — no subcontractors.</p>
+    <a href="/contact" class="btn-white">Get a Free Quote</a>
+  </div>
+</section>
+
+<!-- Benalmádena property types -->
+<section class="en-section">
+  <div class="en-container">
+    <h2>Glass Curtains for Benalmádena's Diverse Properties</h2>
+    <p>Benalmádena is one of the Costa del Sol's most varied residential areas — from the hillside village of Benalmádena Pueblo at 250 metres above sea level, to the dense apartment strips of Arroyo de la Miel and the marina frontage of Benalmádena Costa. Each area presents different architectural constraints and different priorities for a glass curtain installation.</p>
+    <p>In Benalmádena Pueblo, the traditional white-washed buildings on narrow streets often have small rear terraces or patios where glass curtains can provide wind and rain protection without detracting from the village aesthetic. The challenge here is access — our installation teams are equipped to work in tight spaces and on terraces accessible only via narrow stairwells.</p>
+    <p>In the Costa and Marina zones, large-format apartment blocks with sea-facing terraces are the most common project type. These typically involve coordinating with the Comunidad de Propietarios to achieve a uniform system across multiple apartments, ensuring a consistent appearance on the building façade. Costa Glass has extensive experience managing this type of community installation.</p>
+    <p>Whether you own a studio apartment with a 4-metre terrace or a front-line villa with a panoramic sea view worth preserving, glass curtains from Costa Glass are custom-made to fit your precise space and requirements.</p>
+  </div>
+</section>
+
+<!-- What's included -->
+<section class="en-section">
+  <div class="en-container">
+    <h2>What's Included with Every Benalmádena Installation</h2>
+
+    <div class="en-grid">
+      <div class="en-card">
+        <h3>Free Site Survey</h3>
+        <p>A Costa Glass technician visits your Benalmádena property, takes measurements, assesses structural conditions, and advises on the best system for your space — at no charge and no obligation.</p>
+      </div>
+      <div class="en-card">
+        <h3>Fixed-Price Quote</h3>
+        <p>You receive a written fixed-price quotation before any work begins. No hidden extras, no retrospective variations. The price we quote is the price you pay.</p>
+      </div>
+      <div class="en-card">
+        <h3>Custom Manufacture</h3>
+        <p>All panels are manufactured to the precise dimensions of your terrace in our Estepona factory. No standard sizes — your order is made specifically for your property.</p>
+      </div>
+      <div class="en-card">
+        <h3>Professional Installation</h3>
+        <p>Installation is carried out by our own employed technicians — not subcontractors. A typical Benalmádena apartment terrace is installed in a single working day.</p>
+      </div>
+      <div class="en-card">
+        <h3>2-Year Warranty</h3>
+        <p>All mechanical components and hardware carry a 2-year warranty. The glass panels are covered by manufacturer guarantee against defects.</p>
+      </div>
+      <div class="en-card">
+        <h3>English-Speaking Support</h3>
+        <p>Our sales and support team is fully bilingual. All documentation, quotes, and follow-up service in English or Spanish as you prefer.</p>
+      </div>
+    </div>
+
+    <ul class="related-links">
+      <li><a href="/en/glass-curtains-costa-del-sol">Glass Curtains — Full Coverage Area →</a></li>
+      <li><a href="/en/frameless-glass-enclosures">Frameless Glass Enclosures Guide →</a></li>
+      <li><a href="/cortinas-de-cristal">Product Page: Cortinas de Cristal →</a></li>
+    </ul>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-band">
+  <h2>Get a Free Glass Curtain Quote in Benalmádena</h2>
+  <p>Contact Costa Glass for a free, no-obligation site survey and quote. We cover Benalmádena Pueblo, Arroyo de la Miel, Benalmádena Costa, and the Marina area.</p>
+  <a href="/contact" class="btn-white">Request a Free Quote</a>
+</section>
+
+</BaseLayout>
