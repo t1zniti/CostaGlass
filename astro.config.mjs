@@ -111,6 +111,7 @@ export default defineConfig({
     '/glass-balustrades/':                              '/',
 
     // ── Blog posts (old root-level URLs → /blog-posts/) ─────────────────
+    '/ideas-para-cerrar-un-porche-en-invierno/':    '/blog-posts/ideas-para-cerrar-un-porche-en-invierno/',
     '/cerramientos-de-terrazas-cristal-precio-m2':  '/blog-posts/cerramientos-de-terrazas-cristal-precio-m2/',
     '/cerramientos-de-terrazas-cristal-precio-m2/': '/blog-posts/cerramientos-de-terrazas-cristal-precio-m2/',
     '/como-cerrar-una-terraza-sin-obra/':           '/blog-posts/como-cerrar-una-terraza-sin-obra/',
@@ -209,5 +210,89 @@ export default defineConfig({
     '/frameless-glazing-for-your-pool-side/':   '/cortinas-de-cristal/',
     '/frameless-glazing-partitioning-systems-for-offices/': '/cortinas-de-cristal/',
     '/the-advantages-of-frameless-glazing-system/':        '/cortinas-de-cristal/',
+
+    // ── English product aliases (no trailing slash + with slash) ────────
+    '/guillotine-glass':                        '/guillotina-de-cristal/',
+    '/guillotine-glass/':                       '/guillotina-de-cristal/',
+    '/glass-curtain-walls':                     '/cortinas-de-cristal/',
+    '/glass-curtain-walls/':                    '/cortinas-de-cristal/',
+    '/bioclimatic':                             '/pergolas-bioclimaticas/',
+    '/bioclimatic/':                            '/pergolas-bioclimaticas/',
+    '/zip-screen':                              '/toldo-zip/',
+    '/zip-screen/':                             '/toldo-zip/',
+    '/paravientos-de-cristal':                  '/paraviento-de-cristal/',
+    '/paravientos-de-cristal/':                 '/paraviento-de-cristal/',
+
+    // ── Spanish product & content aliases ───────────────────────────────
+    '/ventanas-de-guillotina/':                 '/guillotina-de-cristal/',
+    '/ventanas-de-guillotina-precio':           '/guillotina-de-cristal/',
+    '/ventanas-de-guillotina-precio/':          '/guillotina-de-cristal/',
+    '/ventana-guillotina-de-cristal/':          '/guillotina-de-cristal/',
+    '/ventajas-de-las-guillotinas-de-cristal-en-restaurantes/': '/guillotina-de-cristal/',
+    '/los-beneficios-las-cortinas-cristal/':    '/cortinas-de-cristal/',
+    '/cortinas-de-cristal-precios/':            '/cortinas-de-cristal/',
+    '/cortinas-de-cristal-correderas/':         '/cortinas-de-cristal/',
+    '/cortinas-vidrio-la-solucion-la-sofisticacion/': '/cortinas-de-cristal/',
+    '/tipos-instalacion-cortinas-cristal/':     '/cortinas-de-cristal/',
+    '/empresas-de-cerramientos-de-terrazas/':   '/cortinas-de-cristal/',
+    '/amplia-casa-una-pequena-reforma/':        '/blog/',
+    '/las-ventajas-sistema-acristalamiento-sin-marco/': '/cortinas-de-cristal/',
+    '/cortinas-de-cristal-en-apartamentos/':    '/cortinas-de-cristal/',
+    '/recambios-para-cortinas-de-cristal':      '/blog-posts/recambios-para-cortinas-de-cristal/',
+    '/cerramientos':                            '/cortinas-de-cristal/',
+    '/cerramientos/':                           '/cortinas-de-cristal/',
+    '/cortinas':                                '/cortinas-de-cristal/',
+
+    // ── Pergola / Toldo aliases ──────────────────────────────────────────
+    '/toldo-pergola/':                          '/toldo-zip/',
+    '/toldo-para-pergola/':                     '/toldo-zip/',
+    '/precio-de-toldos-para-pergolas/':         '/toldo-zip/',
+    '/Toldos-y-Pergolas/':                      '/pergolas-bioclimaticas/',
+    '/Toldos-y-Pergolas':                       '/pergolas-bioclimaticas/',
+    '/toldos-y-pergolas/':                      '/pergolas-bioclimaticas/',
+
+    // ── Company / Distributors ───────────────────────────────────────────
+    '/distribuidores2/':                        '/company/',
+
+    // ── City page aliases → main product page ───────────────────────────
+    '/cortinas-de-cristal/sotogrande/':         '/cortinas-de-cristal/',
+    '/pergolas-bioclimaticas/san-roque/':       '/pergolas-bioclimaticas/',
+    '/toldo-zip/san-pedro/':                    '/toldo-zip/',
+
+    // ── Blog / archive aliases ───────────────────────────────────────────
+    '/blogs/':                                  '/blog/',
+    '/blogs/page/2/':                           '/blog/',
+    '/blogs/page/3/':                           '/blog/',
+    '/blogs/page/4/':                           '/blog/',
+    '/blog.html':                               '/blog/',
+    '/2018/03/':                                '/blog/',
+    '/blog-posts/blog-posts/como-cerrar-una-terraza-sin-obra/': '/blog-posts/como-cerrar-una-terraza-sin-obra/',
+
+    // ── Nested subpage aliases → parent/main page ────────────────────────
+    '/los-cerramientos-terraza-adecuados/cerramiento-de-terraza/': '/cortinas-de-cristal/',
+    '/barandillas-y-escaleras/1-barandillas-escaleras/': '/',
+    '/barandillas-de-acero-inoxidable-y-cristal/barandilla2/': '/',
+    '/mantenimiento-cortinas-cristal/cortina/':  '/cortinas-de-cristal/',
+    '/glass-curtain-for-great-view/1000/':       '/cortinas-de-cristal/',
+
+    // ── English /en/ missing entries ─────────────────────────────────────
+    '/en/company/':                             '/company/',
+    '/en/blog-english/':                        '/blog/',
+    '/en/paraviento-de-cristal':                '/paraviento-de-cristal/',
+    '/en/paraviento-de-cristal/':               '/paraviento-de-cristal/',
+    '/en/retractable-pvc-roof/malaga':          '/retractable-pvc-roof/',
+    '/en/retractable-pvc-roof/malaga/':         '/retractable-pvc-roof/',
+    '/en/retractable-pvc-roof/estepona':        '/retractable-pvc-roof/',
+    '/en/retractable-pvc-roof/estepona/':       '/retractable-pvc-roof/',
+    '/en/cortinas-de-cristal/marbella':         '/cortinas-de-cristal/',
+    '/en/cortinas-de-cristal/marbella/':        '/cortinas-de-cristal/',
+    '/en/pergolas-bioclimaticas':               '/pergolas-bioclimaticas/',
+    '/en/pergolas-bioclimaticas/':              '/pergolas-bioclimaticas/',
+    '/en/pergolas-bioclimaticas/torremolinos':  '/pergolas-bioclimaticas/',
+    '/en/pergolas-bioclimaticas/torremolinos/': '/pergolas-bioclimaticas/',
+    '/en/tipos-de-cerramientos-para-terrazas/': '/tipos-de-cerramientos-para-terrazas/',
+
+    // ── English /en-eu/ missing entries ──────────────────────────────────
+    '/en-eu/glass-curtain-for-great-view/':     '/cortinas-de-cristal/',
   },
 });
