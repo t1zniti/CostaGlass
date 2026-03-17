@@ -26,6 +26,7 @@ export default defineConfig({
     '/contact.html':    '/contact/',
 
     // ── Company ─────────────────────────────────────────────────────────
+    '/company.html':    '/company/',
     '/empresa/':        '/company/',
     '/empresa-old/':    '/company/',
     '/servicios/':      '/company/',
@@ -220,8 +221,6 @@ export default defineConfig({
     '/bioclimatic/':                            '/pergolas-bioclimaticas/',
     '/zip-screen':                              '/toldo-zip/',
     '/zip-screen/':                             '/toldo-zip/',
-    '/paravientos-de-cristal':                  '/paraviento-de-cristal/',
-    '/paravientos-de-cristal/':                 '/paraviento-de-cristal/',
 
     // ── Spanish product & content aliases ───────────────────────────────
     '/ventanas-de-guillotina/':                 '/guillotina-de-cristal/',
