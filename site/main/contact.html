@@ -121,7 +121,8 @@
                     <h2 style="font-family: var(--font-serif); font-size: 1.8rem; color: var(--gray-900); margin-bottom: 8px;">Solicitar Consulta Gratuita</h2>
                     <p style="color: var(--gray-500); margin-bottom: 32px;">Rellena el formulario y nuestro equipo se pondrá en contacto contigo en 24 horas.</p>
                     
-                    <form id="contactForm" action="#" method="POST">
+                    <form id="contactForm" action="https://api.web3forms.com/submit" method="POST">
+                        <input type="hidden" name="access_key" value="b338f979-ee98-4fc7-ba2f-2e17332b41fa">
                         <div class="form-group">
                             <label for="name">Nombre Completo *</label>
                             <input type="text" id="name" name="name" required autocomplete="name" placeholder="Tu nombre completo">
@@ -268,7 +269,7 @@
             messageDiv.style.display = 'none';
             
             try {
-                const response = await fetch('./process-form.php', {
+                const response = await fetch('https://api.web3forms.com/submit', {
                     method: 'POST',
                     body: formData
                 });
@@ -279,20 +280,20 @@
                 messageDiv.style.padding = '12px';
                 messageDiv.style.borderRadius = '4px';
                 
-                if (result.success) {
+                if (response.status === 200) {
                     messageDiv.style.backgroundColor = '#d4edda';
                     messageDiv.style.color = '#155724';
-                    messageDiv.textContent = result.message;
+                    messageDiv.textContent = result.message || 'Mensaje enviado con éxito.';
                     form.reset();
-                    turnstile.reset();
+                    if (typeof turnstile !== 'undefined') turnstile.reset();
                     if (typeof gtag_report_conversion === 'function') {
                         gtag_report_conversion();
                     }
                 } else {
                     messageDiv.style.backgroundColor = '#f8d7da';
                     messageDiv.style.color = '#721c24';
-                    messageDiv.textContent = result.message;
-                    turnstile.reset();
+                    messageDiv.textContent = result.message || 'Error al enviar el mensaje. Por favor, inténtalo de nuevo.';
+                    if (typeof turnstile !== 'undefined') turnstile.reset();
                 }
             } catch (error) {
                 messageDiv.style.display = 'block';
