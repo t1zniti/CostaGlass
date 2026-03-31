@@ -271,7 +271,7 @@
             messageDiv.style.display = 'none';
             
             try {
-                const response = await fetch('./process-form.php', {
+                const response = await fetch('/process-form.php', {
                     method: 'POST',
                     body: formData
                 });
