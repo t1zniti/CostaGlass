@@ -261,6 +261,11 @@
             
             const form = e.target;
             const formData = new FormData(form);
+            
+            // Remove Turnstile response so Web3Forms doesn't think we're using the Pro feature
+            formData.delete('cf-turnstile-response');
+            formData.delete('g-recaptcha-response');
+
             const submitBtn = form.querySelector('button[type="submit"]');
             const messageDiv = document.getElementById('formMessage');
             
